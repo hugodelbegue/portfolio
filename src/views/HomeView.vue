@@ -1,9 +1,9 @@
 <script setup>
-import TheWelcome from '../components/TheWelcome.vue'
+import SkillsContainer from '../components/SkillsContainer.vue'
 </script>
 
 <template>
-  <div class="thewelcome">
-    <TheWelcome />
+  <div class="home">
+    <SkillsContainer />
   </div>
 </template>

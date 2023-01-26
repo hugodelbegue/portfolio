@@ -7,7 +7,9 @@ import Footer from './layouts/Footer.vue'
 <template>
   <div class="layout">
     <Header />
+    <!-- <hr> -->
     <Main />
+    <hr class="line__footer">
     <Footer />
   </div>
 </template>
@@ -17,6 +19,12 @@ import Footer from './layouts/Footer.vue'
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  padding: 0 1em;
+}
+
+.line__footer {
+  margin: 0 5%;
+  border: 2px solid var(--divider-light-1);
+  border-radius: 2px;
 }
 </style>

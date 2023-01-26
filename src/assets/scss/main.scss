@@ -1,7 +1,8 @@
 @import './base.scss';
 
 #app {
-  max-width: 1280px;
+  // max-width: 1280px;
+  max-width: 1440px;
   margin: 0 auto;
 
   font-weight: normal;
@@ -10,4 +11,28 @@
 a {
   text-decoration: none;
   transition: 0.4s;
+
+  &:hover {
+    color: var(--chocolate);
+  }
+}
+
+h1 {
+  font-size: 2.5em;
+  font-weight: var(--weight-very-bold);
+}
+
+h3 {
+  font-size: 1.1em;
+  font-weight: var(--weight-bold);
+}
+
+i {
+  display: inline-flex;
+  place-items: center;
+  place-content: center;
+}
+
+svg {
+  background-color: transparent;
 }

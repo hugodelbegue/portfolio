@@ -1,12 +1,12 @@
 <script setup>
-import Logo from '../components/Logo.vue'
+import Logo from '../components/items/Logo.vue'
 import NavBar from '../components/NavBar.vue'
 import AboutMe from '../components/AboutMe.vue'
 </script>
 
 <template>
     <header>
-        <div class="wrapper">
+        <div class="layout__header">
             <Logo />
             <NavBar />
         </div>
@@ -18,9 +18,10 @@ import AboutMe from '../components/AboutMe.vue'
 header {
     display: flex;
     flex-direction: column;
+    margin-bottom: 3rem;
 }
 
-.wrapper {
+.layout__header {
     display: flex;
     justify-content: space-between;
     align-items: center;

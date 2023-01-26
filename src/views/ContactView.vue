@@ -1,6 +1,10 @@
+<script setup>
+import ContactForm from '../components/ContactForm.vue'
+</script>
+
 <template>
   <div class="contact">
-    <h1>This is an contact page</h1>
+    <ContactForm />
   </div>
 </template>
 

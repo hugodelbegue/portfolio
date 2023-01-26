@@ -4,6 +4,7 @@
 
 <template>
     <div class="aboutme">
+        <h1>Hugo Delbegue</h1>
         <p>
             Lorem ipsum dolor sit, amet consectetur adipisicing elit. Assumenda, blanditiis. Lorem ipsum, dolor sit amet
             consectetur adipisicing elit. Impedit maxime quas recusandae. Atque excepturi illo illum beatae dignissimos
@@ -16,10 +17,19 @@
 .aboutme {
     margin: 5rem auto 0;
 
+    h1,
     p {
-        width: 50%;
+        width: 70%;
         margin: 0 auto;
-        text-align: center;
+        text-align: left;
+    }
+
+    h1 {
+        margin-bottom: .2em;
+    }
+
+    p {
+        font-size: 1.5em;
     }
 }
 </style>

@@ -27,9 +27,13 @@
 
   // fonts
   --size: 15px;
-  --family: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu,
-    Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
-  ;
+  --line-height: 1.6;
+  --spacing: 1.1px;
+  --family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  --weight-bold: 600;
+  --weight-very-bold: 800;
+  // --family: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu,
+  //   Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
 }
 
 /* semantic color variables for this project */
@@ -68,6 +72,7 @@
   margin: 0;
   position: relative;
   font-weight: normal;
+  list-style-type: none;
 }
 
 body {
@@ -77,7 +82,8 @@ body {
   background: var(--sunglow);
   background: linear-gradient(225deg, var(--sunglow) 0%, var(--parchment) 100%);
   transition: color 0.5s, background-color 0.5s;
-  line-height: 1.6;
+  line-height: var(--line-height);
+  letter-spacing: var(--spacing);
   font-family: var(--family);
   font-size: var(--size);
   text-rendering: optimizeLegibility;
