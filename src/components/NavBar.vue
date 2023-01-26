@@ -62,9 +62,9 @@ export default {
 
         &.router-link-active {
             background: var(--chocolate);
-            background: linear-gradient(0deg, rgba(218, 98, 32, .25) 0%, transparent 30%);
+            background: linear-gradient(0deg, rgba(218, 98, 32, .25) 0%, transparent 20%);
             color: var(--chocolate);
-            border-radius: 50%;
+            border-radius: 20%;
         }
     }
 
@@ -83,7 +83,7 @@ export default {
         }
 
         &:hover {
-            background-color: rgba(218, 97, 32, 0.5);
+            background-color: rgba(218, 97, 32, 0.6);
             box-shadow: 0 1px 3px var(--divider-light-1);
         }
 

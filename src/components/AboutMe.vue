@@ -15,12 +15,10 @@
 
 <style lang="scss" scoped>
 .aboutme {
-    margin: 5rem auto 0;
+
 
     h1,
     p {
-        width: 70%;
-        margin: 0 auto;
         text-align: left;
     }
 

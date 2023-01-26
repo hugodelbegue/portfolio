@@ -6,7 +6,7 @@ import IconGithub from './icons/IconGithub.vue'
 </script>
 
 <template>
-    <div class="contactlinks">
+    <div class="sociallinks">
         <ul>
             <li>
                 <Link>
@@ -48,7 +48,7 @@ import IconGithub from './icons/IconGithub.vue'
 </template>
 
 <style lang="scss" scoped>
-.contactlinks {
+.sociallinks {
     display: flex;
 
     ul {

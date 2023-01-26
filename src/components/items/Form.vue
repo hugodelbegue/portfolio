@@ -4,6 +4,7 @@ import Button from './Button.vue'
 
 <template>
     <div class="form">
+        <h2>Pour me contacter.</h2>
         <form action="">
             <div class="name">
                 <label for="name">
@@ -20,14 +21,19 @@ import Button from './Button.vue'
                     placeholder="Ecrivez votre demande"></textarea>
             </div>
             <div class="submit">
-                <Button />
+                <Button padding="1" width="25" msg="Envoyer" />
             </div>
         </form>
     </div>
 </template>
 
 <style lang="scss" scoped>
+.form {
+    flex: 1 1 50%;
+}
+
 form {
+    margin-left: 2em;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-gap: 2em;
@@ -91,6 +97,7 @@ input[type="text"] {
         &:focus,
         &:focus-visible {
             border: 2px dashed var(--chocolate);
+            background: var(--white);
         }
     }
 }

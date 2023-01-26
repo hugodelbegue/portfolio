@@ -9,8 +9,11 @@ import Footer from './layouts/Footer.vue'
     <Header />
     <!-- <hr> -->
     <Main />
-    <hr class="line__footer">
-    <Footer />
+    <div>
+      <hr class="line__footer">
+      <Footer />
+    </div>
+
   </div>
 </template>
 
@@ -19,12 +22,28 @@ import Footer from './layouts/Footer.vue'
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  padding: 0 1em;
+  justify-content: space-between;
+  overflow-x: hidden;
 }
 
 .line__footer {
-  margin: 0 5%;
+  margin: 0 2.5%;
   border: 2px solid var(--divider-light-1);
   border-radius: 2px;
+}
+
+header {
+  padding-left: max(1em, (calc(50% - var(--desktop-up) / 2)));
+  padding-right: max(1em, (calc(50% - var(--desktop-up) / 2)));
+}
+
+main {
+  padding-left: max(1em, (calc(50% - var(--desktop-down) / 2)));
+  padding-right: max(1em, (calc(50% - var(--desktop-down) / 2)));
+}
+
+footer {
+  padding-left: max(5em, (calc(50% - var(--desktop-up) / 2)));
+  padding-right: max(5em, (calc(50% - var(--desktop-up) / 2)));
 }
 </style>

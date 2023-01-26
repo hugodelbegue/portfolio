@@ -1,8 +1,7 @@
 @import './base.scss';
 
 #app {
-  // max-width: 1280px;
-  max-width: 1440px;
+  width: 100%;
   margin: 0 auto;
 
   font-weight: normal;
@@ -22,6 +21,12 @@ h1 {
   font-weight: var(--weight-very-bold);
 }
 
+h2 {
+  font-size: 1.8em;
+  font-weight: var(--weight-bold);
+  margin-bottom: 2em;
+}
+
 h3 {
   font-size: 1.1em;
   font-weight: var(--weight-bold);
@@ -35,4 +40,20 @@ i {
 
 svg {
   background-color: transparent;
+}
+
+// Scrollbar
+::-webkit-scrollbar {
+  width: 9px;
+  height: 9px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--parchment);
+  padding: 1px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--divider-light-1);
+  border-radius: 3px;
 }

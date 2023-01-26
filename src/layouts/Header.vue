@@ -6,11 +6,14 @@ import AboutMe from '../components/AboutMe.vue'
 
 <template>
     <header>
-        <div class="layout__header">
-            <Logo />
+        <div class="layout__navbar">
+            <span>Portfolio.</span>
             <NavBar />
         </div>
-        <AboutMe />
+        <div class="layout__aboutme">
+            <Logo />
+            <AboutMe />
+        </div>
     </header>
 </template>
 
@@ -18,12 +21,27 @@ import AboutMe from '../components/AboutMe.vue'
 header {
     display: flex;
     flex-direction: column;
-    margin-bottom: 3rem;
+    padding-bottom: 3rem;
 }
 
-.layout__header {
+.layout__navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    margin-top: 2em;
+}
+
+.layout__aboutme {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    column-gap: 5em;
+    margin: 5rem auto 0;
+    width: 70%;
+}
+
+span {
+    font-size: 2rem;
+    font-weight: var(--weight-bold);
 }
 </style>

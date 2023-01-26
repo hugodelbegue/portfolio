@@ -1,7 +1,10 @@
-<script setup></script>
+<script setup>
+import ProjectsContainer from '../components/ProjectsContainer.vue'
+</script>
 
 <template>
     <div class="projects">
-        <h1>This is the projects page.</h1>
+        <h2>Mes projets web.</h2>
+        <ProjectsContainer />
     </div>
 </template>
