@@ -7,11 +7,22 @@ import AboutMe from '../components/AboutMe.vue'
 <template>
     <header>
         <div class="layout__navbar">
-            <span>Portfolio.</span>
+            <Logo>
+                <template #picture>
+                    <a href="/">
+                        <img alt="PrimalProd logo" src="@/assets/logo.svg" width="75" height="75" />
+                    </a>
+                    <span>Portfolio.</span>
+                </template>
+            </Logo>
             <NavBar />
         </div>
         <div class="layout__aboutme">
-            <Logo />
+            <Logo>
+                <template #picture>
+                    <img alt="Avatar" src="../assets/avatar.jpg" width="125" height="125" />
+                </template>
+            </Logo>
             <AboutMe />
         </div>
     </header>
@@ -21,7 +32,7 @@ import AboutMe from '../components/AboutMe.vue'
 header {
     display: flex;
     flex-direction: column;
-    padding-bottom: 3rem;
+    padding-bottom: 8em;
 }
 
 .layout__navbar {
@@ -43,5 +54,10 @@ header {
 span {
     font-size: 2rem;
     font-weight: var(--weight-bold);
+    margin-left: .2em;
+}
+
+img {
+    place-content: none;
 }
 </style>

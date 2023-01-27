@@ -6,14 +6,12 @@ import Footer from './layouts/Footer.vue'
 
 <template>
   <div class="layout">
-    <Header />
-    <!-- <hr> -->
-    <Main />
     <div>
+      <Header />
       <hr class="line__footer">
-      <Footer />
     </div>
-
+    <Main />
+    <Footer />
   </div>
 </template>
 
@@ -38,8 +36,8 @@ header {
 }
 
 main {
-  padding-left: max(1em, (calc(50% - var(--desktop-down) / 2)));
-  padding-right: max(1em, (calc(50% - var(--desktop-down) / 2)));
+  padding-left: max(3em, (calc(50% - var(--desktop-down) / 2)));
+  padding-right: max(3em, (calc(50% - var(--desktop-down) / 2)));
 }
 
 footer {

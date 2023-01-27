@@ -6,6 +6,7 @@ import Button from './items/Button.vue'
 </script>
 
 <template>
+    <h2>Mes projets web.</h2>
     <div class="projectscontainer">
         <div class="selectors">
             <Button padding=".5" msg="Tous" />
@@ -78,6 +79,13 @@ export default {
         width: 100%;
         padding-top: .9em;
         padding-right: .3em;
+    }
+}
+
+h2 {
+    &::before {
+        content: url(../assets/pc-display.svg);
+        margin-right: .5em;
     }
 }
 

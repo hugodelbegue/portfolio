@@ -10,7 +10,7 @@ import IconSeo from './icons/IconSeo.vue'
 </script>
 
 <template>
-    <h2>Mes compétences.</h2>
+    <h2>Compétences techniques</h2>
     <div class="AllSkills">
         <Skill number="35">
             <template #icon>
@@ -56,6 +56,21 @@ import IconSeo from './icons/IconSeo.vue'
     flex-wrap: wrap;
     gap: 1.5em;
     justify-content: space-evenly;
+}
+
+h2 {
+    display: flex;
+    place-content: center;
+
+    &::before {
+        content: url(../assets/gear-fill.svg);
+        margin-right: 1em;
+    }
+
+    &::after {
+        content: url(../assets/tools.svg);
+        margin-left: 1em;
+    }
 }
 
 svg {

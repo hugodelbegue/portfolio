@@ -32,6 +32,13 @@ import Button from './Button.vue'
     flex: 1 1 50%;
 }
 
+h2 {
+    &::after {
+        content: url(../../assets/send.svg);
+        margin-left: .5em;
+    }
+}
+
 form {
     margin-left: 2em;
     display: grid;
@@ -90,7 +97,7 @@ input[type="text"] {
 
     textarea {
         width: 100%;
-        height: 100%;
+        height: 25em;
         background: var(--white-soft);
 
         &:hover,
