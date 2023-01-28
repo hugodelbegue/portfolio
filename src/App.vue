@@ -22,11 +22,12 @@ import Footer from './layouts/Footer.vue'
   flex-direction: column;
   justify-content: space-between;
   overflow-x: hidden;
+  font-size: 100%;
 }
 
 .line__footer {
   margin: 0 2.5%;
-  border: 2px solid var(--divider-light-1);
+  border: 2px solid var(--divider-light-2);
   border-radius: 2px;
 }
 

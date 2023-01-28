@@ -10,6 +10,7 @@
 a {
   text-decoration: none;
   transition: 0.4s;
+  color: inherit;
 
   &:hover {
     color: var(--chocolate);
@@ -40,6 +41,11 @@ i {
 
 svg {
   background-color: transparent;
+}
+
+input,
+textarea {
+  font-size: .89em;
 }
 
 // Scrollbar

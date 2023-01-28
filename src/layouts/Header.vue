@@ -32,7 +32,7 @@ import AboutMe from '../components/AboutMe.vue'
 header {
     display: flex;
     flex-direction: column;
-    padding-bottom: 8em;
+    padding-bottom: 1em;
 }
 
 .layout__navbar {
@@ -46,13 +46,13 @@ header {
     display: flex;
     justify-content: center;
     align-items: center;
-    column-gap: 5em;
-    margin: 5rem auto 0;
+    column-gap: 10em;
+    margin: 5.3em auto 7em;
     width: 70%;
 }
 
 span {
-    font-size: 2rem;
+    font-size: 2.2em;
     font-weight: var(--weight-bold);
     margin-left: .2em;
 }

@@ -24,7 +24,7 @@ import IconDownload from './icons/IconDownload.vue'
             </Link>
             <Link class="downloadCV" @click="download">
             <template #title>
-                <a>CV</a>
+                <a href="../assets/data/CV_HugoDELBEGUE.pdf" target="_blank" download="CV_hugodelbegue">CV</a>
             </template>
             <template #icon>
                 <IconDownload />
@@ -53,8 +53,9 @@ export default {
     transition: color .4s;
 
     a {
-        font-size: 20px;
+        font-size: 1.33em;
         font-weight: var(--weight-bold);
+        color: inherit;
 
         &:hover {
             color: var(--chocolate);
@@ -76,10 +77,11 @@ export default {
         border-radius: 5px;
         transition: background .3s, box-shadow .2s;
         padding: .5em;
+        cursor: pointer;
 
         a {
             color: var(--indian);
-            font-size: 15px;
+            font-size: 1em;
         }
 
         &:hover {

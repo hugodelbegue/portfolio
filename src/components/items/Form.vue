@@ -1,5 +1,8 @@
 <script setup>
 import Button from './Button.vue'
+import Link from './Link.vue'
+import IconLinkedin from '../icons/IconLinkedin.vue'
+import IconGithub from '../icons/IconGithub.vue'
 </script>
 
 <template>
@@ -21,7 +24,23 @@ import Button from './Button.vue'
                     placeholder="Ecrivez votre demande"></textarea>
             </div>
             <div class="submit">
-                <Button padding="1" width="25" msg="Envoyer" />
+                <Button padding="1" width="50" msg="Envoyer" />
+            </div>
+            <div class="social">
+                <Link color="#000000">
+                <template #icon>
+                    <a href="https://github.com/hugodelbegue" target="_blank">
+                        <IconGithub />
+                    </a>
+                </template>
+                </Link>
+                <Link color="#0e76a8">
+                <template #icon>
+                    <a href="https://fr.linkedin.com/in/hugo-delbegue/" target="_blank">
+                        <IconLinkedin />
+                    </a>
+                </template>
+                </Link>
             </div>
         </form>
     </div>
@@ -58,11 +77,6 @@ textarea {
 
     &:hover {
         cursor: pointer;
-    }
-
-    &:focus,
-    &:focus-visible {
-        outline: transparent;
     }
 }
 
@@ -110,7 +124,25 @@ input[type="text"] {
 }
 
 .submit {
-    grid-column: 1 / 3;
+    grid-column: 1;
     grid-row: 3;
+}
+
+.social {
+    grid-column: 2 / 3;
+    grid-row: 3;
+    display: flex;
+    place-content: flex-end;
+    place-items: center;
+    column-gap: 1em;
+
+    a:hover {
+        color: inherit;
+    }
+
+    svg {
+        width: 27px;
+        height: 27px;
+    }
 }
 </style>

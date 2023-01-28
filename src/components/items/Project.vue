@@ -1,18 +1,24 @@
 <template>
-    <div class="project">
+    <a :href="url" class="project">
         <slot name="title"></slot>
         <div class="image">
             <slot name="image"></slot>
         </div>
         <slot name="language"></slot>
-    </div>
+    </a>
 </template>
 
 <script setup>
-
+defineProps({
+    url: String
+})
 </script>
 
 <style lang="scss" scoped>
+a {
+    color: inherit;
+}
+
 .project {
     display: flex;
     flex-direction: column;

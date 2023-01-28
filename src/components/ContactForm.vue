@@ -14,6 +14,6 @@ import Map from './items/Map.vue';
 .contactform {
     display: flex;
     justify-content: center;
-    column-gap: 2rem;
+    column-gap: 2.3em;
 }
 </style>

@@ -9,27 +9,27 @@ import IconGithub from './icons/IconGithub.vue'
     <div class="sociallinks">
         <ul>
             <li>
-                <Link>
+                <Link color="#bb001b">
                 <template #icon>
-                    <a href="mailto:hugodelbegue@gmail.com">
+                    <a href="mailto:hugodelbegue@gmail.com" target="_blank">
                         <IconMail />
                     </a>
                 </template>
                 </Link>
             </li>
             <li>
-                <Link>
+                <Link color="#0e76a8">
                 <template #icon>
-                    <a href="https://fr.linkedin.com/in/hugo-delbegue/">
+                    <a href="https://fr.linkedin.com/in/hugo-delbegue/" target="_blank">
                         <IconLinkedin />
                     </a>
                 </template>
                 </Link>
             </li>
             <li>
-                <Link>
+                <Link color="#000000">
                 <template #icon>
-                    <a href="https://github.com/hugodelbegue">
+                    <a href="https://github.com/hugodelbegue" target="_blank">
                         <IconGithub />
                     </a>
                 </template>
@@ -51,17 +51,21 @@ import IconGithub from './icons/IconGithub.vue'
 .sociallinks {
     display: flex;
 
+    a:hover {
+        color: inherit;
+    }
+
     ul {
         display: flex;
         flex-direction: column;
         justify-content: space-around;
-        padding-right: 5rem;
+        padding-right: 6em;
         padding-left: 0;
     }
 
     svg {
-        width: 30px;
-        height: 30px;
+        width: 27px;
+        height: 27px;
     }
 }
 </style>

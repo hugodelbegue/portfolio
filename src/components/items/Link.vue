@@ -1,5 +1,5 @@
 <template>
-    <div class="link">
+    <div class="link" :style="{ 'color': color }">
         <i>
             <slot name="icon"></slot>
         </i>
@@ -8,7 +8,9 @@
 </template>
 
 <script setup>
-
+defineProps({
+    color: String
+})
 </script>
 
 <style lang="scss" scoped>

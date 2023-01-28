@@ -10,6 +10,7 @@ import { RouterView } from 'vue-router'
 
 <style lang="scss" scoped>
 main {
-    padding: 3em 6em 10em;
+    padding-top: 3em;
+    padding-bottom: 10em;
 }
 </style>

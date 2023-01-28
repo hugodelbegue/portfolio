@@ -16,7 +16,6 @@
 <style lang="scss" scoped>
 .aboutme {
 
-
     h1,
     p {
         text-align: left;

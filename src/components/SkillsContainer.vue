@@ -61,6 +61,7 @@ import IconSeo from './icons/IconSeo.vue'
 h2 {
     display: flex;
     place-content: center;
+    margin-bottom: 3em;
 
     &::before {
         content: url(../assets/gear-fill.svg);
