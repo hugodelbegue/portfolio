@@ -6,11 +6,11 @@ import LegalNotices from '../components/LegalNotices.vue'
 
 <template>
     <footer>
-        <SocialLinks />
         <div class="layout__footer">
             <ReadMore />
             <LegalNotices />
         </div>
+        <SocialLinks />
     </footer>
 </template>
 

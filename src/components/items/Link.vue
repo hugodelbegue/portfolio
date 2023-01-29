@@ -16,7 +16,7 @@ defineProps({
 <style lang="scss" scoped>
 .link {
     display: flex;
-    align-items: center;
+    place-items: flex-start;
     border-radius: 5px;
 }
 </style>

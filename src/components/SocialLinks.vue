@@ -9,31 +9,40 @@ import IconGithub from './icons/IconGithub.vue'
     <div class="sociallinks">
         <ul>
             <li>
-                <Link color="#bb001b">
-                <template #icon>
-                    <a href="mailto:hugodelbegue@gmail.com" target="_blank">
+                <a href="mailto:hugodelbegue@gmail.com" target="_blank">
+                    <Link color="">
+                    <template #icon>
                         <IconMail />
-                    </a>
-                </template>
-                </Link>
+                    </template>
+                    <template #title>
+                        <span>hugodelbegue@gmail.com</span>
+                    </template>
+                    </Link>
+                </a>
             </li>
             <li>
-                <Link color="#0e76a8">
-                <template #icon>
-                    <a href="https://fr.linkedin.com/in/hugo-delbegue/" target="_blank">
+                <a href="https://fr.linkedin.com/in/hugo-delbegue/" target="_blank">
+                    <Link color="">
+                    <template #icon>
                         <IconLinkedin />
-                    </a>
-                </template>
-                </Link>
+                    </template>
+                    <template #title>
+                        <span>LinkedIn</span>
+                    </template>
+                    </Link>
+                </a>
             </li>
             <li>
-                <Link color="#000000">
-                <template #icon>
-                    <a href="https://github.com/hugodelbegue" target="_blank">
+                <a href="https://github.com/hugodelbegue" target="_blank">
+                    <Link color="">
+                    <template #icon>
                         <IconGithub />
-                    </a>
-                </template>
-                </Link>
+                    </template>
+                    <template #title>
+                        <span>GitHub</span>
+                    </template>
+                    </Link>
+                </a>
             </li>
             <!-- <li>
                 <a href="https://www.instagram.com/primalprod_freelance/" target="_blank">
@@ -51,21 +60,21 @@ import IconGithub from './icons/IconGithub.vue'
 .sociallinks {
     display: flex;
 
-    a:hover {
-        color: inherit;
-    }
-
     ul {
         display: flex;
         flex-direction: column;
         justify-content: space-around;
-        padding-right: 6em;
-        padding-left: 0;
+        padding-left: 2em;
+        padding-right: 0;
     }
 
     svg {
-        width: 27px;
-        height: 27px;
+        width: 1.4em;
+        height: 1.4em;
+    }
+
+    span {
+        margin-left: .8em;
     }
 }
 </style>

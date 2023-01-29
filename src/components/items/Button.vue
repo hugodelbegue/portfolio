@@ -1,11 +1,12 @@
 <template>
     <div class="button">
-        <input type="button" :style="{ 'padding': padding + 'em', 'width': width + '%' }" :value="msg">
+        <input :type="type" :style="{ 'padding': padding + 'em', 'width': width + '%' }" :value="msg">
     </div>
 </template>
 
 <script setup>
 defineProps({
+    type: String,
     msg: String,
     padding: String,
     width: String
@@ -15,7 +16,9 @@ defineProps({
 
 <style lang="scss" scoped>
 .button {
-    input[type="button"] {
+
+    input[type="button"],
+    input[type="submit"] {
         top: 0;
         left: 0;
         font-variant-caps: all-small-caps;

@@ -9,9 +9,9 @@ import Button from './items/Button.vue'
     <h2>Mes projets web.</h2>
     <div class="projectscontainer">
         <div class="selectors">
-            <Button padding=".5" msg="Tous" />
-            <Button padding=".5" msg="Full Frontend" />
-            <Button padding=".5" msg="Avec Backend" />
+            <Button type="button" padding=".5" msg="Tous" />
+            <Button type="button" padding=".5" msg="Full Frontend" />
+            <Button type="button" padding=".5" msg="Avec Backend" />
         </div>
         <div class="layout__project">
             <div v-for="data in dataList" class="project">
