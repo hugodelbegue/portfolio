@@ -15,6 +15,8 @@ defineProps({
 </script>
 
 <style lang="scss" scoped>
+@import '../../assets/scss/responsive.scss';
+
 .button {
 
     input[type="button"],
@@ -22,6 +24,7 @@ defineProps({
         top: 0;
         left: 0;
         font-variant-caps: all-small-caps;
+        font-weight: var(--weight-bold);
         background: var(--chocolate);
         border: 1px solid var(--chocolate);
         border-radius: 2px;
@@ -43,6 +46,10 @@ defineProps({
             border: 1px solid var(--chocolate);
             background: var(--chocolate);
             box-shadow: 0px 0px 10px 1px var(--divider-light-1);
+        }
+
+        @media #{$tabletScreen} {
+            font-size: 1em;
         }
     }
 }

@@ -3,24 +3,26 @@ import Button from './Button.vue'
 import Link from './Link.vue'
 import IconLinkedin from '../icons/IconLinkedin.vue'
 import IconGithub from '../icons/IconGithub.vue'
+// import emailjs from '@emailjs/browser'
 </script>
 
 <template>
     <div class="form">
         <h2>Pour me contacter.</h2>
-        <form @submit.prevent="sendMail()" method="post">
+        <form @submit.prevent="sendMail()" ref="form" method="post">
             <div class="name">
                 <label for="name">
-                    <input v-model="formData.name" type="text" placeholder="Votre nom & prenom" autofocus>
+                    <input v-model="formData.name" ref="name" type="text" name="name" placeholder="Votre nom & prenom"
+                        autofocus>
                 </label>
             </div>
             <div class="email">
                 <label for="email">
-                    <input v-model="formData.email" type="email" placeholder="Votre adresse email">
+                    <input v-model="formData.email" type="email" name="email" placeholder="Votre adresse email">
                 </label>
             </div>
-            <div class="request">
-                <textarea v-model="formData.request" name="request" id="request" cols="30" rows="10"
+            <div class="message">
+                <textarea v-model="formData.message" name="message" id="message" cols="30" rows="10"
                     placeholder="Ecrivez votre demande.."></textarea>
             </div>
             <div class="submit">
@@ -34,14 +36,14 @@ import IconGithub from '../icons/IconGithub.vue'
             <div class="social">
                 <Link color="#000000">
                 <template #icon>
-                    <a href="https://github.com/hugodelbegue" target="_blank">
+                    <a href="https://github.com/hugodelbegue" target="_blank" title="GitHub">
                         <IconGithub />
                     </a>
                 </template>
                 </Link>
                 <Link color="#0e76a8">
                 <template #icon>
-                    <a href="https://fr.linkedin.com/in/hugo-delbegue/" target="_blank">
+                    <a href="https://fr.linkedin.com/in/hugo-delbegue/" target="_blank" title="LinkedIn">
                         <IconLinkedin />
                     </a>
                 </template>
@@ -58,14 +60,20 @@ export default {
             formData: {
                 name: null,
                 email: null,
-                request: null
+                message: null
             },
             errors: []
         }
     },
+    mounted() {
+        this.$refs.name.focus();
+    },
     methods: {
         // Send form
         sendMail() {
+            const serviceId = 'service_kj8g0gs';
+            const templateId = 'template_uywc7uk';
+            const publicKey = 'qH3WgmDhYRov4CSQq';
             this.errors = [];
             if (!this.formData.name) {
                 this.errors.push('#nom/prénom')
@@ -73,20 +81,22 @@ export default {
             if (!this.formData.email) {
                 this.errors.push('#email')
             }
-            if (!this.formData.request) {
+            if (!this.formData.message) {
                 this.errors.push('#demande')
             }
-            if (this.errors.length == 0) {
-                alert('Erreurs OK')
-                alert('envoi OK')
-                this.formData.name = '';
-                this.formData.email = '';
-                this.formData.request = '';
-                this.errors = [];
-                alert('Reset OK')
+            if (this.errors.length === 0) {
+                this.formData = { name: '', email: '', message: '' };
+            } else {
+                console.error(`Les champs suivants sont manquants: ${this.errors.join(', ')}`);
+                return;
             }
-            console.log('Erreur ' + this.errors)
-            console.log('Formulaire ' + this.formData)
+            emailjs.sendForm(serviceId, templateId, this.$refs.form, publicKey)
+                .then((res) => {
+                    console.log('Success.', res.text);
+                })
+                .catch((err) => {
+                    console.error('Erreur lors de l\'envoi.', err.text)
+                })
         }
     },
 }
@@ -94,8 +104,16 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import '../../assets/scss/responsive.scss';
+
 .form {
     flex: 1 1 50%;
+
+    h2 {
+        @media #{$mobileMediumScreen} {
+            text-align: center;
+        }
+    }
 }
 
 form {
@@ -103,6 +121,10 @@ form {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-gap: 2em;
+
+    @media #{$tabletScreen} {
+        margin-left: 0;
+    }
 }
 
 input,
@@ -135,6 +157,11 @@ input[type="email"] {
     input {
         width: 100%;
     }
+
+    @media #{$mobileMediumScreen} {
+        grid-column: 1 / 3;
+        grid-row: 1;
+    }
 }
 
 .email {
@@ -144,9 +171,14 @@ input[type="email"] {
     input {
         width: 100%;
     }
+
+    @media #{$mobileMediumScreen} {
+        grid-column: 1 / 3;
+        grid-row: 2;
+    }
 }
 
-.request {
+.message {
     grid-column: 1 / 3;
     grid-row: 2;
 
@@ -162,6 +194,10 @@ input[type="email"] {
             background: var(--white);
         }
     }
+
+    @media #{$mobileMediumScreen} {
+        grid-row: 3;
+    }
 }
 
 .errors {
@@ -169,11 +205,25 @@ input[type="email"] {
     grid-row: 3;
     height: 1.4em;
     color: var(--harvard-crimson);
+
+    @media #{$mobileMediumScreen} {
+        grid-row: 4;
+    }
+
+    @media #{$mobileDownScreen} {
+        text-align: center;
+    }
 }
 
 .submit {
     grid-column: 1;
     grid-row: 4;
+
+    @media #{$mobileMediumScreen} {
+        grid-column: 1 / 3;
+        grid-row: 5;
+        text-align: center;
+    }
 }
 
 .social {
@@ -191,6 +241,12 @@ input[type="email"] {
     svg {
         width: 27px;
         height: 27px;
+    }
+
+    @media #{$mobileMediumScreen} {
+        grid-column: 1 / 3;
+        grid-row: 6;
+        place-content: center;
     }
 }
 </style>

@@ -11,15 +11,31 @@
 </script>
 
 <style lang="scss" scoped>
+@import '../../assets/scss/responsive.scss';
+
 .googlemaps {
     border: 3px solid var(--divider-light-1);
     display: flex;
     align-items: center;
     flex: 1 1 50%;
 
+    @media #{$tabletScreen} {
+        margin: 2em;
+    }
+
+    @media #{$mobileUpScreen} {
+        margin: 0;
+        margin-top: 2em;
+    }
+
     iframe {
         width: 100%;
         height: 100%;
+
+        @media #{$tabletScreen} {
+            height: auto;
+            aspect-ratio: 1/1;
+        }
     }
 }
 </style>

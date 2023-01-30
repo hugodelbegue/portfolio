@@ -3,6 +3,7 @@ import Link from './items/Link.vue'
 import IconMail from './icons/IconMail.vue'
 import IconLinkedin from './icons/IconLinkedin.vue'
 import IconGithub from './icons/IconGithub.vue'
+import IconInstagram from './icons/IconInstagram.vue';
 </script>
 
 <template>
@@ -15,7 +16,7 @@ import IconGithub from './icons/IconGithub.vue'
                         <IconMail />
                     </template>
                     <template #title>
-                        <span>hugodelbegue@gmail.com</span>
+                        <span>Email</span>
                     </template>
                     </Link>
                 </a>
@@ -44,28 +45,46 @@ import IconGithub from './icons/IconGithub.vue'
                     </Link>
                 </a>
             </li>
-            <!-- <li>
+            <li>
                 <a href="https://www.instagram.com/primalprod_freelance/" target="_blank">
-                    <span>
-                        <i class="bi bi-instagram"></i>
-                        Instagram
-                    </span>
+                    <Link color="">
+                    <template #icon>
+                        <IconInstagram />
+                    </template>
+                    <template #title>
+                        <span>Instagram</span>
+                    </template>
+                    </Link>
                 </a>
-            </li> -->
+            </li>
         </ul>
     </div>
 </template>
 
 <style lang="scss" scoped>
+@import '../assets/scss/responsive.scss';
+
 .sociallinks {
     display: flex;
 
     ul {
         display: flex;
         flex-direction: column;
-        justify-content: space-around;
-        padding-left: 2em;
+        justify-content: space-between;
+        align-items: flex-end;
+        padding-left: 3em;
         padding-right: 0;
+
+        @media #{$tabletScreen} {
+            flex-direction: row;
+            padding-left: 0;
+            width: 100%;
+        }
+
+        @media #{$mobileUpScreen} {
+            flex-wrap: wrap;
+            gap: 1em;
+        }
     }
 
     svg {

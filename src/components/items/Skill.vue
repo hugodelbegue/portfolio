@@ -25,8 +25,8 @@ defineProps({
     place-items: center;
     place-content: center;
     background-color: transparent;
-    width: 250px;
-    height: 250px;
+    width: 16.6em;
+    height: 16.6em;
 }
 
 .number__percentage {
@@ -45,7 +45,7 @@ defineProps({
     background-color: var(--divider-light-2);
     border-radius: 5px;
     width: 100%;
-    height: 20px;
+    height: 1.3em;
 
     .filling {
         background-color: var(--chocolate);

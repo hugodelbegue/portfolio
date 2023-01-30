@@ -15,7 +15,9 @@ import Footer from './layouts/Footer.vue'
   </div>
 </template>
 
-<style scoped>
+<style lang="scss" scoped>
+@import './assets/scss/responsive.scss';
+
 .layout {
   min-height: 100vh;
   display: flex;
@@ -23,6 +25,14 @@ import Footer from './layouts/Footer.vue'
   justify-content: space-between;
   overflow-x: hidden;
   font-size: 100%;
+
+  @media #{$tabletScreen} {
+    font-size: 90%;
+  }
+
+  @media #{$mobileDownScreen} {
+    font-size: 80%;
+  }
 }
 
 .line__footer {

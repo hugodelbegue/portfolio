@@ -9,7 +9,7 @@ import AboutMe from '../components/AboutMe.vue'
         <div class="layout__navbar">
             <Logo>
                 <template #picture>
-                    <a href="/">
+                    <a href="/" title="Accueil">
                         <img alt="PrimalProd logo" src="@/assets/logo.svg" width="75" height="75" />
                     </a>
                     <span>Portfolio.</span>
@@ -29,6 +29,8 @@ import AboutMe from '../components/AboutMe.vue'
 </template>
 
 <style lang="scss" scoped>
+@import '../assets/scss/responsive.scss';
+
 header {
     display: flex;
     flex-direction: column;
@@ -46,9 +48,18 @@ header {
     display: flex;
     justify-content: center;
     align-items: center;
-    column-gap: 10em;
+    gap: 10em;
     margin: 5.3em auto 7em;
     width: 70%;
+
+    @media #{$desktopScreen} {
+        gap: 5em;
+    }
+
+    @media #{$tabletScreen} {
+        flex-direction: column;
+        gap: 1em;
+    }
 }
 
 span {

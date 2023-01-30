@@ -22,7 +22,8 @@ import IconDownload from './icons/IconDownload.vue'
                 <RouterLink to="/contact">Contact</RouterLink>
             </template>
             </Link>
-            <a href="../assets/data/CV_HugoDELBEGUE.pdf" target="_blank" download="CV_hugodelbegue">
+            <a href="../assets/data/CV_HugoDELBEGUE.pdf" target="_blank" download="CV_hugodelbegue"
+                title="Téléchager mon CV">
                 <Link class="downloadCV" @click="download">
                 <template #title>
                     <span>CV</span>
@@ -76,7 +77,7 @@ export default {
         flex-direction: column-reverse;
         place-items: center;
         background-color: rgba(218, 97, 32, 0.25);
-        color: var(--indian);
+        color: red;
         border: 3px dashed var(--chocolate);
         border-radius: 5px;
         transition: background .3s, box-shadow .2s;
@@ -84,7 +85,7 @@ export default {
         cursor: pointer;
 
         span {
-            color: var(--indian);
+            color: red;
             font-size: .8em;
             font-weight: var(--weight-bold);
         }

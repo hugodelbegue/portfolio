@@ -14,11 +14,17 @@
 </template>
 
 <style lang="scss" scoped>
+@import '../assets/scss/responsive.scss';
+
 .aboutme {
 
     h1,
     p {
         text-align: left;
+
+        @media #{$tabletScreen} {
+            text-align: center;
+        }
     }
 
     h1 {

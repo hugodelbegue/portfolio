@@ -51,6 +51,8 @@ import IconSeo from './icons/IconSeo.vue'
 </template>
 
 <style lang="scss" scoped>
+@import '../assets/scss/responsive.scss';
+
 .AllSkills {
     display: flex;
     flex-wrap: wrap;
@@ -61,6 +63,7 @@ import IconSeo from './icons/IconSeo.vue'
 h2 {
     display: flex;
     place-content: center;
+    text-align: center;
     margin-bottom: 3em;
 
     &::before {

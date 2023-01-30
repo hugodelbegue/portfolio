@@ -15,12 +15,19 @@ import LegalNotices from '../components/LegalNotices.vue'
 </template>
 
 <style lang="scss" scoped>
+@import '../assets/scss/responsive.scss';
+
 footer {
     display: flex;
     justify-content: center;
     padding-top: 2.3em;
     padding-bottom: 2.3rem;
     font-size: .9em;
+
+    @media #{$tabletScreen} {
+        flex-direction: column-reverse;
+        gap: 2em;
+    }
 }
 
 .layout__footer {
