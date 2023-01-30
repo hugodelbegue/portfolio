@@ -62,13 +62,12 @@ export default {
         color: inherit;
 
         &:hover {
-            color: var(--chocolate);
+            color: var(--color-link);
         }
 
         &.router-link-active {
-            background: var(--chocolate);
             background: linear-gradient(0deg, rgba(218, 98, 32, .25) 0%, transparent 20%);
-            color: var(--chocolate);
+            color: var(--color-link);
             border-radius: 20%;
         }
     }
@@ -77,27 +76,27 @@ export default {
         flex-direction: column-reverse;
         place-items: center;
         background-color: rgba(218, 97, 32, 0.25);
-        color: red;
-        border: 3px dashed var(--chocolate);
+        color: var(--color-icon);
+        border: 3px dashed var(--color-button-border);
         border-radius: 5px;
         transition: background .3s, box-shadow .2s;
         padding: .5em;
         cursor: pointer;
 
         span {
-            color: red;
+            color: var(--color-icon);
             font-size: .8em;
             font-weight: var(--weight-bold);
         }
 
         &:hover {
             background-color: rgba(218, 97, 32, 0.6);
-            box-shadow: 0 1px 3px var(--divider-light-1);
+            box-shadow: 0 1px 3px var(--color-border-1);
         }
 
         &:active {
-            background: var(--chocolate);
-            box-shadow: 0 1px 6px var(--divider-light-1);
+            background: var(--color-button-active);
+            box-shadow: 0 1px 6px var(--color-border-1);
         }
 
         svg {

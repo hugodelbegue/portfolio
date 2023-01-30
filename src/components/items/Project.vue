@@ -32,7 +32,7 @@ a {
     .image {
         width: 100%;
         height: 100%;
-        box-shadow: 0 0 10px;
+        box-shadow: 0 0 10px var(--color-border-1);
         border-radius: 10px;
         overflow: hidden;
     }

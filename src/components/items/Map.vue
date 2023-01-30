@@ -14,7 +14,7 @@
 @import '../../assets/scss/responsive.scss';
 
 .googlemaps {
-    border: 3px solid var(--divider-light-1);
+    border: 3px solid var(--color-border-1);
     display: flex;
     align-items: center;
     flex: 1 1 50%;

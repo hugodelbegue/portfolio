@@ -1,35 +1,47 @@
 :root {
   // colors
   --chocolate: #da6220;
+  --fluorescent-orange: #ff8125;
   --indian: #4f1e0c;
   --parchment: #ede8d1;
   --sunglow: #f2c744;
   --harvard-crimson: #bb001b;
+  --cinnabar: #ea4335;
+  --indigo: #2c3e50;
+  --smoke: #f3f3f3;
+  --gray: #767676;
+  --color1: var(--black-soft);
+  --color2: #793200;
 
   --white: #ffffff;
   --white-soft: #f8f8f8;
   --white-mute: #f2f2f2;
 
-  --black: #181818;
+  --black: #000;
   --black-soft: #222222;
   --black-mute: #282828;
 
-  --indigo: #2c3e50;
+  --linear-background-light: linear-gradient(225deg, var(--sunglow) 0%, var(--parchment) 100%), var(--sunglow);
+  --linear-background-dark: linear-gradient(25deg, var(--color1) 0%, var(--color2) 100%), var(--black-mute);
 
-  --divider-light-1: rgba(60, 60, 60, 0.29);
-  --divider-light-2: rgba(60, 60, 60, 0.12);
-  --divider-dark-1: rgba(84, 84, 84, 0.65);
-  --divider-dark-2: rgba(84, 84, 84, 0.48);
+  --shadow-light: rgba(60, 60, 60, 0.29);
+  --line-light: rgba(60, 60, 60, 0.12);
+  --shadow-dark: rgba(84, 84, 84, 0.65);
+  --line-dark: rgba(84, 84, 84, 0.48);
 
-  --text-light-1: var(--indigo);
-  --text-light-2: rgba(60, 60, 60, 0.66);
-  --text-dark-1: var(--white);
-  --text-dark-2: rgba(235, 235, 235, 0.64);
+  --text-light: var(--indigo);
+  --text-dark: var(--smoke);
+
+  --color-background-soft: var(--white-soft);
+  --color-background-focus: var(--white);
+  --color-background-language: rgba(218, 97, 32, 0.2);
+  --color-text-language: var(--chocolate);
 
   // fonts
   --size: 15px;
   --line-height: 1.6;
   --spacing: 1.1px;
+
   --family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   --weight-bold: 600;
   --weight-very-bold: 800;
@@ -48,30 +60,54 @@
 
 /* semantic color variables for this project */
 :root {
-  --color-background: var(--white);
-  --color-background-soft: var(--white-soft);
-  --color-background-mute: var(--white-mute);
+  --color-background: var(--linear-background-light);
 
-  --color-border: var(--divider-light-2);
-  --color-border-hover: var(--divider-light-1);
+  --color-border-1: var(--shadow-light);
+  --color-border-2: var(--line-light);
+  --color-border-hover: var(--chocolate);
+  --color-border-active: var(--chocolate);
+  --color-button: var(--chocolate);
+  --color-button-border: var(--chocolate);
+  --color-button-hover: var(--chocolate);
+  --color-button-active: var(--chocolate);
 
-  --color-heading: var(--text-light-1);
-  --color-text: var(--text-light-1);
+  --color-heading: var(--text-light);
+  --color-text: var(--text-light);
+  --color-icon: var(--black);
+  --color-link: var(--chocolate);
 
-  --section-gap: 160px;
+  --color-input: var(--gray);
+  --color-error: var(--harvard-crimson);
+
+  --gauge-empty: var(--line-light);
+  --gauge-full: var(--chocolate);
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --color-background: var(--black);
-    --color-background-soft: var(--black-soft);
-    --color-background-mute: var(--black-mute);
+    --color-background: var(--linear-background-dark);
+    // --color-background-language: rgba(242, 198, 68, 0.2);
+    // --color-text-language: var(--sunglow);
 
-    --color-border: var(--divider-dark-2);
-    --color-border-hover: var(--divider-dark-1);
+    --color-border-1: var(--shadow-dark);
+    --color-border-2: var(--line-dark);
+    --color-border-hover: var(--fluorescent-orange);
+    --color-border-active: var(--fluorescent-orange);
+    --color-button: var(--fluorescent-orange);
+    --color-button-border: var(--fluorescent-orange);
+    --color-button-hover: var(--fluorescent-orange);
+    --color-button-active: var(--fluorescent-orange);
 
-    --color-heading: var(--text-dark-1);
-    --color-text: var(--text-dark-2);
+    --color-heading: var(--text-dark);
+    --color-text: var(--text-dark);
+    --color-icon: var(--white);
+    --color-link: var(--fluorescent-orange);
+
+    --color-input: var(--text-dark);
+    --color-error: var(--cinnabar);
+
+    --gauge-empty: var(--line-dark);
+    --gauge-full: var(--fluorescent-orange);
   }
 }
 
@@ -89,9 +125,7 @@
 body {
   min-height: 100vh;
   color: var(--color-text);
-  // background: var(--color-background);
-  background: var(--sunglow);
-  background: linear-gradient(225deg, var(--sunglow) 0%, var(--parchment) 100%);
+  background: var(--color-background);
   transition: color 0.5s, background-color 0.5s;
   line-height: var(--line-height);
   letter-spacing: var(--spacing);

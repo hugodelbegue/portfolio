@@ -7,7 +7,3 @@ import ContactForm from '../components/ContactForm.vue'
     <ContactForm />
   </div>
 </template>
-
-<style>
-
-</style>

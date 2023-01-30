@@ -8,7 +8,7 @@ import IconGithub from '../icons/IconGithub.vue'
 
 <template>
     <div class="form">
-        <h2>Pour me contacter.</h2>
+        <h2>Pour me&nbsp;<span class="important">contacter</span></h2>
         <form @submit.prevent="sendMail()" ref="form" method="post">
             <div class="name">
                 <label for="name">
@@ -110,7 +110,7 @@ export default {
     flex: 1 1 50%;
 
     h2 {
-        @media #{$mobileMediumScreen} {
+        @media #{$mobileUpScreen} {
             text-align: center;
         }
     }
@@ -148,6 +148,11 @@ input[type="email"] {
     border-top: none;
     border-left: none;
     border-right: none;
+    color: var(--black);
+
+    &::placeholder {
+        color: var(--color-input);
+    }
 }
 
 .name {
@@ -185,13 +190,13 @@ input[type="email"] {
     textarea {
         width: 100%;
         height: 25em;
-        background: var(--white-soft);
+        background: var(--color-background-soft);
 
         &:hover,
         &:focus,
         &:focus-visible {
-            border: 2px dashed var(--chocolate);
-            background: var(--white);
+            border: 2px dashed var(--color-button-hover);
+            background: var(--color-background-focus);
         }
     }
 
@@ -204,7 +209,7 @@ input[type="email"] {
     grid-column: 1 / 3;
     grid-row: 3;
     height: 1.4em;
-    color: var(--harvard-crimson);
+    color: var(--color-error);
 
     @media #{$mobileMediumScreen} {
         grid-row: 4;

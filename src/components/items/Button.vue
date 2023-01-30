@@ -23,29 +23,29 @@ defineProps({
     input[type="submit"] {
         top: 0;
         left: 0;
+        color: var(--black);
         font-variant-caps: all-small-caps;
         font-weight: var(--weight-bold);
-        background: var(--chocolate);
-        border: 1px solid var(--chocolate);
+        background: var(--color-button);
+        border: 1px solid var(--color-button-border);
         border-radius: 2px;
-        box-shadow: 3px 3px 0px var(--divider-light-1);
+        box-shadow: 3px 3px 0px var(--color-border-1);
         transition: all .25s;
 
         &:hover {
             top: 3px;
             left: 2.5px;
-            background: var(--chocolate);
-            border: 1px solid var(--chocolate);
-            // filter: brightness(1.1);
-            box-shadow: 1px 1px 0px var(--divider-light-1);
+            background: var(--color-button-hover);
+            border: 1px solid var(--color-button-hover);
+            box-shadow: 1px 1px 0px var(--color-border-1);
         }
 
         &:active {
             top: 4px;
             left: 3px;
-            border: 1px solid var(--chocolate);
-            background: var(--chocolate);
-            box-shadow: 0px 0px 10px 1px var(--divider-light-1);
+            border: 1px solid var(--color-button-active);
+            background: var(--color-button-active);
+            box-shadow: 0px 0px 10px 1px var(--color-border-1);
         }
 
         @media #{$tabletScreen} {

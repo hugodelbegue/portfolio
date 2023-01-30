@@ -6,7 +6,7 @@ import { dataList } from '../assets/data/data.js'
 </script>
 
 <template>
-    <h2>Mes projets web.</h2>
+    <h2>Mes&nbsp;<span class="important">projets</span>&nbsp;web</h2>
     <div class="projectscontainer">
         <div class="selectors">
             <Button type="button" padding=".5" msg="Tous" />
@@ -72,6 +72,7 @@ h2 {
     &::before {
         content: url(../assets/pc-display.svg);
         margin-right: .5em;
+        color: var(--color-icon);
     }
 
     @media #{$mobileUpScreen} {

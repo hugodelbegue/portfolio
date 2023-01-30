@@ -37,7 +37,7 @@ import Footer from './layouts/Footer.vue'
 
 .line__footer {
   margin: 0 2.5%;
-  border: 2px solid var(--divider-light-2);
+  border: 2px solid var(--color-border-2);
   border-radius: 2px;
 }
 

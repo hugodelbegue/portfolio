@@ -66,6 +66,7 @@ span {
     font-size: 2.2em;
     font-weight: var(--weight-bold);
     margin-left: .2em;
+    color: var(--color-heading);
 }
 
 img {
