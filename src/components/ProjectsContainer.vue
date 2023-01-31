@@ -69,6 +69,9 @@ import { dataList } from '../assets/data/data.js'
 }
 
 h2 {
+    display: flex;
+    flex-wrap: wrap;
+
     &::before {
         content: url(../assets/pc-display.svg);
         margin-right: .5em;

@@ -110,6 +110,9 @@ export default {
     flex: 1 1 50%;
 
     h2 {
+        display: flex;
+        flex-wrap: wrap;
+
         @media #{$mobileUpScreen} {
             text-align: center;
         }

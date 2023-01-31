@@ -17,7 +17,7 @@ import AboutMe from '../components/AboutMe.vue'
             </Logo>
             <NavBar />
         </div>
-        <div class="layout__aboutme">
+        <div v-if="$route.name == 'HomeView'" class="layout__aboutme">
             <Logo>
                 <template #picture>
                     <img alt="Avatar" src="../assets/avatar.jpg" width="125" height="125" />
@@ -27,6 +27,14 @@ import AboutMe from '../components/AboutMe.vue'
         </div>
     </header>
 </template>
+
+<script>
+export default {
+    mounted() {
+        console.log(this.$route);
+    }
+}
+</script>
 
 <style lang="scss" scoped>
 @import '../assets/scss/responsive.scss';

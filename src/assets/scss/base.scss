@@ -1,7 +1,8 @@
 :root {
   // colors
-  --chocolate: #da6220;
+  --orange: #da6220;
   --fluorescent-orange: #ff8125;
+  --light-orange: #f9e4d8;
   --indian: #4f1e0c;
   --parchment: #ede8d1;
   --sunglow: #f2c744;
@@ -30,12 +31,12 @@
   --line-dark: rgba(84, 84, 84, 0.48);
 
   --text-light: var(--indigo);
-  --text-dark: var(--smoke);
+  --text-dark: var(--light-orange);
 
   --color-background-soft: var(--white-soft);
   --color-background-focus: var(--white);
   --color-background-language: rgba(218, 97, 32, 0.2);
-  --color-text-language: var(--chocolate);
+  --color-text-language: var(--orange);
 
   // fonts
   --size: 15px;
@@ -64,23 +65,23 @@
 
   --color-border-1: var(--shadow-light);
   --color-border-2: var(--line-light);
-  --color-border-hover: var(--chocolate);
-  --color-border-active: var(--chocolate);
-  --color-button: var(--chocolate);
-  --color-button-border: var(--chocolate);
-  --color-button-hover: var(--chocolate);
-  --color-button-active: var(--chocolate);
+  --color-border-hover: var(--orange);
+  --color-border-active: var(--orange);
+  --color-button: var(--orange);
+  --color-button-border: var(--orange);
+  --color-button-hover: var(--orange);
+  --color-button-active: var(--orange);
 
   --color-heading: var(--text-light);
   --color-text: var(--text-light);
   --color-icon: var(--black);
-  --color-link: var(--chocolate);
+  --color-link: var(--orange);
 
   --color-input: var(--gray);
   --color-error: var(--harvard-crimson);
 
   --gauge-empty: var(--line-light);
-  --gauge-full: var(--chocolate);
+  --gauge-full: var(--orange);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -116,7 +117,8 @@
 *::after {
   box-sizing: border-box;
   margin: 0;
-  position: relative;
+  // A revoir pour button
+  // position: relative;
   font-weight: normal;
   list-style-type: none;
   outline: transparent !important;

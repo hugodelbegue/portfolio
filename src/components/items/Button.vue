@@ -18,9 +18,11 @@ defineProps({
 @import '../../assets/scss/responsive.scss';
 
 .button {
+    position: relative;
 
     input[type="button"],
     input[type="submit"] {
+        position: relative;
         top: 0;
         left: 0;
         color: var(--black);

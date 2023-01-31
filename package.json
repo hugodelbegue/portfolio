@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "@emailjs/browser": "^3.10.0",
+    "typewriter-vue": "^0.5.19",
     "vue": "^3.2.45",
     "vue-router": "^4.1.6"
   },

@@ -1,10 +1,11 @@
 <script setup>
-
+// import Typewriter from "typewriter-vue";
 </script>
 
 <template>
     <div class="aboutme">
         <h1>Hugo Delbegue</h1>
+        <Typewriter></Typewriter>
         <div id="writer"></div>
         <p>
             Lorem ipsum dolor sit, amet consectetur adipisicing elit. Assumenda, blanditiis. Lorem ipsum, dolor sit amet
@@ -15,13 +16,23 @@
 </template>
 
 <script>
-const writer = document.getElementById('writer');
-console.log('writer:', writer)
-// const typewriter = document.getElementById('typewriter')
+// const writer = document.getElementById('writer');
+// let typewriter = new Typewriter(writer, {
+//     wrapperClassName: 'wrapper',
+//     cursorClassName: 'cursor',
+//     loop: true
+// });
+// typewriter
+//     .typeString('<h1>Hugo Delbegue</h1>')
+//     .start();
 </script>
 
 <style lang="scss" scoped>
 @import '../assets/scss/responsive.scss';
+
+#writer {
+    display: flex;
+}
 
 .aboutme {
 
