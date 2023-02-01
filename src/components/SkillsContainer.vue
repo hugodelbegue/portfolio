@@ -5,7 +5,7 @@ import RenderSkillIcon from './items/RenderSkillIcon.vue'
 </script>
 
 <template>
-    <h2><span class="important">Compétences</span>&nbsp;techniques</h2>
+    <h2><strong class="important">Compétences</strong>&nbsp;techniques</h2>
     <div class="AllSkills">
         <Skill v-for="skill in skillList" :number="skill.number">
             <template #text>
@@ -46,13 +46,13 @@ h2 {
     &::before {
         content: url(../assets/gear-fill.svg);
         color: var(--color-icon);
-        margin-right: 1em;
+        margin-right: .5em;
     }
 
     &::after {
         content: url(../assets/tools.svg);
         color: var(--color-icon);
-        margin-left: 1em;
+        margin-left: .5em;
     }
 }
 

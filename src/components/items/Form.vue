@@ -8,7 +8,7 @@ import IconGithub from '../icons/IconGithub.vue'
 
 <template>
     <div class="form">
-        <h2>Pour me&nbsp;<span class="important">contacter</span></h2>
+        <h2>Pour me&nbsp;<strong class="important">contacter</strong></h2>
         <form @submit.prevent="sendMail()" ref="form" method="post">
             <div class="name">
                 <label for="name">

@@ -35,8 +35,12 @@
 
   --color-background-soft: var(--white-soft);
   --color-background-focus: var(--white);
-  --color-background-language: rgba(218, 97, 32, 0.2);
-  --color-text-language: var(--orange);
+  --color-background-burger-light: rgba(242, 198, 68, 0.75);
+  --color-background-burger-dark: rgba(218, 97, 32, 0.75);
+  --color-background-download-light-25: rgba(218, 97, 32, 0.25);
+  --color-background-download-light-6: rgba(218, 97, 32, 0.6);
+  --color-background-download-dark-25: rgba(255, 128, 37, 0.25);
+  --color-background-download-dark-6: rgba(255, 128, 37, 0.6);
 
   // fonts
   --size: 15px;
@@ -62,6 +66,12 @@
 /* semantic color variables for this project */
 :root {
   --color-background: var(--linear-background-light);
+  --color-background-burger: var(--color-background-burger-light);
+  --color-background-download-25: var(--color-background-download-light-25);
+  --color-background-download-6: var(--color-background-download-light-6);
+
+  --color-background-language: rgba(218, 97, 32, 0.2);
+  --color-text-language: var(--orange);
 
   --color-border-1: var(--shadow-light);
   --color-border-2: var(--line-light);
@@ -76,6 +86,7 @@
   --color-text: var(--text-light);
   --color-icon: var(--black);
   --color-link: var(--orange);
+  --color-underline: var(--color-background-download-light-25);
 
   --color-input: var(--gray);
   --color-error: var(--harvard-crimson);
@@ -87,8 +98,12 @@
 @media (prefers-color-scheme: dark) {
   :root {
     --color-background: var(--linear-background-dark);
-    // --color-background-language: rgba(242, 198, 68, 0.2);
-    // --color-text-language: var(--sunglow);
+    --color-background-burger: var(--color-background-burger-dark);
+    --color-background-download-25: var(--color-background-download-dark-25);
+    --color-background-download-6: var(--color-background-download-dark-6);
+
+    --color-background-language: rgba(242, 198, 68, 0.2);
+    --color-text-language: var(--sunglow);
 
     --color-border-1: var(--shadow-dark);
     --color-border-2: var(--line-dark);
@@ -103,6 +118,7 @@
     --color-text: var(--text-dark);
     --color-icon: var(--white);
     --color-link: var(--fluorescent-orange);
+    --color-underline: var(--color-background-download-dark-25);
 
     --color-input: var(--text-dark);
     --color-error: var(--cinnabar);

@@ -16,15 +16,14 @@ import IconFingerprint from './icons/IconFingerprint.vue'
     </div>
 </template>
 
-<script setup>
-
-</script>
-
 <style lang="scss" scoped>
 .legalnotices {
     font-size: .8em;
-}
 
+    p {
+        text-align: justify;
+    }
+}
 
 svg {
     width: 1em;

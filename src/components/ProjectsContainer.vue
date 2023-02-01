@@ -6,7 +6,7 @@ import { dataList } from '../assets/data/data.js'
 </script>
 
 <template>
-    <h2>Mes&nbsp;<span class="important">projets</span>&nbsp;web</h2>
+    <h2>Mes&nbsp;<strong class="important">projets</strong>&nbsp;web</h2>
     <div class="projectscontainer">
         <div class="selectors">
             <Button type="button" padding=".5" msg="Tous" />

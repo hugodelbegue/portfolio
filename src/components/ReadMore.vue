@@ -15,6 +15,7 @@
 
     p {
         margin-top: .8em;
+        // text-align: justify;
 
         &::before {
             content: open-quote;

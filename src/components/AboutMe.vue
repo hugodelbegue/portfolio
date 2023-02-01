@@ -1,13 +1,13 @@
 <script setup>
-// import Typewriter from "typewriter-vue";
+import VueWriter from 'vue-writer'
 </script>
 
 <template>
     <div class="aboutme">
-        <h1>Hugo Delbegue</h1>
-        <Typewriter></Typewriter>
-        <div id="writer"></div>
+        <h1>Hello !<br>Je suis&nbsp;<strong class="important">Hugo Delbegue</strong>&nbsp;!</h1>
         <p>
+            Je cherche un poste de developpeur
+            <VueWriter :array="arr" :typeSpeed="150" :eraseSpeed="50" :iterations='1' :start="1500" />
             Lorem ipsum dolor sit, amet consectetur adipisicing elit. Assumenda, blanditiis. Lorem ipsum, dolor sit amet
             consectetur adipisicing elit. Impedit maxime quas recusandae. Atque excepturi illo illum beatae dignissimos
             inventore mollitia.
@@ -16,23 +16,17 @@
 </template>
 
 <script>
-// const writer = document.getElementById('writer');
-// let typewriter = new Typewriter(writer, {
-//     wrapperClassName: 'wrapper',
-//     cursorClassName: 'cursor',
-//     loop: true
-// });
-// typewriter
-//     .typeString('<h1>Hugo Delbegue</h1>')
-//     .start();
+export default {
+    data() {
+        return {
+            arr: ["Frontend", "Vue.js"]
+        };
+    },
+};
 </script>
 
 <style lang="scss" scoped>
 @import '../assets/scss/responsive.scss';
-
-#writer {
-    display: flex;
-}
 
 .aboutme {
 
@@ -47,10 +41,15 @@
 
     h1 {
         margin-bottom: .2em;
+        font-size: 2.5em;
+
+        strong {
+            font-weight: var(--weight-very-bold);
+        }
     }
 
     p {
-        font-size: 1.5em;
+        font-size: 1.7em;
     }
 }
 </style>

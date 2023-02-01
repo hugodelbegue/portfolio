@@ -28,14 +28,6 @@ import AboutMe from '../components/AboutMe.vue'
     </header>
 </template>
 
-<script>
-export default {
-    mounted() {
-        console.log(this.$route);
-    }
-}
-</script>
-
 <style lang="scss" scoped>
 @import '../assets/scss/responsive.scss';
 
