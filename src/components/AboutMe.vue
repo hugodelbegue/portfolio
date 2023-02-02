@@ -4,10 +4,12 @@ import VueWriter from 'vue-writer'
 
 <template>
     <div class="aboutme">
-        <h1>Hello !<br>Je suis&nbsp;<strong class="important">Hugo Delbegue</strong>&nbsp;!</h1>
+        <h1>Hello !<br>Je suis&nbsp;<strong class="important">Hugo Delbegue</strong>&nbsp;!<br>Je cherche un poste de
+            développeur !
+            <VueWriter :array="words" :start="1200" :typeSpeed="150" :delay="1000" :eraseSpeed="50" :intervals="200"
+                :iterations='1' />
+        </h1>
         <p>
-            Je cherche un poste de developpeur
-            <VueWriter :array="arr" :typeSpeed="150" :eraseSpeed="50" :iterations='1' :start="1500" />
             Lorem ipsum dolor sit, amet consectetur adipisicing elit. Assumenda, blanditiis. Lorem ipsum, dolor sit amet
             consectetur adipisicing elit. Impedit maxime quas recusandae. Atque excepturi illo illum beatae dignissimos
             inventore mollitia.
@@ -19,7 +21,7 @@ import VueWriter from 'vue-writer'
 export default {
     data() {
         return {
-            arr: ["Frontend", "Vue.js"]
+            words: ["Frontend", "< Vue.js />"]
         };
     },
 };

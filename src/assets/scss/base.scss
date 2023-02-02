@@ -41,6 +41,8 @@
   --color-background-download-light-6: rgba(218, 97, 32, 0.6);
   --color-background-download-dark-25: rgba(255, 128, 37, 0.25);
   --color-background-download-dark-6: rgba(255, 128, 37, 0.6);
+  --color-background-project-light: #f0d47a;
+  --color-background-project-dark: #592c0c;
 
   // fonts
   --size: 15px;
@@ -54,6 +56,9 @@
   //   Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
 
   // layout
+  --size-project: var(--size-project-desktop);
+  --size-project-desktop: 300px;
+  --size-project-mobile: 250px;
   --desktop-up: 1620px;
   --desktop-medium: 1440px;
   --desktop-down: 1280px;
@@ -69,6 +74,7 @@
   --color-background-burger: var(--color-background-burger-light);
   --color-background-download-25: var(--color-background-download-light-25);
   --color-background-download-6: var(--color-background-download-light-6);
+  --color-background-project: var(--color-background-project-light);
 
   --color-background-language: rgba(218, 97, 32, 0.2);
   --color-text-language: var(--orange);
@@ -101,6 +107,7 @@
     --color-background-burger: var(--color-background-burger-dark);
     --color-background-download-25: var(--color-background-download-dark-25);
     --color-background-download-6: var(--color-background-download-dark-6);
+    --color-background-project: var(--color-background-project-dark);
 
     --color-background-language: rgba(242, 198, 68, 0.2);
     --color-text-language: var(--sunglow);
@@ -128,13 +135,20 @@
   }
 }
 
+@media only screen and (max-width: 375px) {
+  :root {
+    --size-project: var(--size-project-mobile);
+  }
+}
+
 *,
 *::before,
 *::after {
   box-sizing: border-box;
   margin: 0;
-  // A revoir pour button
+  // A revoir pour button !!!
   // position: relative;
+  // !!!!
   font-weight: normal;
   list-style-type: none;
   outline: transparent !important;

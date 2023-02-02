@@ -9,13 +9,13 @@ import { dataList } from '../assets/data/data.js'
     <h2>Mes&nbsp;<strong class="important">projets</strong>&nbsp;web</h2>
     <div class="projectscontainer">
         <div class="selectors">
-            <Button type="button" padding=".5" msg="Tous" />
-            <Button type="button" padding=".5" msg="Full Frontend" />
-            <Button type="button" padding=".5" msg="Avec Backend" />
+            <Button type="button" padding=".5" msg="Tous" @click="showAll" />
+            <Button type="button" padding=".5" msg="Tout Frontend" @click="showFrontend" />
+            <Button type="button" padding=".5" msg="Avec Backend" @click="showBackend" />
         </div>
         <div class="layout__project">
-            <div v-for="data in dataList" class="project">
-                <Project :url="data.url">
+            <div v-for="data in allData" class="project">
+                <Project :url="data.url" :title="data.title">
                     <template #title>
                         <div class="layout__title">{{ data.title }}</div>
                     </template>
@@ -35,6 +35,42 @@ import { dataList } from '../assets/data/data.js'
     </div>
 </template>
 
+<script>
+export default {
+    data() {
+        return {
+            dataList,
+            choice: ""
+        }
+    },
+    computed: {
+        allData() {
+            return this.dataList.filter((items) => {
+                if (this.choice == "frontend") {
+                    return items.frontend;
+                }
+                if (this.choice == "backend") {
+                    return items.backend;
+                } else {
+                    return items;
+                }
+            })
+        },
+    },
+    methods: {
+        showAll() {
+            return this.choice = "all";
+        },
+        showFrontend() {
+            return this.choice = "frontend";
+        },
+        showBackend() {
+            return this.choice = "backend";
+        }
+    }
+}
+</script>
+
 <style lang="scss" scoped>
 @import '../assets/scss/responsive.scss';
 
@@ -49,6 +85,69 @@ import { dataList } from '../assets/data/data.js'
         justify-content: center;
         flex-wrap: wrap;
         gap: 3.3em;
+        min-height: calc((var(--size-project) * 2) + 3.3em);
+    }
+
+    .project {
+        position: relative;
+        display: flex;
+        background-color: var(--color-background-project);
+        width: var(--size-project);
+        height: var(--size-project);
+        padding: .5em;
+        border-radius: 3px;
+        border: 2px solid var(--color-border-1);
+        box-shadow: 0 2px 4px var(--color-border-1);
+        transition: border .1s color .1s;
+
+        &::before {
+            z-index: -1;
+            content: "";
+            position: absolute;
+            top: 2px;
+            left: 2px;
+            width: var(--size-project);
+            height: var(--size-project);
+            box-shadow: 0 2px 4px var(--color-border-1);
+            border-radius: 3px;
+            background: var(--color-background-project);
+            border: 2px solid var(--color-border-1);
+            transition: transform .2s, border .2s;
+            // A voir !!!
+            transform: rotate(-2.5deg);
+            // !!!!
+        }
+
+        &::after {
+            z-index: -2;
+            content: "";
+            position: absolute;
+            top: 5px;
+            left: 5px;
+            width: var(--size-project);
+            height: var(--size-project);
+            box-shadow: 0 2px 4px var(--color-border-1);
+            border-radius: 3px;
+            background: var(--color-background-project);
+            border: 2px solid var(--color-border-1);
+            transition: transform .3s, border .3s;
+        }
+    }
+
+    .project:hover {
+        cursor: pointer;
+        color: var(--color-text-language);
+        border: 2px solid var(--color-text-language);
+
+        &::before {
+            transform: rotate(3deg);
+            border: 2px dashed var(--color-text-language);
+        }
+
+        &::after {
+            transform: rotate(8deg);
+            border: 2px dashed var(--color-text-language);
+        }
     }
 
     .layout__title {

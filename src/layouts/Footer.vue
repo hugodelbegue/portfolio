@@ -1,14 +1,14 @@
 <script setup>
 import SocialLinks from '../components/SocialLinks.vue'
 import ReadMore from '../components/ReadMore.vue'
-import LegalNotices from '../components/LegalNotices.vue'
+import Legality from '../components/Legality.vue'
 </script>
 
 <template>
     <footer>
         <div class="layout__footer">
             <ReadMore />
-            <LegalNotices />
+            <Legality />
         </div>
         <SocialLinks />
     </footer>

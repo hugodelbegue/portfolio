@@ -6,7 +6,7 @@ import Footer from './layouts/Footer.vue'
 
 <template>
   <div class="layout">
-    <div>
+    <div class="header__part">
       <Header />
       <hr class="line__footer">
     </div>

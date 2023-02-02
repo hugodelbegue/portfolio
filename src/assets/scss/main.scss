@@ -10,7 +10,7 @@
 
 a {
   text-decoration: none;
-  transition: .4s;
+  // transition: .4s;
   color: inherit;
 
   &:hover {
@@ -80,10 +80,11 @@ textarea {
 
 .is-typed {
   color: var(--color-link);
+  // font-variant-caps: all-small-caps;
 }
 
 .is-typed span.typed {
-  font-weight: var(--weight-bold);
+  font-weight: var(--weight-very-bold);
 }
 
 .is-typed span.cursor {
@@ -92,7 +93,7 @@ textarea {
   width: 3px;
   height: 1.5em;
   background-color: black;
-  // animation: blink 1s infinite;
+  animation: blink 1s infinite;
 }
 
 .is-typed span.cursor.typing {

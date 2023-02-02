@@ -172,6 +172,10 @@ label.elev {
         display: flex;
         column-gap: 2rem;
 
+        a {
+            transition: .3s;
+        }
+
         @media #{$mobileMenuHidden} {
             display: none;
         }
