@@ -18,10 +18,6 @@ import RenderSkillIcon from './items/RenderSkillIcon.vue'
     </div>
 </template>
 
-<script>
-
-</script>
-
 <style lang="scss" scoped>
 @import '../assets/scss/responsive.scss';
 

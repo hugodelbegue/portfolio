@@ -20,7 +20,7 @@ defineProps({
     border-radius: 5px;
     font-weight: var(--weight-bold);
     font-variant-caps: all-small-caps;
-    color: var(--color-text-language);
+    color: var(--gray);
     border: none;
 }
 </style>

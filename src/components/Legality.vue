@@ -85,9 +85,10 @@ svg {
     display: flex;
     justify-content: space-between;
     padding: 1.5em;
-    padding-bottom: 0;
+    border-bottom: 2px solid var(--line-light);
 
     h2 {
+        color: var(--text-light);
         font-size: 1.5em;
         margin: 0;
     }
@@ -96,7 +97,7 @@ svg {
         cursor: pointer;
         font-variant-caps: all-small-caps;
         border: none;
-        background: var(--color-border-2);
+        background: var(--line-light);
     }
 }
 </style>

@@ -26,7 +26,10 @@ import IconGithub from '../icons/IconGithub.vue'
                     placeholder="Ecrivez votre demande.."></textarea>
             </div>
             <div class="submit">
-                <Button type="submit" padding="1" width="50" msg="Envoyer" />
+                <Button type="submit" padding="1" width="100" msg="Envoyer" />
+                <Transition name="animation__submit" appear>
+                    <div v-if="this.submit == true" class="anim__submit"></div>
+                </Transition>
             </div>
             <div class="errors">
                 <div v-if="errors.length">
@@ -62,7 +65,8 @@ export default {
                 email: null,
                 message: null
             },
-            errors: []
+            errors: [],
+            submit: false
         }
     },
     mounted() {
@@ -86,6 +90,7 @@ export default {
             }
             if (this.errors.length === 0) {
                 this.formData = { name: '', email: '', message: '' };
+                this.submit = true;
             } else {
                 console.error(`Les champs suivants sont manquants: ${this.errors.join(', ')}`);
                 return;
@@ -93,6 +98,8 @@ export default {
             emailjs.sendForm(serviceId, templateId, this.$refs.form, publicKey)
                 .then((res) => {
                     console.log('Success.', res.text);
+                    this.submit = false;
+                    console.log('Envoyé !!!!');
                 })
                 .catch((err) => {
                     console.error('Erreur lors de l\'envoi.', err.text)
@@ -100,7 +107,6 @@ export default {
         }
     },
 }
-
 </script>
 
 <style lang="scss" scoped>
@@ -226,12 +232,26 @@ input[type="email"] {
 .submit {
     grid-column: 1;
     grid-row: 4;
+    display: flex;
+    place-items: center;
+    gap: 2em;
 
     @media #{$mobileMediumScreen} {
         grid-column: 1 / 3;
         grid-row: 5;
         text-align: center;
     }
+}
+
+.submit>.button {
+    width: 100%;
+}
+
+.anim__submit {
+    content: url(../../assets/send-fill.svg);
+    background: transparent;
+    height: 30px;
+    filter: drop-shadow(2px 3px 1px var(--color-border-1));
 }
 
 .social {
@@ -255,6 +275,33 @@ input[type="email"] {
         grid-column: 1 / 3;
         grid-row: 6;
         place-content: center;
+    }
+}
+
+// Transition
+.animation__submit-enter-active {
+    animation: appearance 1.1s;
+}
+
+.animation__submit-leave-active {
+    animation: appearance 1.1s ease;
+}
+
+@keyframes appearance {
+    0% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+
+    50% {
+        opacity: 1;
+        transform: translateX(0);
+        transform: rotate(-45deg);
+    }
+
+    100% {
+        opacity: 0;
+        transform: translateY(-300px) rotate(-45deg);
     }
 }
 </style>

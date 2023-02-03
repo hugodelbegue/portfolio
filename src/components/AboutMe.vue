@@ -4,15 +4,16 @@ import VueWriter from 'vue-writer'
 
 <template>
     <div class="aboutme">
-        <h1>Hello !<br>Je suis&nbsp;<strong class="important">Hugo Delbegue</strong>&nbsp;!<br>Je cherche un poste de
-            développeur !
+        <h1>Hello !<br>Je suis&nbsp;<strong class="important">Hugo Delbegue</strong>&nbsp;!<br>Je recherche un poste de
+            développeur&nbsp;!
             <VueWriter :array="words" :start="1200" :typeSpeed="150" :delay="1000" :eraseSpeed="50" :intervals="200"
                 :iterations='1' />
         </h1>
         <p>
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Assumenda, blanditiis. Lorem ipsum, dolor sit amet
-            consectetur adipisicing elit. Impedit maxime quas recusandae. Atque excepturi illo illum beatae dignissimos
-            inventore mollitia.
+            Dé<span>v</span>eloppeur web j<span>u</span>nior curi<span>e</span>ux et impliqué, <span>j</span>e
+            <span>s</span>ouhaite mettre à
+            profit mes compétences pour mener à bien mes missions, en
+            cultivant de bonnes pratiques et un travail bien fait..
         </p>
     </div>
 </template>
@@ -21,7 +22,7 @@ import VueWriter from 'vue-writer'
 export default {
     data() {
         return {
-            words: ["Frontend", "< Vue.js />"]
+            words: ["Frontend ..", "< Vue.js /> Frontend !"]
         };
     },
 };
@@ -42,8 +43,7 @@ export default {
     }
 
     h1 {
-        margin-bottom: .2em;
-        font-size: 2.5em;
+        font-size: 1.9em;
 
         strong {
             font-weight: var(--weight-very-bold);
@@ -51,7 +51,11 @@ export default {
     }
 
     p {
-        font-size: 1.7em;
+        font-size: 1.6em;
+
+        span {
+            font-family: 'Courier New', Courier, monospace;
+        }
     }
 }
 </style>

@@ -14,23 +14,25 @@ import { dataList } from '../assets/data/data.js'
             <Button type="button" padding=".5" msg="Avec Backend" @click="showBackend" />
         </div>
         <div class="layout__project">
-            <div v-for="data in allData" class="project">
-                <Project :url="data.url" :title="data.title">
-                    <template #title>
-                        <div class="layout__title">{{ data.title }}</div>
-                    </template>
-                    <template #image>
-                        <img :src="data.img" alt="">
-                    </template>
-                    <template #language>
-                        <div class="layout__language">
-                            <div v-for="lang in data.language">
-                                <Language :language="lang.name" style="box-shadow: 0 0 2px" />
+            <TransitionGroup name="transition__projects" appear>
+                <div v-for="data in allData" :key="data" class="project">
+                    <Project :url="data.url" :title="data.title">
+                        <template #title>
+                            <div class="layout__title">{{ data.title }}</div>
+                        </template>
+                        <template #image>
+                            <img :src="data.img" alt="">
+                        </template>
+                        <template #language>
+                            <div class="layout__language">
+                                <div v-for="lang in data.language">
+                                    <Language :language="lang.name" style="box-shadow: 0 0 2px" />
+                                </div>
                             </div>
-                        </div>
-                    </template>
-                </Project>
-            </div>
+                        </template>
+                    </Project>
+                </div>
+            </TransitionGroup>
         </div>
     </div>
 </template>
@@ -150,6 +152,10 @@ export default {
         }
     }
 
+    .project:hover .language {
+        color: var(--color-text-language);
+    }
+
     .layout__title {
         font-size: 1.3em;
         font-weight: var(--weight-bold);
@@ -192,5 +198,18 @@ h2 {
     @media #{$mobileUpScreen} {
         place-content: center;
     }
+}
+
+// Transitions
+.transition__projects-move,
+.transition__projects-enter-active,
+.transition__projects-leave-active {
+    transition: all 0.5s ease;
+}
+
+.transition__projects-enter-from,
+.transition__projects-leave-to {
+    opacity: 0;
+    transform: translateY(-30px);
 }
 </style>

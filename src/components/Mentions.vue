@@ -1,7 +1,7 @@
 <template>
     <div class="official">
         <div class="scroll">
-            <h3>1. Présentation du site.</h3>
+            <h3 style="border-top: none; padding-top: 0;">1. Présentation du site.</h3>
             <p>En vertu de l'article 6 de la loi n° 2004-575 du 21 juin 2004 pour la confiance dans l'économie
                 numérique, il
                 est précisé aux utilisateurs du site <a href="https://primalprod.fr/">www.primalprod.fr</a>
@@ -264,15 +264,17 @@
 <style lang="scss" scoped>
 .official {
     padding: 4em;
-    padding-top: 2em;
+    padding-top: 1em;
     max-height: 100%;
     width: 100%;
+    color: var(--text-light);
 
     h3 {
+        color: var(--text-light);
         margin-top: 1em;
         margin-bottom: 1em;
         padding-top: 1em;
-        border-top: 2px solid var(--color-border-2);
+        border-top: 2px solid var(--line-light);
     }
 
     a {
@@ -288,6 +290,7 @@
         // height: 912px;
         height: calc(84.8em - 1em);
         padding: 1em;
+        border-bottom: 2px solid var(--line-light);
     }
 }
 </style>

@@ -17,14 +17,16 @@ import AboutMe from '../components/AboutMe.vue'
             </Logo>
             <NavBar />
         </div>
-        <div v-if="$route.name == 'HomeView'" class="layout__aboutme">
-            <Logo>
-                <template #picture>
-                    <img alt="Avatar" src="../assets/avatar.jpg" width="125" height="125" />
-                </template>
-            </Logo>
-            <AboutMe />
-        </div>
+        <Transition name="transition__text">
+            <div v-if="$route.name == 'HomeView'" class="layout__aboutme">
+                <Logo>
+                    <template #picture>
+                        <img alt="Avatar" src="../assets/avatar.jpg" width="125" height="125" />
+                    </template>
+                </Logo>
+                <AboutMe />
+            </div>
+        </Transition>
     </header>
 </template>
 
@@ -50,7 +52,7 @@ header {
     align-items: center;
     gap: 10em;
     margin: 5.3em auto 7em;
-    width: 70%;
+    width: 80%;
 
     @media #{$desktopScreen} {
         gap: 5em;
@@ -58,7 +60,7 @@ header {
 
     @media #{$tabletScreen} {
         flex-direction: column;
-        gap: 1em;
+        gap: 2.5em;
     }
 }
 
@@ -71,5 +73,17 @@ span {
 
 img {
     place-content: none;
+}
+
+// Transitions
+.transition__text-enter-active,
+.transition__text-leave-active {
+    transition: 0.3s ease;
+}
+
+.transition__text-enter-from,
+.transition__text-leave-to {
+    transform: translateY(-100px);
+    opacity: 0;
 }
 </style>

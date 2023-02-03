@@ -18,11 +18,8 @@
         // text-align: justify;
 
         &::before {
-            content: open-quote;
-        }
-
-        &::after {
-            content: close-quote;
+            content: url(../assets/quote.svg);
+            margin-right: .2em;
         }
     }
 }

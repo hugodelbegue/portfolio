@@ -5,7 +5,9 @@
             <span class="number">{{ number }}</span>%
         </div>
         <div class="gauge">
-            <div class="filling" :style="{ 'width': number + '%' }"></div>
+            <Transition name="animation__bounce" appear>
+                <div class="filling" :style="{ 'width': number + '%' }"></div>
+            </Transition>
         </div>
     </div>
     <div class="skill_horizontal">
@@ -13,7 +15,9 @@
         <div class="content__skill">
             <slot name="icon"></slot>
             <div class="gauge">
-                <div class="filling" :style="{ 'width': number + '%' }"></div>
+                <Transition name="animation__bounce" appear>
+                    <div class="filling" :style="{ 'width': number + '%' }"></div>
+                </Transition>
             </div>
             <div class="number__percentage">
                 <span class="number">{{ number }}</span>%
@@ -103,6 +107,30 @@ defineProps({
         background-color: var(--gauge-full);
         border-radius: 5px;
         height: 100%;
+    }
+}
+
+// Transitions
+.animation__bounce-enter-active {
+    animation: bounce 1s;
+}
+
+.animation__bounce-leave-active {
+    animation: bounce 1s cubic-bezier(.21, .74, .83, .51);
+}
+
+@keyframes bounce {
+    0% {
+        width: 0%;
+    }
+
+    50% {
+        width: 100%;
+        background-color: var(--sunglow);
+    }
+
+    100% {
+        background-color: var(--gauge-full);
     }
 }
 </style>
