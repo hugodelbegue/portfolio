@@ -15,10 +15,9 @@
 
     p {
         margin-top: .8em;
-        // text-align: justify;
 
         &::before {
-            content: url(../assets/quote.svg);
+            content: url(@/assets/img/designs/quote.svg);
             margin-right: .2em;
         }
     }

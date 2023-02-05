@@ -1,9 +1,9 @@
 <script setup>
-import Link from './items/Link.vue'
-import IconMail from './icons/IconMail.vue'
-import IconLinkedin from './icons/IconLinkedin.vue'
-import IconGithub from './icons/IconGithub.vue'
-import IconInstagram from './icons/IconInstagram.vue';
+import Link from '@/components/items/Link.vue'
+import IconMail from '@/components/icons/IconMail.vue'
+import IconLinkedin from '@/components/icons/IconLinkedin.vue'
+import IconGithub from '@/components/icons/IconGithub.vue'
+import IconInstagram from '@/components/icons/IconInstagram.vue';
 </script>
 
 <template>
@@ -62,7 +62,7 @@ import IconInstagram from './icons/IconInstagram.vue';
 </template>
 
 <style lang="scss" scoped>
-@import '../assets/scss/responsive.scss';
+@import '@/assets/scss/responsive.scss';
 
 .sociallinks {
     display: flex;

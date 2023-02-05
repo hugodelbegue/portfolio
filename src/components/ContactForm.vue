@@ -1,7 +1,6 @@
-
 <script setup>
-import Form from './items/Form.vue'
-import Map from './items/Map.vue';
+import Form from '@/components/items/Form.vue'
+import Map from '@/components/items/Map.vue';
 </script>
 
 <template>
@@ -12,7 +11,7 @@ import Map from './items/Map.vue';
 </template>
 
 <style lang="scss" scoped>
-@import '../assets/scss/responsive.scss';
+@import '@/assets/scss/responsive.scss';
 
 .contactform {
     display: flex;

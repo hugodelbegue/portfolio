@@ -1,5 +1,5 @@
 <script setup>
-import SkillsContainer from '../components/SkillsContainer.vue'
+import SkillsContainer from '@/components/SkillsContainer.vue'
 </script>
 
 <template>

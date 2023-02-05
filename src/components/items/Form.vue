@@ -1,14 +1,14 @@
 <script setup>
-import Button from './Button.vue'
-import Link from './Link.vue'
-import IconLinkedin from '../icons/IconLinkedin.vue'
-import IconGithub from '../icons/IconGithub.vue'
+import Button from '@/components/items/Button.vue'
+import Link from '@/components/items/Link.vue'
+import IconLinkedin from '@/components/icons/IconLinkedin.vue'
+import IconGithub from '@/components/icons/IconGithub.vue'
 // import emailjs from '@emailjs/browser'
 </script>
 
 <template>
     <div class="form">
-        <h2>Pour me&nbsp;<strong class="important">contacter</strong></h2>
+        <h2>Pour me&nbsp;<strong class="important">contacter</strong>.</h2>
         <form @submit.prevent="sendMail()" ref="form" method="post">
             <div class="name">
                 <label for="name">
@@ -110,7 +110,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import '../../assets/scss/responsive.scss';
+@import '@/assets/scss/responsive.scss';
 
 .form {
     flex: 1 1 50%;
@@ -248,7 +248,7 @@ input[type="email"] {
 }
 
 .anim__submit {
-    content: url(../../assets/send-fill.svg);
+    content: url(@/assets/img/designs/send-fill.svg);
     background: transparent;
     height: 30px;
     filter: drop-shadow(2px 3px 1px var(--color-border-1));

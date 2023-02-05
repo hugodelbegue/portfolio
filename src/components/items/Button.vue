@@ -10,12 +10,11 @@ defineProps({
     msg: String,
     padding: String,
     width: String
-
 })
 </script>
 
 <style lang="scss" scoped>
-@import '../../assets/scss/responsive.scss';
+@import '@/assets/scss/responsive.scss';
 
 .button {
     position: relative;

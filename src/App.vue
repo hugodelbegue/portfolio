@@ -1,14 +1,14 @@
 <script setup>
-import Header from './layouts/Header.vue'
-import Main from './layouts/Main.vue'
-import Footer from './layouts/Footer.vue'
+import Header from '@/layouts/Header.vue'
+import Main from '@/layouts/Main.vue'
+import Footer from '@/layouts/Footer.vue'
 </script>
 
 <template>
   <div class="layout">
     <div class="header__part">
       <Header />
-      <hr class="line__footer">
+      <hr class="line__header">
     </div>
     <Main />
     <Footer />
@@ -16,7 +16,7 @@ import Footer from './layouts/Footer.vue'
 </template>
 
 <style lang="scss" scoped>
-@import './assets/scss/responsive.scss';
+@import '@/assets/scss/responsive.scss';
 
 .layout {
   min-height: 100vh;
@@ -35,8 +35,9 @@ import Footer from './layouts/Footer.vue'
   }
 }
 
-.line__footer {
-  margin: 0 2.5%;
+.line__header {
+  margin-left: max(5em, calc((50% - var(--desktop-up) / 2) + 4em));
+  margin-right: max(5em, calc((50% - var(--desktop-up) / 2) + 5em));
   border: 2px solid var(--color-border-2);
   border-radius: 2px;
 }

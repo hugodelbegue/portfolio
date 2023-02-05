@@ -35,7 +35,7 @@ defineProps({
 </script>
 
 <style lang="scss" scoped>
-@import '../../assets/scss/responsive.scss';
+@import '@/assets/scss/responsive.scss';
 
 .skill {
     display: flex;

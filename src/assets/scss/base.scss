@@ -3,27 +3,24 @@
   --orange: #da6220;
   --fluorescent-orange: #ff8125;
   --light-orange: #f9e4d8;
+  --brown-orange: #bd5c16;
   --indian: #4f1e0c;
   --parchment: #ede8d1;
   --sunglow: #f2c744;
   --harvard-crimson: #bb001b;
   --cinnabar: #ea4335;
   --indigo: #2c3e50;
-  --smoke: #f3f3f3;
   --gray: #767676;
-  --color1: var(--black-soft);
-  --color2: #793200;
+  --gray-light: #bebebe;
 
   --white: #ffffff;
   --white-soft: #f8f8f8;
-  --white-mute: #f2f2f2;
 
   --black: #000;
   --black-soft: #222222;
-  --black-mute: #282828;
 
   --linear-background-light: linear-gradient(225deg, var(--sunglow) 0%, var(--parchment) 100%), var(--sunglow);
-  --linear-background-dark: linear-gradient(25deg, var(--color1) 0%, var(--color2) 100%), var(--black-mute);
+  --linear-background-dark: linear-gradient(25deg, var(--black-soft) 0%, var(--brown-orange) 100%), var(--black-soft);
 
   --shadow-light: rgba(60, 60, 60, 0.29);
   --line-light: rgba(60, 60, 60, 0.12);
@@ -32,6 +29,8 @@
 
   --text-light: var(--indigo);
   --text-dark: var(--light-orange);
+  --color-language-light: var(--gray);
+  --color-language-dark: var(--gray-light);
 
   --color-background-soft: var(--white-soft);
   --color-background-focus: var(--white);
@@ -41,11 +40,12 @@
   --color-background-download-light-6: rgba(218, 97, 32, 0.6);
   --color-background-download-dark-25: rgba(255, 128, 37, 0.25);
   --color-background-download-dark-6: rgba(255, 128, 37, 0.6);
-  --color-background-project-light: #f0d47a;
-  --color-background-project-dark: #592c0c;
+  --color-background-project-light: #efdb9c;
+  --color-background-project-dark: #86471a;
 
   // fonts
   --size: 15px;
+  --size-navbar: 1.25em;
   --line-height: 1.6;
   --spacing: 1.1px;
 
@@ -78,6 +78,7 @@
 
   --color-background-language: rgba(218, 97, 32, 0.2);
   --color-text-language: var(--orange);
+  --color-language: var(--color-language-light);
 
   --color-border-1: var(--shadow-light);
   --color-border-2: var(--line-light);
@@ -109,8 +110,9 @@
     --color-background-download-6: var(--color-background-download-dark-6);
     --color-background-project: var(--color-background-project-dark);
 
-    --color-background-language: rgba(242, 198, 68, 0.2);
-    --color-text-language: var(--sunglow);
+    --color-background-language: rgba(255, 128, 37, 0.2);
+    --color-text-language: var(--fluorescent-orange);
+    --color-language: var(--color-language-dark);
 
     --color-border-1: var(--shadow-dark);
     --color-border-2: var(--line-dark);
@@ -166,4 +168,10 @@ body {
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+#app {
+  width: 100%;
+  margin: 0 auto;
+  font-weight: normal;
 }

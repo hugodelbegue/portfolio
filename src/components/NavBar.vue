@@ -1,10 +1,12 @@
 <script setup>
 import { RouterLink } from 'vue-router'
-import Link from './items/Link.vue'
-import IconDownload from './icons/IconDownload.vue'
-import IconAboutme from './icons/IconAboutme.vue'
-import IconProjects from './icons/IconProjects.vue'
-import IconContact from './icons/IconContact.vue'
+import Link from '@/components/items/Link.vue'
+import IconDownload from '@/components/icons/IconDownload.vue'
+import IconPc from '@/components/icons/IconPc.vue'
+import IconProfil from '@/components/icons/IconProfil.vue'
+import IconProfilPhone from '@/components/icons/IconProfilPhone.vue'
+import IconBoard from '@/components/icons/IconBoard.vue'
+import IconPen from '@/components/icons/IconPen.vue'
 </script>
 
 <template>
@@ -12,21 +14,36 @@ import IconContact from './icons/IconContact.vue'
         <div class="navbar">
             <!-- Menu desktop -->
             <div class="line_menu">
-                <Link>
-                <template #title>
-                    <RouterLink to="/">A propos</RouterLink>
-                </template>
-                </Link>
-                <Link>
-                <template #title>
-                    <RouterLink to="/projects">Projets</RouterLink>
-                </template>
-                </Link>
-                <Link>
-                <template #title>
-                    <RouterLink to="/contact">Contact</RouterLink>
-                </template>
-                </Link>
+                <RouterLink to="/">
+                    <Link>
+                    <template #icon>
+                        <IconProfil />
+                    </template>
+                    <template #title>
+                        A propos
+                    </template>
+                    </Link>
+                </RouterLink>
+                <RouterLink to="/projects">
+                    <Link>
+                    <template #icon>
+                        <IconPc />
+                    </template>
+                    <template #title>
+                        Projets
+                    </template>
+                    </Link>
+                </RouterLink>
+                <RouterLink to="/contact">
+                    <Link>
+                    <template #icon>
+                        <IconPen />
+                    </template>
+                    <template #title>
+                        Contact
+                    </template>
+                    </Link>
+                </RouterLink>
             </div>
             <!-- Menu mobile -->
             <div class="burger_menu">
@@ -37,10 +54,10 @@ import IconContact from './icons/IconContact.vue'
                 <div ref="burger_links" class="burger_links">
                     <ul class="layout_burger_links">
                         <li>
-                            <RouterLink to="/">
-                                <Link @click="pageRedirect('/')">
+                            <RouterLink to="/" @click="pageRedirect('/')">
+                                <Link>
                                 <template #icon>
-                                    <IconAboutme />
+                                    <IconProfilPhone />
                                 </template>
                                 <template #title>
                                     A propos
@@ -49,10 +66,10 @@ import IconContact from './icons/IconContact.vue'
                             </RouterLink>
                         </li>
                         <li>
-                            <RouterLink to="/projects">
-                                <Link @click="pageRedirect('/projects')">
+                            <RouterLink to="/projects" @click="pageRedirect('/projects')">
+                                <Link>
                                 <template #icon>
-                                    <IconProjects />
+                                    <IconBoard />
                                 </template>
                                 <template #title>
                                     Projets
@@ -61,10 +78,10 @@ import IconContact from './icons/IconContact.vue'
                             </RouterLink>
                         </li>
                         <li>
-                            <RouterLink to="/contact">
-                                <Link @click="pageRedirect('/contact')">
+                            <RouterLink to="/contact" @click="pageRedirect('/contact')">
+                                <Link>
                                 <template #icon>
-                                    <IconContact />
+                                    <IconPen />
                                 </template>
                                 <template #title>
                                     Contact
@@ -76,8 +93,8 @@ import IconContact from './icons/IconContact.vue'
                 </div>
             </div>
             <!-- Link CV download -->
-            <a ref="download" href="../assets/data/CV_HugoDELBEGUE.pdf" target="_blank" download="CV_hugodelbegue"
-                title="Téléchager mon CV">
+            <a href="@/assets/data/CV_HugoDELBEGUE.pdf" target="_blank" download="CV_hugodelbegue"
+                title="Téléchagement CV pdf">
                 <Link class="downloadCV">
                 <template #title>
                     <span>CV</span>
@@ -96,15 +113,11 @@ export default {
     methods: {
         // Open and close links menu
         toggleMenu() {
-            const burger = this.$refs.burger;
-            const links = this.$refs.burger_links;
-            const labels = this.$refs.animation;
-            const elevationBurger = this.$refs.cross;
-            const elevationDownload = this.$refs.download;
-            links.classList.toggle('show')
-            labels.classList.toggle('anim')
-            elevationBurger.classList.toggle('elev')
-            elevationDownload.classList.toggle('elev')
+            const { burger, burger_links, animation, cross, download } = this.$refs;
+            burger_links.classList.toggle('show');
+            animation.classList.toggle('anim');
+            cross.classList.toggle('elev');
+            download.classList.toggle('elev');
             if (burger.checked) {
                 document.body.style.overflow = 'hidden';
             } else {
@@ -112,14 +125,14 @@ export default {
             }
         },
         pageRedirect(url) {
-            location.assign(url);
+            window.location.assign(url);
         }
     }
 }
 </script>
 
 <style lang="scss" scoped>
-@import '../assets/scss/responsive.scss';
+@import '@/assets/scss/responsive.scss';
 
 .show {
     display: flex !important;
@@ -157,7 +170,7 @@ label.elev {
     }
 
     &.iconMenu::after {
-        bottom: 2px !important;
+        bottom: 3px !important;
         transform: rotate(-90deg);
     }
 }
@@ -168,16 +181,38 @@ label.elev {
     column-gap: 2rem;
     transition: color .4s;
 
+    a {
+        font-size: var(--size-navbar);
+        color: inherit;
+        transition: .3s;
+
+        &:hover {
+            color: var(--color-link);
+        }
+
+        &.router-link-active {
+            background: linear-gradient(0deg, var(--color-underline) 0%, transparent 10%);
+            color: var(--color-link);
+            border-radius: 20%;
+        }
+    }
+
     .line_menu {
         display: flex;
-        column-gap: 2rem;
-
-        a {
-            transition: .3s;
-        }
+        gap: 2rem;
 
         @media #{$mobileMenuHidden} {
             display: none;
+        }
+
+        .link {
+            display: flex;
+            place-items: center;
+            gap: .5em;
+        }
+
+        a .link {
+            font-weight: var(--weight-bold);
         }
     }
 
@@ -209,7 +244,8 @@ label.elev {
             background: currentColor;
             display: block;
             width: 2em;
-            height: 2px;
+            height: 3px;
+            border-radius: 3px;
             position: relative;
             transition: transform .3s;
         }
@@ -219,7 +255,7 @@ label.elev {
         }
 
         .iconMenu::after {
-            bottom: 12px;
+            bottom: 13px;
         }
 
         .burger_links {
@@ -268,22 +304,6 @@ label.elev {
         }
     }
 
-    a {
-        font-size: 1.25em;
-        font-weight: var(--weight-bold);
-        color: inherit;
-
-        &:hover {
-            color: var(--color-link);
-        }
-
-        &.router-link-active {
-            background: linear-gradient(0deg, var(--color-underline) 0%, transparent 10%);
-            color: var(--color-link);
-            border-radius: 20%;
-        }
-    }
-
     .downloadCV {
         flex-direction: column-reverse;
         place-items: center;
@@ -292,7 +312,7 @@ label.elev {
         border: 3px dashed var(--color-button-border);
         border-radius: 5px;
         transition: background .3s, box-shadow .2s;
-        padding: .5em;
+        padding: .3em .4em;
         cursor: pointer;
 
         span {

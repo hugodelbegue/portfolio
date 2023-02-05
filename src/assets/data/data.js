@@ -2,15 +2,18 @@
 export const dataList = [
     {
         id: 1,
-        url: "/",
-        img: "https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__480.jpg",
-        title: "Hello à tous",
+        url: "https://github.com/hugodelbegue/portfolio",
+        img: "./src/assets/img/previews/portfolio.png",
+        title: "Portfolio",
         frontend: true,
         backend: false,
         language: [
-            { name: "css" },
-            { name: "sql" },
-            { name: "docker" }
+            { name: "vue.js" },
+            { name: "sass" },
+            { name: "javascript" },
+            { name: "html" },
+            { name: "seo/référencement" },
+            { name: "Node.js" },
         ]
     },
     {

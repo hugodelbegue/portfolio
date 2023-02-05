@@ -1,7 +1,7 @@
 <script setup>
-import Skill from './items/Skill.vue'
-import { skillList } from '../assets/data/skills'
-import RenderSkillIcon from './items/RenderSkillIcon.vue'
+import Skill from '@/components/items/Skill.vue'
+import RenderSkillIcon from '@/components/items/RenderSkillIcon.vue'
+import { skillList } from '@/assets/data/skills'
 </script>
 
 <template>
@@ -19,7 +19,7 @@ import RenderSkillIcon from './items/RenderSkillIcon.vue'
 </template>
 
 <style lang="scss" scoped>
-@import '../assets/scss/responsive.scss';
+@import '@/assets/scss/responsive.scss';
 
 .AllSkills {
     display: flex;
@@ -40,13 +40,13 @@ h2 {
     margin-bottom: 3em;
 
     &::before {
-        content: url(../assets/gear-fill.svg);
+        content: url(@/assets/img/designs/gear-fill.svg);
         color: var(--color-icon);
         margin-right: .5em;
     }
 
     &::after {
-        content: url(../assets/tools.svg);
+        content: url(@/assets/img/designs/tools.svg);
         color: var(--color-icon);
         margin-left: .5em;
     }
@@ -62,6 +62,7 @@ p {
 }
 
 svg {
+    filter: drop-shadow(2px 2px 2px var(--color-border-1));
     width: 6.6em;
     height: 6.6em;
 

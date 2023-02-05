@@ -1,16 +1,7 @@
-@import './base.scss';
-// @import './responsive.scss';
-
-#app {
-  width: 100%;
-  margin: 0 auto;
-
-  font-weight: normal;
-}
+@import '@/assets/scss/base.scss';
 
 a {
   text-decoration: none;
-  // transition: .4s;
   color: inherit;
 
   &:hover {
@@ -26,7 +17,8 @@ h1 {
 }
 
 h2 {
-  font-size: 2.5em;
+  // font-size: 2.5em;
+  font-size: 3.25em;
   font-weight: var(--weight-bold);
   margin-bottom: 2em;
   color: var(--color-heading);
@@ -77,10 +69,8 @@ textarea {
 
 
 // Vue-writer
-
 .is-typed {
   color: var(--color-link);
-  // font-variant-caps: all-small-caps;
 }
 
 .is-typed span.typed {
@@ -92,7 +82,7 @@ textarea {
   place-items: center;
   width: 3px;
   height: 1.5em;
-  background-color: black;
+  background-color: var(--color-heading);
   animation: blink 1s infinite;
 }
 
@@ -102,7 +92,7 @@ textarea {
 
 @keyframes blink {
   49% {
-    background-color: black;
+    background-color: var(--color-heading);
   }
 
   50% {

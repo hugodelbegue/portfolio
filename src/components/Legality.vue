@@ -1,6 +1,6 @@
 <script setup>
-import IconFingerprint from './icons/IconFingerprint.vue'
-import Mentions from './Mentions.vue'
+import IconFingerprint from '@/components/icons/IconFingerprint.vue'
+import Mentions from '@/components/Mentions.vue'
 </script>
 
 <template>
@@ -98,6 +98,7 @@ svg {
         font-variant-caps: all-small-caps;
         border: none;
         background: var(--line-light);
+        border-radius: 2px;
     }
 }
 </style>

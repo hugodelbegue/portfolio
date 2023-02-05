@@ -1,5 +1,5 @@
 <template>
-    <a :href="url" class="project__url">
+    <a :href="url" class="project__url" target="_blank">
         <slot name="title"></slot>
         <div class="image">
             <slot name="image"></slot>
@@ -24,6 +24,7 @@ a {
     flex-direction: column;
     place-items: center;
     place-content: center;
+    width: 100%;
 
     .image {
         width: 100%;

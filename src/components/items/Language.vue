@@ -17,10 +17,11 @@ defineProps({
     background: var(--color-background-language);
     padding: .1em .5em;
     box-shadow: 0 0 0 !important;
-    border-radius: 5px;
+    border-radius: 4px;
     font-weight: var(--weight-bold);
     font-variant-caps: all-small-caps;
-    color: var(--gray);
+    color: var(--color-language);
+    font-size: .9em;
     border: none;
 }
 </style>

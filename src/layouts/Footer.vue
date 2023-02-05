@@ -1,7 +1,7 @@
 <script setup>
-import SocialLinks from '../components/SocialLinks.vue'
-import ReadMore from '../components/ReadMore.vue'
-import Legality from '../components/Legality.vue'
+import SocialLinks from '@/components/SocialLinks.vue'
+import ReadMore from '@/components/ReadMore.vue'
+import Legality from '@/components/Legality.vue'
 </script>
 
 <template>
@@ -15,7 +15,7 @@ import Legality from '../components/Legality.vue'
 </template>
 
 <style lang="scss" scoped>
-@import '../assets/scss/responsive.scss';
+@import '@/assets/scss/responsive.scss';
 
 footer {
     display: flex;

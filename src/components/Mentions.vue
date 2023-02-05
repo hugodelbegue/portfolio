@@ -287,7 +287,6 @@
 
     .scroll {
         overflow-y: scroll;
-        // height: 912px;
         height: calc(84.8em - 1em);
         padding: 1em;
         border-bottom: 2px solid var(--line-light);

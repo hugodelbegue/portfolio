@@ -1,8 +1,8 @@
 <script setup>
-import Project from './items/Project.vue'
-import Language from './items/Language.vue'
-import Button from './items/Button.vue'
-import { dataList } from '../assets/data/data.js'
+import Project from '@/components/items/Project.vue'
+import Language from '@/components/items/Language.vue'
+import Button from '@/components/items/Button.vue'
+import { dataList } from '@/assets/data/data.js'
 </script>
 
 <template>
@@ -21,7 +21,7 @@ import { dataList } from '../assets/data/data.js'
                             <div class="layout__title">{{ data.title }}</div>
                         </template>
                         <template #image>
-                            <img :src="data.img" alt="">
+                            <img :src="data.img" :alt="'photo du project ' + data.title" :title="data.title">
                         </template>
                         <template #language>
                             <div class="layout__language">
@@ -74,7 +74,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import '../assets/scss/responsive.scss';
+@import '@/assets/scss/responsive.scss';
 
 .projectscontainer {
     img {
@@ -115,17 +115,15 @@ export default {
             background: var(--color-background-project);
             border: 2px solid var(--color-border-1);
             transition: transform .2s, border .2s;
-            // A voir !!!
             transform: rotate(-2.5deg);
-            // !!!!
         }
 
         &::after {
             z-index: -2;
             content: "";
             position: absolute;
-            top: 5px;
-            left: 5px;
+            top: 3px;
+            left: 2px;
             width: var(--size-project);
             height: var(--size-project);
             box-shadow: 0 2px 4px var(--color-border-1);
@@ -133,6 +131,7 @@ export default {
             background: var(--color-background-project);
             border: 2px solid var(--color-border-1);
             transition: transform .3s, border .3s;
+            transform: rotate(.5deg);
         }
     }
 
@@ -159,14 +158,15 @@ export default {
     .layout__title {
         font-size: 1.3em;
         font-weight: var(--weight-bold);
-        letter-spacing: normal;
+        letter-spacing: .7px;
         padding-bottom: .3em;
     }
 
     .layout__language {
         display: flex;
         justify-content: flex-end;
-        column-gap: 10px;
+        flex-wrap: wrap;
+        column-gap: 5px;
         width: 100%;
         padding-top: .9em;
         padding-right: .3em;
@@ -177,16 +177,9 @@ h2 {
     display: flex;
     flex-wrap: wrap;
 
-    &::before {
-        content: url(../assets/pc-display.svg);
-        margin-right: .5em;
-        color: var(--color-icon);
-    }
-
     @media #{$mobileUpScreen} {
         text-align: center;
     }
-
 }
 
 .selectors {
