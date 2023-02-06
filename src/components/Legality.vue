@@ -49,7 +49,6 @@ export default {
 
     a {
         cursor: pointer;
-        transition: .3s;
     }
 
     p {

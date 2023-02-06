@@ -13,59 +13,108 @@ export const dataList = [
             { name: "javascript" },
             { name: "html" },
             { name: "seo/référencement" },
-            { name: "Node.js" },
+            { name: "node.js" }
         ]
     },
     {
         id: 2,
-        url: "/",
-        img: "https://media.istockphoto.com/id/1140180560/fr/photo/explosion-de-poudre-color%C3%A9e-sur-fond-noir.jpg?s=612x612&w=0&k=20&c=8EKPu2s5gLcqb09jSmT0tgrydf9UYLzHm3dtoTm5vfs=",
-        title: "Hello world",
-        frontend: false,
-        backend: true,
+        url: "https://github.com/hugodelbegue/interactive-card-details-form-main",
+        img: "./src/assets/img/previews/interactive_card_details_form_desktop.png",
+        title: "Interactive card details form",
+        frontend: true,
+        backend: false,
         language: [
-            { name: "js" },
-            { name: "mongodb" },
-            { name: "react" }
+            { name: "vue.js" },
+            { name: "javascript" },
+            { name: "html" },
+            { name: "sass" },
+            { name: "seo/référencement" }
         ]
     },
     {
         id: 3,
-        url: "/",
-        img: "https://thumbs.dreamstime.com/b/belle-for%C3%AAt-tropicale-%C3%A0-l-itin%C3%A9raire-am%C3%A9nag%C3%A9-pour-amateurs-de-la-nature-de-ka-d-ang-36703721.jpg",
-        title: "Bienvenue",
+        url: "https://github.com/hugodelbegue/notifications-page-main",
+        img: "./src/assets/img/previews/notifications_page_desktop.png",
+        title: "Notifications page",
         frontend: true,
         backend: false,
         language: [
-            { name: "css" },
             { name: "html" },
-            { name: "scss" }
+            { name: "seo/référencement" },
+            { name: "sass" },
+            { name: "vue.js" },
+            { name: "javascript" }
         ]
     },
     {
         id: 4,
-        url: "/",
-        img: "https://st3.depositphotos.com/7036298/14140/i/600/depositphotos_141401686-stock-photo-yellow-sunflowers-close-up-in.jpg",
-        title: "Mangez moi, je suis bon!",
+        url: "https://github.com/hugodelbegue/news-homepage-main",
+        img: "./src/assets/img/previews/news_homepage_desktop.png",
+        title: "News homepage",
         frontend: true,
         backend: false,
         language: [
-            { name: "php" },
-            { name: "ruby" },
-            { name: "xampp" }
+            { name: "javascript" },
+            { name: "html" },
+            { name: "seo/référencement" },
+            { name: "sass" }
         ]
     },
     {
         id: 5,
-        url: "/",
-        img: "https://www.affluences.ca/upload/2019/07/site-web-525X300-1.png",
-        title: "Toujours la même.",
+        url: "https://github.com/hugodelbegue/vue",
+        img: "./src/assets/img/previews/vue.png",
+        title: "Vue",
+        frontend: true,
+        backend: false,
+        language: [
+            { name: "vue.js" },
+            { name: "javascript" },
+            { name: "html" },
+            { name: "seo/référencement" },
+            { name: "sass" }
+        ]
+    },
+    {
+        id: 6,
+        url: "https://github.com/hugodelbegue/my-links",
+        img: "./src/assets/img/previews/my-links.png",
+        title: "My links",
         frontend: false,
         backend: true,
         language: [
-            { name: "vue" },
-            { name: "nuxt" },
-            { name: "seo" }
+            { name: "php" },
+            { name: "javascript" },
+            { name: "css" },
+            { name: "html" },
+            { name: "sql" },
         ]
     },
+    {
+        id: 7,
+        url: "https://github.com/hugodelbegue/primalprod",
+        img: "./src/assets/img/previews/primalprod.png",
+        title: "Primalprod",
+        frontend: false,
+        backend: true,
+        language: [
+            { name: "php" },
+            { name: "html" },
+            { name: "css" },
+            { name: "javascript" }
+        ]
+    },
+    {
+        id: 8,
+        url: "https://github.com/hugodelbegue/teacozy",
+        img: "./src/assets/img/previews/teacozy.png",
+        title: "Teacozy",
+        frontend: true,
+        backend: false,
+        language: [
+            { name: "html" },
+            { name: "css" },
+            { name: "javascript" }
+        ]
+    }
 ];

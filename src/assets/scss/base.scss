@@ -12,6 +12,7 @@
   --indigo: #2c3e50;
   --gray: #767676;
   --gray-light: #bebebe;
+  --gray-very-light: #d3d3d3;
 
   --white: #ffffff;
   --white-soft: #f8f8f8;
@@ -31,6 +32,16 @@
   --text-dark: var(--light-orange);
   --color-language-light: var(--gray);
   --color-language-dark: var(--gray-light);
+  --color-moon: #dfdabd;
+  --color-sun: #e3a11c;
+  --color-ball-light: #ffa500;
+  --color-ball-dark: var(--cinnabar);
+  --color-band-light-1: rgba(218, 97, 32);
+  --color-band-light-2: rgba(218, 97, 32, 0.4);
+  --color-band-light-3: rgba(218, 97, 32, 0.2);
+  --color-band-dark-1: rgba(255, 128, 37);
+  --color-band-dark-2: rgba(255, 128, 37, 0.4);
+  --color-band-dark-3: rgba(255, 128, 37, 0.2);
 
   --color-background-soft: var(--white-soft);
   --color-background-focus: var(--white);
@@ -57,8 +68,9 @@
 
   // layout
   --size-project: var(--size-project-desktop);
-  --size-project-desktop: 300px;
+  --size-project-desktop: 350px;
   --size-project-mobile: 250px;
+
   --desktop-up: 1620px;
   --desktop-medium: 1440px;
   --desktop-down: 1280px;
@@ -69,12 +81,21 @@
 }
 
 /* semantic color variables for this project */
-:root {
+@media only screen and (max-width: 450px) {
+  :root {
+    --size-project: var(--size-project-mobile);
+  }
+}
+
+.theme__light {
   --color-background: var(--linear-background-light);
   --color-background-burger: var(--color-background-burger-light);
   --color-background-download-25: var(--color-background-download-light-25);
   --color-background-download-6: var(--color-background-download-light-6);
   --color-background-project: var(--color-background-project-light);
+  --color-background-band-1: var(--color-band-light-1);
+  --color-background-band-2: var(--color-band-light-2);
+  --color-background-band-3: var(--color-band-light-3);
 
   --color-background-language: rgba(218, 97, 32, 0.2);
   --color-text-language: var(--orange);
@@ -102,45 +123,40 @@
   --gauge-full: var(--orange);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --color-background: var(--linear-background-dark);
-    --color-background-burger: var(--color-background-burger-dark);
-    --color-background-download-25: var(--color-background-download-dark-25);
-    --color-background-download-6: var(--color-background-download-dark-6);
-    --color-background-project: var(--color-background-project-dark);
+.theme__dark {
+  --color-background: var(--linear-background-dark);
+  --color-background-burger: var(--color-background-burger-dark);
+  --color-background-download-25: var(--color-background-download-dark-25);
+  --color-background-download-6: var(--color-background-download-dark-6);
+  --color-background-project: var(--color-background-project-dark);
+  --color-background-band-1: var(--color-band-dark-1);
+  --color-background-band-2: var(--color-band-dark-2);
+  --color-background-band-3: var(--color-band-dark-3);
 
-    --color-background-language: rgba(255, 128, 37, 0.2);
-    --color-text-language: var(--fluorescent-orange);
-    --color-language: var(--color-language-dark);
+  --color-background-language: rgba(255, 128, 37, 0.2);
+  --color-text-language: var(--fluorescent-orange);
+  --color-language: var(--color-language-dark);
 
-    --color-border-1: var(--shadow-dark);
-    --color-border-2: var(--line-dark);
-    --color-border-hover: var(--fluorescent-orange);
-    --color-border-active: var(--fluorescent-orange);
-    --color-button: var(--fluorescent-orange);
-    --color-button-border: var(--fluorescent-orange);
-    --color-button-hover: var(--fluorescent-orange);
-    --color-button-active: var(--fluorescent-orange);
+  --color-border-1: var(--shadow-dark);
+  --color-border-2: var(--line-dark);
+  --color-border-hover: var(--fluorescent-orange);
+  --color-border-active: var(--fluorescent-orange);
+  --color-button: var(--fluorescent-orange);
+  --color-button-border: var(--fluorescent-orange);
+  --color-button-hover: var(--fluorescent-orange);
+  --color-button-active: var(--fluorescent-orange);
 
-    --color-heading: var(--text-dark);
-    --color-text: var(--text-dark);
-    --color-icon: var(--white);
-    --color-link: var(--fluorescent-orange);
-    --color-underline: var(--color-background-download-dark-25);
+  --color-heading: var(--text-dark);
+  --color-text: var(--text-dark);
+  --color-icon: var(--white);
+  --color-link: var(--fluorescent-orange);
+  --color-underline: var(--color-background-download-dark-25);
 
-    --color-input: var(--text-dark);
-    --color-error: var(--cinnabar);
+  --color-input: var(--text-dark);
+  --color-error: var(--cinnabar);
 
-    --gauge-empty: var(--line-dark);
-    --gauge-full: var(--fluorescent-orange);
-  }
-}
-
-@media only screen and (max-width: 375px) {
-  :root {
-    --size-project: var(--size-project-mobile);
-  }
+  --gauge-empty: var(--line-dark);
+  --gauge-full: var(--fluorescent-orange);
 }
 
 *,
@@ -148,9 +164,6 @@
 *::after {
   box-sizing: border-box;
   margin: 0;
-  // A revoir pour button !!!
-  // position: relative;
-  // !!!!
   font-weight: normal;
   list-style-type: none;
   outline: transparent !important;
@@ -160,7 +173,7 @@ body {
   min-height: 100vh;
   color: var(--color-text);
   background: var(--color-background);
-  transition: color 0.5s, background-color 0.5s;
+  transition: color 0.5s, background 0.5s;
   line-height: var(--line-height);
   letter-spacing: var(--spacing);
   font-family: var(--family);
@@ -168,6 +181,12 @@ body {
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  a {
+    &:hover {
+      transition: .3s;
+    }
+  }
 }
 
 #app {

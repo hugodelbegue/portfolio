@@ -25,7 +25,7 @@ import { dataList } from '@/assets/data/data.js'
                         </template>
                         <template #language>
                             <div class="layout__language">
-                                <div v-for="lang in data.language">
+                                <div class="language" :class="cleanString(lang.name)" v-for="lang in data.language">
                                     <Language :language="lang.name" style="box-shadow: 0 0 2px" />
                                 </div>
                             </div>
@@ -42,7 +42,10 @@ export default {
     data() {
         return {
             dataList,
-            choice: ""
+            choice: "",
+            cleanString(name) {
+                return name.replace(/[./\/]/g, "");
+            }
         }
     },
     computed: {
@@ -160,13 +163,19 @@ export default {
         font-weight: var(--weight-bold);
         letter-spacing: .7px;
         padding-bottom: .3em;
+        text-align: center;
+    }
+
+    .language {
+        padding: 0em .5em;
+        border-radius: 4px;
     }
 
     .layout__language {
         display: flex;
         justify-content: flex-end;
         flex-wrap: wrap;
-        column-gap: 5px;
+        gap: 5px;
         width: 100%;
         padding-top: .9em;
         padding-right: .3em;
@@ -178,7 +187,7 @@ h2 {
     flex-wrap: wrap;
 
     @media #{$mobileUpScreen} {
-        text-align: center;
+        place-content: center;
     }
 }
 
@@ -191,6 +200,53 @@ h2 {
     @media #{$mobileUpScreen} {
         place-content: center;
     }
+}
+
+// Class projects
+.vuejs {
+    color: rgb(65, 184, 131) !important;
+    background-color: rgb(65, 184, 131, 0.2) !important;
+}
+
+.sass {
+    color: rgb(205, 103, 153) !important;
+    background-color: rgb(205, 103, 153, 0.2) !important;
+}
+
+.javascript {
+    // color: rgb(247, 223, 30) !important;
+    color: rgb(255, 166, 0) !important;
+    background-color: rgb(247, 223, 30, 0.2) !important;
+}
+
+.html {
+    color: rgb(227, 78, 38) !important;
+    background-color: rgb(227, 78, 38, 0.2) !important;
+}
+
+.seoréférencement {
+    color: rgb(0, 0, 0) !important;
+    background-color: rgb(0, 0, 0, 0.2) !important;
+}
+
+.nodejs {
+    color: rgb(140, 200, 75) !important;
+    background-color: rgb(140, 200, 75, 0.2) !important;
+}
+
+.css {
+    color: rgb(27, 115, 186) !important;
+    background-color: rgb(27, 115, 186, 0.2) !important;
+}
+
+.php {
+    color: rgb(97, 129, 182) !important;
+    background-color: rgb(97, 129, 182, 0.2) !important;
+}
+
+.sql {
+    color: rgb(172, 185, 193) !important;
+    background-color: rgb(172, 185, 193, 0.2) !important;
 }
 
 // Transitions

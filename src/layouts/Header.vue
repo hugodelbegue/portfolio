@@ -1,5 +1,6 @@
 <script setup>
 import Logo from '@/components/items/Logo.vue'
+import SwitchMode from '@/components/items/SwitchMode.vue'
 import NavBar from '@/components/NavBar.vue'
 import AboutMe from '@/components/AboutMe.vue'
 </script>
@@ -12,7 +13,10 @@ import AboutMe from '@/components/AboutMe.vue'
                     <a href="/" title="Accueil">
                         <img alt="PrimalProd logo" src="@/assets/img/logo.svg" width="50" height="50" />
                     </a>
-                    <span>| Portfolio.</span>
+                    <div class="layout__switch">
+                        <SwitchMode />
+                        <span>| Thème.</span>
+                    </div>
                 </template>
             </Logo>
             <NavBar />
@@ -67,11 +71,17 @@ header {
     }
 }
 
+.layout__switch {
+    display: flex;
+    place-content: center;
+    place-items: center;
+    margin-left: 1em;
+}
+
 span {
-    font-size: var(--size-navbar);
-    font-weight: var(--weight-bold);
-    margin-left: .2em;
+    font-size: .85em;
     color: var(--color-heading);
+    margin-left: .8em;
 }
 
 img {

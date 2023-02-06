@@ -36,7 +36,6 @@ h2 {
     display: flex;
     flex-wrap: wrap;
     place-content: center;
-    text-align: center;
     margin-bottom: 3em;
 
     &::before {

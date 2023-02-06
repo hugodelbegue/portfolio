@@ -120,7 +120,7 @@ export default {
         flex-wrap: wrap;
 
         @media #{$mobileUpScreen} {
-            text-align: center;
+            place-content: center;
         }
     }
 }

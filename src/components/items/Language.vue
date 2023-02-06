@@ -1,5 +1,5 @@
 <template>
-    <span class="language">
+    <span class="language__text">
         {{ language }}
     </span>
 </template>
@@ -13,14 +13,10 @@ defineProps({
 </script>
 
 <style lang="scss" scoped>
-.language {
-    background: var(--color-background-language);
-    padding: .1em .5em;
+.language__text {
     box-shadow: 0 0 0 !important;
-    border-radius: 4px;
     font-weight: var(--weight-bold);
     font-variant-caps: all-small-caps;
-    color: var(--color-language);
     font-size: .9em;
     border: none;
 }

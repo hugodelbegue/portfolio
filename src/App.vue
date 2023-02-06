@@ -11,7 +11,18 @@ import Footer from '@/layouts/Footer.vue'
       <hr class="line__header">
     </div>
     <Main />
-    <Footer />
+    <div class="footer__part">
+      <Footer />
+      <div class="layout__band">
+        <Transition name="transition__band__1" appear>
+          <div v-if="$route.name == 'ContactView'" class="band__1"></div>
+        </Transition>
+        <Transition name="transition__band__2" appear>
+          <div v-if="$route.name == 'ContactView'" class="band__2"></div>
+        </Transition>
+      </div>
+    </div>
+
   </div>
 </template>
 
@@ -55,5 +66,96 @@ main {
 footer {
   padding-left: max(5em, (calc(50% - var(--desktop-up) / 2)));
   padding-right: max(5em, (calc(50% - var(--desktop-up) / 2)));
+}
+
+.layout__band {
+  position: relative;
+  width: 100%;
+
+  .band__1 {
+    z-index: -1;
+    position: absolute;
+    bottom: 0%;
+    width: 100%;
+    height: 14vh;
+    background: var(--color-background-band-1);
+    border-radius: 0% 100% 0% 0%;
+
+    &::before {
+      content: "";
+      position: absolute;
+      bottom: 0%;
+      display: flex;
+      height: 120%;
+      width: 100%;
+      background: var(--color-background-band-2);
+      border-radius: 0% 100% 0% 0%;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: 0%;
+      display: flex;
+      width: 100%;
+      height: 115%;
+      background: var(--color-background-band-3);
+      border-radius: 100% 100% 0% 0%;
+    }
+  }
+
+  .band__2 {
+    z-index: -2;
+    position: absolute;
+    bottom: 0%;
+    right: 0%;
+    height: 15vh;
+    width: 100%;
+    background: var(--color-background-band-1);
+    border-radius: 100% 0% 0% 0%;
+
+    &::before {
+      content: "";
+      position: absolute;
+      bottom: 0%;
+      right: 0%;
+      display: flex;
+      height: 115%;
+      width: 60%;
+      background: var(--color-background-band-2);
+      border-radius: 100% 0% 0% 0%;
+      transition: .1s;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: 0%;
+      right: 0%;
+      display: flex;
+      height: 120%;
+      width: 70%;
+      background: var(--color-background-band-3);
+      border-radius: 100% 100% 0% 0%;
+    }
+  }
+}
+
+// Transitions
+.transition__band__1-enter-active,
+.transition__band__1-leave-active,
+.transition__band__2-enter-active,
+.transition__band__2-leave-active {
+  transition: transform .8s ease;
+}
+
+.transition__band__1-enter-from,
+.transition__band__1-leave-to {
+  transform: translateX(-50%);
+}
+
+.transition__band__2-enter-from,
+.transition__band__2-leave-to {
+  transform: translateX(50%);
 }
 </style>

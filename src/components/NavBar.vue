@@ -93,7 +93,7 @@ import IconPen from '@/components/icons/IconPen.vue'
                 </div>
             </div>
             <!-- Link CV download -->
-            <a href="@/assets/data/CV_HugoDELBEGUE.pdf" target="_blank" download="CV_hugodelbegue"
+            <a ref="download" href="@/assets/data/CV_HugoDELBEGUE.pdf" target="_blank" download="CV_hugodelbegue"
                 title="Téléchagement CV pdf">
                 <Link class="downloadCV">
                 <template #title>
@@ -178,13 +178,11 @@ label.elev {
 .navbar {
     display: flex;
     align-items: center;
-    column-gap: 2rem;
-    transition: color .4s;
+    column-gap: 1em;
 
     a {
         font-size: var(--size-navbar);
         color: inherit;
-        transition: .3s;
 
         &:hover {
             color: var(--color-link);

@@ -75,10 +75,6 @@ import IconInstagram from '@/components/icons/IconInstagram.vue';
         padding-left: 3em;
         padding-right: 0;
 
-        a {
-            transition: .3s;
-        }
-
         @media #{$tabletScreen} {
             flex-direction: row;
             padding-left: 0;
