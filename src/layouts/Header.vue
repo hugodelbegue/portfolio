@@ -25,7 +25,7 @@ import AboutMe from '@/components/AboutMe.vue'
             <div v-if="$route.name == 'HomeView'" class="layout__aboutme">
                 <Logo>
                     <template #picture>
-                        <img alt="Avatar" src="@/assets/img/avatar.png" width="150" />
+                        <img alt="Avatar" src="@/assets/img/avatar.png" width="125" />
                     </template>
                 </Logo>
                 <AboutMe />
