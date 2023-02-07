@@ -93,8 +93,8 @@ import IconPen from '@/components/icons/IconPen.vue'
                 </div>
             </div>
             <!-- Link CV download -->
-            <a ref="download" href="@/assets/data/CV_HugoDELBEGUE.pdf" target="_blank" download="CV_hugodelbegue"
-                title="Téléchagement CV pdf">
+            <a ref="download" href="@/assets/data/CV_HugoDELBEGUE.pdf" target="_blank" rel="noreferrer"
+                download="CV_hugodelbegue" title="Téléchagement CV pdf">
                 <Link class="downloadCV">
                 <template #title>
                     <span>CV</span>
