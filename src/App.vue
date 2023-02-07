@@ -5,7 +5,7 @@ import Footer from '@/layouts/Footer.vue'
 </script>
 
 <template>
-  <div class="layout">
+  <div class="layout" :class="showPaint">
     <div class="header__part">
       <Header />
       <hr class="line__header">
@@ -14,17 +14,29 @@ import Footer from '@/layouts/Footer.vue'
     <div class="footer__part">
       <Footer />
       <div class="layout__band">
-        <Transition name="transition__band__1" appear>
-          <div v-if="$route.name == 'ContactView'" class="band__1"></div>
+        <Transition name="transition__band__left" appear>
+          <div v-if="$route.name == 'ContactView'" class="band__left"></div>
         </Transition>
-        <Transition name="transition__band__2" appear>
-          <div v-if="$route.name == 'ContactView'" class="band__2"></div>
+        <Transition name="transition__band__right" appear>
+          <div v-if="$route.name == 'ContactView'" class="band__right"></div>
         </Transition>
       </div>
     </div>
 
   </div>
 </template>
+
+<script>
+export default {
+  computed: {
+    showPaint() {
+      return {
+        paint: this.$route.name == 'HomeView'
+      }
+    }
+  }
+}
+</script>
 
 <style lang="scss" scoped>
 @import '@/assets/scss/responsive.scss';
@@ -68,11 +80,21 @@ footer {
   padding-right: max(5em, (calc(50% - var(--desktop-up) / 2)));
 }
 
+// Label background
+.paint {
+  background-image: url(@/assets/img/designs/label.svg);
+  background-repeat: no-repeat;
+  background-size: 25vh;
+  background-position-x: right;
+  background-position-y: top;
+}
+
+// Colored stripes footer
 .layout__band {
   position: relative;
   width: 100%;
 
-  .band__1 {
+  .band__left {
     z-index: -1;
     position: absolute;
     bottom: 0%;
@@ -102,9 +124,21 @@ footer {
       background: var(--color-background-band-3);
       border-radius: 100% 100% 0% 0%;
     }
+
+    @media #{$tabletScreen} {
+      height: 17vh;
+    }
+
+    @media #{$mobileMediumScreen} {
+      height: 24vh;
+    }
+
+    @media #{$mobileDownScreen} {
+      height: 28vh;
+    }
   }
 
-  .band__2 {
+  .band__right {
     z-index: -2;
     position: absolute;
     bottom: 0%;
@@ -138,24 +172,36 @@ footer {
       background: var(--color-background-band-3);
       border-radius: 100% 100% 0% 0%;
     }
+
+    @media #{$tabletScreen} {
+      height: 18vh;
+    }
+
+    @media #{$mobileMediumScreen} {
+      height: 25vh;
+    }
+
+    @media #{$mobileDownScreen} {
+      height: 29vh;
+    }
   }
 }
 
 // Transitions
-.transition__band__1-enter-active,
-.transition__band__1-leave-active,
-.transition__band__2-enter-active,
-.transition__band__2-leave-active {
+.transition__band__left-enter-active,
+.transition__band__left-leave-active,
+.transition__band__right-enter-active,
+.transition__band__right-leave-active {
   transition: transform .8s ease;
 }
 
-.transition__band__1-enter-from,
-.transition__band__1-leave-to {
+.transition__band__left-enter-from,
+.transition__band__left-leave-to {
   transform: translateX(-50%);
 }
 
-.transition__band__2-enter-from,
-.transition__band__2-leave-to {
+.transition__band__right-enter-from,
+.transition__band__right-leave-to {
   transform: translateX(50%);
 }
 </style>

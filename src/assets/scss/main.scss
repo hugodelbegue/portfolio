@@ -35,6 +35,12 @@ h3 {
   font-weight: var(--weight-bold);
 }
 
+.important__hover {
+  &:hover {
+    color: var(--color-link-contact);
+  }
+}
+
 i {
   display: inline-flex;
   place-items: center;

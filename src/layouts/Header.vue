@@ -1,6 +1,6 @@
 <script setup>
 import Logo from '@/components/items/Logo.vue'
-import SwitchMode from '@/components/items/SwitchMode.vue'
+import SwitchButton from '@/components/items/SwitchButton.vue'
 import NavBar from '@/components/NavBar.vue'
 import AboutMe from '@/components/AboutMe.vue'
 </script>
@@ -14,7 +14,7 @@ import AboutMe from '@/components/AboutMe.vue'
                         <img alt="PrimalProd logo" src="@/assets/img/logo.svg" width="50" height="50" />
                     </a>
                     <div class="layout__switch">
-                        <SwitchMode />
+                        <SwitchButton />
                         <span>| Thème.</span>
                     </div>
                 </template>
@@ -25,7 +25,7 @@ import AboutMe from '@/components/AboutMe.vue'
             <div v-if="$route.name == 'HomeView'" class="layout__aboutme">
                 <Logo>
                     <template #picture>
-                        <img alt="Avatar" src="@/assets/img/avatar.jpg" width="125" height="125" />
+                        <img alt="Avatar" src="@/assets/img/avatar.png" width="150" />
                     </template>
                 </Logo>
                 <AboutMe />
@@ -57,7 +57,7 @@ header {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 10em;
+    gap: 7em;
     margin: 5.3em auto 7em;
     width: 80%;
 

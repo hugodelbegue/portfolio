@@ -39,6 +39,7 @@ defineProps({
             background: var(--color-button-hover);
             border: 1px solid var(--color-button-hover);
             box-shadow: 1px 1px 0px var(--color-border-1);
+            cursor: pointer;
         }
 
         &:active {

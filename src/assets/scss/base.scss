@@ -60,11 +60,9 @@
   --line-height: 1.6;
   --spacing: 1.1px;
 
-  --family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  --family: 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   --weight-bold: 600;
   --weight-very-bold: 800;
-  // --family: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu,
-  //   Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
 
   // layout
   --size-project: var(--size-project-desktop);
@@ -114,9 +112,11 @@
   --color-text: var(--text-light);
   --color-icon: var(--black);
   --color-link: var(--orange);
+  --color-link-contact: var(--text-dark);
   --color-underline: var(--color-background-download-light-25);
 
   --color-input: var(--gray);
+  --color-caret: var(--color-text);
   --color-error: var(--harvard-crimson);
 
   --gauge-empty: var(--line-light);
@@ -150,9 +150,11 @@
   --color-text: var(--text-dark);
   --color-icon: var(--white);
   --color-link: var(--fluorescent-orange);
+  --color-link-contact: var(--text-light);
   --color-underline: var(--color-background-download-dark-25);
 
   --color-input: var(--text-dark);
+  --color-caret: var(--color-text);
   --color-error: var(--cinnabar);
 
   --gauge-empty: var(--line-dark);

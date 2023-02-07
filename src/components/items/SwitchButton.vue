@@ -1,7 +1,7 @@
 <template>
-    <div ref="switchmode" class="switchmode">
-        <input ref="switchInput" @change="swicthButton" type="checkbox" class="checkbox" id="switch" :checked="checked">
-        <label for="switch" class="label">
+    <div class="switch">
+        <input ref="switchInput" @change="swicthButton" type="checkbox" class="checkbox" id="toggle" :checked="checked">
+        <label for="toggle" class="label">
             <div class="ball"></div>
         </label>
     </div>

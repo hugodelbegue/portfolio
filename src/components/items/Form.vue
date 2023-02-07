@@ -3,7 +3,7 @@ import Button from '@/components/items/Button.vue'
 import Link from '@/components/items/Link.vue'
 import IconLinkedin from '@/components/icons/IconLinkedin.vue'
 import IconGithub from '@/components/icons/IconGithub.vue'
-// import emailjs from '@emailjs/browser'
+import emailjs from '@emailjs/browser'
 </script>
 
 <template>
@@ -28,7 +28,7 @@ import IconGithub from '@/components/icons/IconGithub.vue'
             <div class="submit">
                 <Button type="submit" padding="1" width="100" msg="Envoyer" />
                 <Transition name="animation__submit" appear>
-                    <div v-if="this.submit == true" class="anim__submit"></div>
+                    <div v-if="this.submit" class="anim__submit"></div>
                 </Transition>
             </div>
             <div class="errors">
@@ -91,6 +91,9 @@ export default {
             if (this.errors.length === 0) {
                 this.formData = { name: '', email: '', message: '' };
                 this.submit = true;
+                setTimeout(() => {
+                    this.submit = false;
+                }, 1400)
             } else {
                 console.error(`Les champs suivants sont manquants: ${this.errors.join(', ')}`);
                 return;
@@ -98,8 +101,6 @@ export default {
             emailjs.sendForm(serviceId, templateId, this.$refs.form, publicKey)
                 .then((res) => {
                     console.log('Success.', res.text);
-                    this.submit = false;
-                    console.log('Envoyé !!!!');
                 })
                 .catch((err) => {
                     console.error('Erreur lors de l\'envoi.', err.text)
@@ -158,6 +159,7 @@ input[type="email"] {
     border-left: none;
     border-right: none;
     color: var(--black);
+    caret-color: var(--color-caret);
 
     &::placeholder {
         color: var(--color-input);
@@ -280,11 +282,7 @@ input[type="email"] {
 
 // Transition
 .animation__submit-enter-active {
-    animation: appearance 1.1s;
-}
-
-.animation__submit-leave-active {
-    animation: appearance 1.1s ease;
+    animation: appearance 1.5s ease;
 }
 
 @keyframes appearance {
@@ -301,7 +299,7 @@ input[type="email"] {
 
     100% {
         opacity: 0;
-        transform: translateY(-300px) rotate(-45deg);
+        transform: translateY(-600px) rotate(-45deg);
     }
 }
 </style>

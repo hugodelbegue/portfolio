@@ -10,7 +10,7 @@ import IconInstagram from '@/components/icons/IconInstagram.vue';
     <div class="sociallinks">
         <ul>
             <li>
-                <a href="mailto:hugodelbegue@gmail.com" target="_blank">
+                <a :class="classLink" href="mailto:hugodelbegue@gmail.com" target="_blank">
                     <Link color="">
                     <template #icon>
                         <IconMail />
@@ -22,7 +22,7 @@ import IconInstagram from '@/components/icons/IconInstagram.vue';
                 </a>
             </li>
             <li>
-                <a href="https://fr.linkedin.com/in/hugo-delbegue/" target="_blank">
+                <a :class="classLink" href="https://fr.linkedin.com/in/hugo-delbegue/" target="_blank">
                     <Link color="">
                     <template #icon>
                         <IconLinkedin />
@@ -34,7 +34,7 @@ import IconInstagram from '@/components/icons/IconInstagram.vue';
                 </a>
             </li>
             <li>
-                <a href="https://github.com/hugodelbegue" target="_blank">
+                <a :class="classLink" href="https://github.com/hugodelbegue" target="_blank">
                     <Link color="">
                     <template #icon>
                         <IconGithub />
@@ -46,7 +46,7 @@ import IconInstagram from '@/components/icons/IconInstagram.vue';
                 </a>
             </li>
             <li>
-                <a href="https://www.instagram.com/primalprod_freelance/" target="_blank">
+                <a :class="classLink" href="https://www.instagram.com/primalprod_freelance/" target="_blank">
                     <Link color="">
                     <template #icon>
                         <IconInstagram />
@@ -60,6 +60,18 @@ import IconInstagram from '@/components/icons/IconInstagram.vue';
         </ul>
     </div>
 </template>
+
+<script>
+export default {
+    computed: {
+        classLink() {
+            return {
+                important__hover: this.$route.name == "ContactView"
+            }
+        }
+    }
+}
+</script>
 
 <style lang="scss" scoped>
 @import '@/assets/scss/responsive.scss';

@@ -6,8 +6,9 @@ import Mentions from '@/components/Mentions.vue'
 <template>
     <div class="legality">
         <div class="copyright">
-            <p>© Copyright 2023 - Hugo DELBEGUE | <a @click="openMentions">Mentions Légales</a> | <a
-                    href="https://www.infomaniak.com/fr/ecologie" target="_blank">Hébergé par Infomaniak</a>.
+            <p>© Copyright 2023 - Hugo DELBEGUE | <a :class="classLink" @click="openMentions">Mentions Légales</a> | <a
+                    :class="classLink" href="https://www.infomaniak.com/fr/ecologie" target="_blank">Hébergé par
+                    Infomaniak</a>.
                 <i>
                     <IconFingerprint />
                 </i>
@@ -30,14 +31,21 @@ import Mentions from '@/components/Mentions.vue'
 export default {
     methods: {
         openMentions() {
-            const mentions = this.$refs.mentions;
+            const { mentions } = this.$refs;
             mentions.style.display = "block";
             document.body.style.overflow = "hidden";
         },
         closeMentions() {
-            const mentions = this.$refs.mentions;
+            const { mentions } = this.$refs;
             mentions.style.display = "none";
             document.body.style = "initial";
+        }
+    },
+    computed: {
+        classLink() {
+            return {
+                important__hover: this.$route.name == "ContactView"
+            }
         }
     }
 }
