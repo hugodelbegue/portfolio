@@ -47,14 +47,14 @@ import IconPen from '@/components/icons/IconPen.vue'
             </div>
             <!-- Menu mobile -->
             <div class="burger_menu">
-                <input @change="toggleMenu" ref="burger" type="checkbox" id="burger">
-                <label ref="cross" for="burger">
+                <input @change="toggleMenu" type="checkbox" id="burger">
+                <label ref="cross" for="burger" class="burger">
                     <div ref="animation" class="iconMenu"></div>
                 </label>
                 <div ref="burger_links" class="burger_links">
                     <ul class="layout_burger_links">
                         <li>
-                            <RouterLink to="/" @click="pageRedirect('/')">
+                            <RouterLink to="/" @click="toggleMenu">
                                 <Link>
                                 <template #icon>
                                     <IconProfilPhone />
@@ -66,7 +66,7 @@ import IconPen from '@/components/icons/IconPen.vue'
                             </RouterLink>
                         </li>
                         <li>
-                            <RouterLink to="/projects" @click="pageRedirect('/projects')">
+                            <RouterLink to="/projects" @click="toggleMenu">
                                 <Link>
                                 <template #icon>
                                     <IconBoard />
@@ -78,7 +78,7 @@ import IconPen from '@/components/icons/IconPen.vue'
                             </RouterLink>
                         </li>
                         <li>
-                            <RouterLink to="/contact" @click="pageRedirect('/contact')">
+                            <RouterLink to="/contact" @click="toggleMenu">
                                 <Link>
                                 <template #icon>
                                     <IconPen />
@@ -93,7 +93,7 @@ import IconPen from '@/components/icons/IconPen.vue'
                 </div>
             </div>
             <!-- Link CV download -->
-            <a ref="download" href="@/assets/data/CV_HugoDELBEGUE.pdf" target="_blank" rel="noreferrer"
+            <a ref="download" href="/src/assets/upload/CV_HugoDELBEGUE.pdf" target="_blank" rel="noreferrer"
                 download="CV_hugodelbegue" title="Téléchagement CV pdf">
                 <Link class="downloadCV">
                 <template #title>
@@ -113,20 +113,13 @@ export default {
     methods: {
         // Open and close links menu
         toggleMenu() {
-            const { burger, burger_links, animation, cross, download } = this.$refs;
+            const { burger_links, animation, cross, download } = this.$refs;
             burger_links.classList.toggle('show');
             animation.classList.toggle('anim');
             cross.classList.toggle('elev');
             download.classList.toggle('elev');
-            if (burger.checked) {
-                document.body.style.overflow = 'hidden';
-            } else {
-                document.body.style = 'initial';
-            }
+            document.body.classList.toggle('hidden')
         },
-        pageRedirect(url) {
-            window.location.assign(url);
-        }
     }
 }
 </script>
@@ -228,11 +221,6 @@ label.elev {
             cursor: pointer;
             width: 25px;
             height: 25px;
-            transition: color .4s;
-
-            &:hover {
-                color: var(--color-link);
-            }
         }
 
         .iconMenu,
@@ -319,9 +307,13 @@ label.elev {
             font-weight: var(--weight-bold);
         }
 
-        &:hover {
-            background-color: var(--color-background-download-6);
-            box-shadow: 0 1px 3px var(--color-border-1);
+        @media #{$desktopDownScreen} {
+            &:hover {
+                &:hover {
+                    background-color: var(--color-background-download-6);
+                    box-shadow: 0 1px 3px var(--color-border-1);
+                }
+            }
         }
 
         &:active {

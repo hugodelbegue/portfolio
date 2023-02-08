@@ -1,7 +1,7 @@
 <script setup>
 import Skill from '@/components/items/Skill.vue'
 import RenderSkillIcon from '@/components/items/RenderSkillIcon.vue'
-import { skillList } from '@/assets/data/skills'
+import { skillList } from '@/components/data/skills'
 </script>
 
 <template>
@@ -38,16 +38,28 @@ h2 {
     place-content: center;
     margin-bottom: 3em;
 
+    @media #{$mobileMediumScreen} {
+        margin-bottom: 1em;
+    }
+
     &::before {
         content: url(@/assets/img/designs/gear-fill.svg);
         color: var(--color-icon);
         margin-right: .5em;
+
+        @media #{$mobileUpScreen} {
+            display: none;
+        }
     }
 
     &::after {
         content: url(@/assets/img/designs/tools.svg);
         color: var(--color-icon);
         margin-left: .5em;
+
+        @media #{$mobileUpScreen} {
+            display: none;
+        }
     }
 }
 

@@ -134,7 +134,7 @@ footer {
     }
 
     @media #{$mobileDownScreen} {
-      height: 28vh;
+      height: 30em;
     }
   }
 
@@ -182,7 +182,7 @@ footer {
     }
 
     @media #{$mobileDownScreen} {
-      height: 29vh;
+      height: 31em;
     }
   }
 }

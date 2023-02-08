@@ -2,7 +2,8 @@
 import Project from '@/components/items/Project.vue'
 import Language from '@/components/items/Language.vue'
 import Button from '@/components/items/Button.vue'
-import { dataList } from '@/assets/data/data.js'
+import RenderProjectImg from '@/components/items/RenderProjectImg.vue';
+import { dataList } from '@/components/data/data.js'
 </script>
 
 <template>
@@ -21,7 +22,7 @@ import { dataList } from '@/assets/data/data.js'
                             <div class="layout__title">{{ data.title }}</div>
                         </template>
                         <template #image>
-                            <img :src="data.img" :alt="'photo du project ' + data.title" :title="data.title">
+                            <RenderProjectImg :src="data.img" :alt="data.title" :title="data.title" />
                         </template>
                         <template #language>
                             <div class="layout__language">
@@ -80,11 +81,6 @@ export default {
 @import '@/assets/scss/responsive.scss';
 
 .projectscontainer {
-    img {
-        width: 100%;
-        height: 100%;
-    }
-
     .layout__project {
         display: flex;
         justify-content: center;
@@ -138,7 +134,25 @@ export default {
         }
     }
 
-    .project:hover {
+    @media #{$desktopDownScreen} {
+        .project:hover {
+            cursor: pointer;
+            color: var(--color-text-language);
+            border: 2px solid var(--color-text-language);
+
+            &::before {
+                transform: rotate(3deg);
+                border: 2px dashed var(--color-text-language);
+            }
+
+            &::after {
+                transform: rotate(8deg);
+                border: 2px dashed var(--color-text-language);
+            }
+        }
+    }
+
+    .project:active {
         cursor: pointer;
         color: var(--color-text-language);
         border: 2px solid var(--color-text-language);
@@ -152,10 +166,6 @@ export default {
             transform: rotate(8deg);
             border: 2px dashed var(--color-text-language);
         }
-    }
-
-    .project:hover .language {
-        color: var(--color-text-language);
     }
 
     .layout__title {
@@ -204,49 +214,48 @@ h2 {
 
 // Class projects
 .vuejs {
-    color: rgb(65, 184, 131) !important;
-    background-color: rgb(65, 184, 131, 0.2) !important;
+    color: rgb(65, 184, 131);
+    background-color: rgb(65, 184, 131, 0.2);
 }
 
 .sass {
-    color: rgb(205, 103, 153) !important;
-    background-color: rgb(205, 103, 153, 0.2) !important;
+    color: rgb(205, 103, 153);
+    background-color: rgb(205, 103, 153, 0.2);
 }
 
 .javascript {
-    // color: rgb(247, 223, 30) !important;
-    color: rgb(255, 166, 0) !important;
-    background-color: rgb(247, 223, 30, 0.2) !important;
+    color: rgb(255, 166, 0);
+    background-color: rgb(247, 223, 30, 0.2);
 }
 
 .html {
-    color: rgb(227, 78, 38) !important;
-    background-color: rgb(227, 78, 38, 0.2) !important;
+    color: rgb(227, 78, 38);
+    background-color: rgb(227, 78, 38, 0.2);
 }
 
 .seoréférencement {
-    color: rgb(0, 0, 0) !important;
-    background-color: rgb(0, 0, 0, 0.2) !important;
+    color: rgb(0, 0, 0);
+    background-color: rgb(0, 0, 0, 0.2);
 }
 
 .nodejs {
-    color: rgb(140, 200, 75) !important;
-    background-color: rgb(140, 200, 75, 0.2) !important;
+    color: rgb(140, 200, 75);
+    background-color: rgb(140, 200, 75, 0.2);
 }
 
 .css {
-    color: rgb(27, 115, 186) !important;
-    background-color: rgb(27, 115, 186, 0.2) !important;
+    color: rgb(27, 115, 186);
+    background-color: rgb(27, 115, 186, 0.2);
 }
 
 .php {
-    color: rgb(97, 129, 182) !important;
-    background-color: rgb(97, 129, 182, 0.2) !important;
+    color: rgb(97, 129, 182);
+    background-color: rgb(97, 129, 182, 0.2);
 }
 
 .sql {
-    color: rgb(172, 185, 193) !important;
-    background-color: rgb(172, 185, 193, 0.2) !important;
+    color: rgb(172, 185, 193);
+    background-color: rgb(172, 185, 193, 0.2);
 }
 
 // Transitions

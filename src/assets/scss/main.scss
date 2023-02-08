@@ -1,11 +1,31 @@
 @import '@/assets/scss/base.scss';
 
-a {
+.hidden {
+  overflow: hidden !important;
+}
+
+a,
+.burger {
   text-decoration: none;
   color: inherit;
+  transition: .3s;
 
-  &:hover {
+  @media #{$desktopDownScreen} {
+    &:hover {
+      color: var(--color-link);
+    }
+  }
+
+  &:active {
     color: var(--color-link);
+  }
+}
+
+.important__hover {
+  @media #{$desktopDownScreen} {
+    &:hover {
+      color: var(--color-link-contact);
+    }
   }
 }
 
@@ -24,22 +44,17 @@ h2 {
   transition: .4s;
 }
 
+.important {
+  color: var(--color-link);
+  font-weight: var(--weight-bold);
+}
+
 h3 {
   font-size: 1.1em;
   font-weight: var(--weight-bold);
   color: var(--color-heading);
 }
 
-.important {
-  color: var(--color-link);
-  font-weight: var(--weight-bold);
-}
-
-.important__hover {
-  &:hover {
-    color: var(--color-link-contact);
-  }
-}
 
 i {
   display: inline-flex;

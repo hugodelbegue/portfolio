@@ -23,7 +23,7 @@ import AboutMe from '@/components/AboutMe.vue'
         </div>
         <Transition name="transition__text" appear>
             <div v-if="$route.name == 'HomeView'" class="layout__aboutme">
-                <Logo>
+                <Logo class="avatar">
                     <template #picture>
                         <img alt="Avatar" src="@/assets/img/avatar.png" width="125" />
                     </template>
@@ -69,6 +69,10 @@ header {
         flex-direction: column;
         gap: 2.5em;
     }
+
+    @media #{$mobileMediumScreen} {
+        margin-bottom: 5em;
+    }
 }
 
 .layout__switch {
@@ -76,6 +80,12 @@ header {
     place-content: center;
     place-items: center;
     margin-left: 1em;
+}
+
+.avatar {
+    @media #{$mobileMediumScreen} {
+        display: none;
+    }
 }
 
 span {

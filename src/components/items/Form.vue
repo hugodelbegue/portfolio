@@ -203,7 +203,13 @@ input[type="email"] {
         height: 25em;
         background: var(--color-background-soft);
 
-        &:hover,
+        @media #{$desktopDownScreen} {
+            &:hover {
+                border: 2px dashed var(--color-button-hover);
+                background: var(--color-background-focus);
+            }
+        }
+
         &:focus,
         &:focus-visible {
             border: 2px dashed var(--color-button-hover);
@@ -263,10 +269,6 @@ input[type="email"] {
     place-content: flex-end;
     place-items: center;
     column-gap: 1em;
-
-    a:hover {
-        color: inherit;
-    }
 
     svg {
         width: 27px;
