@@ -22,7 +22,7 @@ import { dataList } from '@/components/data/data.js'
                             <div class="layout__title">{{ data.title }}</div>
                         </template>
                         <template #image>
-                            <RenderProjectImg :src="data.img" :alt="data.title" :title="data.title" />
+                            <RenderProjectImg :src="imgUrl(data.img)" :alt="data.title" :title="data.title" />
                         </template>
                         <template #language>
                             <div class="layout__language">
@@ -46,6 +46,9 @@ export default {
             choice: "",
             cleanString(name) {
                 return name.replace(/[./\/]/g, "");
+            },
+            imgUrl(file) {
+                return new URL(`../assets/img/previews/${file}`, import.meta.url).href;
             }
         }
     },
@@ -61,7 +64,7 @@ export default {
                     return items;
                 }
             })
-        },
+        }
     },
     methods: {
         showAll() {

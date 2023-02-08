@@ -91,20 +91,21 @@ export default {
             if (this.errors.length === 0) {
                 this.formData = { name: '', email: '', message: '' };
                 this.submit = true;
-                setTimeout(() => {
-                    this.submit = false;
-                }, 1400)
             } else {
                 console.error(`Les champs suivants sont manquants: ${this.errors.join(', ')}`);
                 return;
             }
-            emailjs.sendForm(serviceId, templateId, this.$refs.form, publicKey)
-                .then((res) => {
-                    console.log('Success.', res.text);
-                })
-                .catch((err) => {
-                    console.error('Erreur lors de l\'envoi.', err.text)
-                })
+            setTimeout(() => {
+                this.submit = false;
+                emailjs.sendForm(serviceId, templateId, this.$refs.form, publicKey)
+                    .then((res) => {
+                        console.log('Success.', res.text);
+                    })
+                    .catch((err) => {
+                        console.error('Erreur lors de l\'envoi.', err.text)
+                    })
+            }, 1400)
+
         }
     },
 }

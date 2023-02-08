@@ -53,7 +53,7 @@ export default {
     font-size: 90%;
   }
 
-  @media #{$mobileDownScreen} {
+  @media #{$mobileMediumScreen} {
     font-size: 80%;
   }
 }
@@ -99,7 +99,7 @@ footer {
     position: absolute;
     bottom: 0%;
     width: 100%;
-    height: 14vh;
+    height: 14em;
     background: var(--color-background-band-1);
     border-radius: 0% 100% 0% 0%;
 
@@ -126,11 +126,11 @@ footer {
     }
 
     @media #{$tabletScreen} {
-      height: 17vh;
+      height: 21em;
     }
 
     @media #{$mobileMediumScreen} {
-      height: 24vh;
+      height: 24em;
     }
 
     @media #{$mobileDownScreen} {
@@ -143,7 +143,7 @@ footer {
     position: absolute;
     bottom: 0%;
     right: 0%;
-    height: 15vh;
+    height: 15em;
     width: 100%;
     background: var(--color-background-band-1);
     border-radius: 100% 0% 0% 0%;
@@ -174,11 +174,11 @@ footer {
     }
 
     @media #{$tabletScreen} {
-      height: 18vh;
+      height: 22em;
     }
 
     @media #{$mobileMediumScreen} {
-      height: 25vh;
+      height: 25em;
     }
 
     @media #{$mobileDownScreen} {

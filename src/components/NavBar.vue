@@ -93,7 +93,7 @@ import IconPen from '@/components/icons/IconPen.vue'
                 </div>
             </div>
             <!-- Link CV download -->
-            <a ref="download" href="/src/assets/upload/CV_HugoDELBEGUE.pdf" target="_blank" rel="noreferrer"
+            <a ref="download" :href="downloadUrl('CV_HugoDELBEGUE.pdf')" target="_blank" rel="noreferrer"
                 download="CV_hugodelbegue" title="Téléchagement CV pdf">
                 <Link class="downloadCV">
                 <template #title>
@@ -110,6 +110,13 @@ import IconPen from '@/components/icons/IconPen.vue'
 
 <script>
 export default {
+    data() {
+        return {
+            downloadUrl(file) {
+                return new URL(`../assets/upload/${file}`, import.meta.url).href;
+            }
+        }
+    },
     methods: {
         // Open and close links menu
         toggleMenu() {
