@@ -26,9 +26,7 @@ import emailjs from '@emailjs/browser'
             </div>
             <div class="submit">
                 <Button type="submit" padding="1" width="100" msg="Envoyer" />
-                <Transition name="animation__submit">
-                    <div v-if="this.animSubmit" class="anim__submit"></div>
-                </Transition>
+                <div :class="animation" class="anim__submit"></div>
             </div>
             <div class="errors">
                 <div v-if="errors.length">
@@ -70,6 +68,13 @@ export default {
     },
     mounted() {
         this.$refs.name.focus();
+    },
+    computed: {
+        animation() {
+            return {
+                animation__submit: this.animSubmit == true
+            };
+        },
     },
     methods: {
         // Send form
@@ -254,6 +259,8 @@ input[type="email"] {
     background: transparent;
     height: 30px;
     filter: drop-shadow(2px 3px 1px var(--color-border-1));
+    display: none;
+
 }
 
 .social {
@@ -277,7 +284,8 @@ input[type="email"] {
 }
 
 // Transition
-.animation__submit-enter-active {
+.animation__submit {
+    display: block;
     animation: appearance 1.5s ease;
 }
 
