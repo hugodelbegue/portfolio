@@ -9,11 +9,10 @@ import emailjs from '@emailjs/browser'
 <template>
     <div class="form">
         <h2>Pour me&nbsp;<strong class="important">contacter</strong>.</h2>
-        <form @submit.prevent="sendMail()" ref="form" method="post">
+        <form @submit.prevent="sendMail" ref="form" method="post">
             <div class="name">
                 <label for="name">
-                    <input v-model="formData.name" ref="name" type="text" name="name" placeholder="Votre nom & prenom"
-                        autofocus>
+                    <input v-model="formData.name" ref="name" type="text" name="name" placeholder="Votre nom & prenom">
                 </label>
             </div>
             <div class="email">
@@ -27,8 +26,8 @@ import emailjs from '@emailjs/browser'
             </div>
             <div class="submit">
                 <Button type="submit" padding="1" width="100" msg="Envoyer" />
-                <Transition name="animation__submit" appear>
-                    <div v-if="this.submit" class="anim__submit"></div>
+                <Transition name="animation__submit">
+                    <div v-if="this.animSubmit" class="anim__submit"></div>
                 </Transition>
             </div>
             <div class="errors">
@@ -66,7 +65,7 @@ export default {
                 message: null
             },
             errors: [],
-            submit: false
+            animSubmit: false
         }
     },
     mounted() {
@@ -74,38 +73,36 @@ export default {
     },
     methods: {
         // Send form
-        sendMail() {
+        async sendMail() {
             const serviceId = 'service_kj8g0gs';
             const templateId = 'template_uywc7uk';
             const publicKey = 'qH3WgmDhYRov4CSQq';
             this.errors = [];
             if (!this.formData.name) {
-                this.errors.push('#nom/prénom')
+                this.errors.push('#nom/prénom');
             }
             if (!this.formData.email) {
-                this.errors.push('#email')
+                this.errors.push('#email');
             }
             if (!this.formData.message) {
-                this.errors.push('#demande')
+                this.errors.push('#demande');
             }
-            if (this.errors.length === 0) {
-                this.formData = { name: '', email: '', message: '' };
-                this.submit = true;
+            if (this.errors.length === 0 && this.formData) {
+                try {
+                    await emailjs.sendForm(serviceId, templateId, this.$refs.form, publicKey);
+                    console.log('Success');
+                    this.animSubmit = true;
+                } catch (error) {
+                    console.error('Erreur lors de l\'envoi.', error.text);
+                } finally {
+                    this.formData = { name: null, email: null, message: null };
+                    setTimeout(() => {
+                        this.animSubmit = false;
+                    }, 1500)
+                }
             } else {
                 console.error(`Les champs suivants sont manquants: ${this.errors.join(', ')}`);
-                return;
             }
-            setTimeout(() => {
-                this.submit = false;
-                emailjs.sendForm(serviceId, templateId, this.$refs.form, publicKey)
-                    .then((res) => {
-                        console.log('Success.', res.text);
-                    })
-                    .catch((err) => {
-                        console.error('Erreur lors de l\'envoi.', err.text)
-                    })
-            }, 1400)
-
         }
     },
 }
@@ -146,10 +143,6 @@ textarea {
 
     &::placeholder {
         font-variant-caps: small-caps;
-    }
-
-    &:hover {
-        cursor: pointer;
     }
 }
 

@@ -32,6 +32,7 @@ defineProps({
         border-radius: 2px;
         box-shadow: 3px 3px 0px var(--color-border-1);
         transition: all .25s;
+        cursor: pointer;
 
         @media #{$desktopDownScreen} {
             &:hover {
@@ -40,7 +41,6 @@ defineProps({
                 background: var(--color-button-hover);
                 border: 1px solid var(--color-button-hover);
                 box-shadow: 1px 1px 0px var(--color-border-1);
-                cursor: pointer;
             }
         }
 

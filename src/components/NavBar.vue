@@ -316,10 +316,8 @@ label.elev {
 
         @media #{$desktopDownScreen} {
             &:hover {
-                &:hover {
-                    background-color: var(--color-background-download-6);
-                    box-shadow: 0 1px 3px var(--color-border-1);
-                }
+                background-color: var(--color-background-download-6);
+                box-shadow: 0 1px 3px var(--color-border-1);
             }
         }
 

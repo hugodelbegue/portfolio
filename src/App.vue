@@ -2,11 +2,12 @@
 import Header from '@/layouts/Header.vue'
 import Main from '@/layouts/Main.vue'
 import Footer from '@/layouts/Footer.vue'
+import ReturnTop from './components/items/ReturnTop.vue';
 </script>
 
 <template>
   <div class="layout" :class="showPaint">
-    <div class="header__part">
+    <div ref="top" class="header__part">
       <Header />
       <hr class="line__header">
     </div>
@@ -21,6 +22,7 @@ import Footer from '@/layouts/Footer.vue'
           <div v-if="$route.name == 'ContactView'" class="band__right"></div>
         </Transition>
       </div>
+      <ReturnTop @click="top" />
     </div>
 
   </div>
@@ -28,6 +30,13 @@ import Footer from '@/layouts/Footer.vue'
 
 <script>
 export default {
+  methods: {
+    // Return to the top
+    top() {
+      const { top } = this.$refs;
+      top.scrollIntoView({ behavior: 'smooth' });
+    }
+  },
   computed: {
     showPaint() {
       return {
@@ -129,12 +138,20 @@ footer {
       height: 21em;
     }
 
+    @media only screen and (max-width: 620px) {
+      height: 23em;
+    }
+
     @media #{$mobileMediumScreen} {
-      height: 24em;
+      height: 25em;
+    }
+
+    @media only screen and (max-width: 447px) {
+      height: 30em;
     }
 
     @media #{$mobileDownScreen} {
-      height: 30em;
+      height: 33em;
     }
   }
 
@@ -177,12 +194,20 @@ footer {
       height: 22em;
     }
 
+    @media only screen and (max-width: 620px) {
+      height: 24em;
+    }
+
     @media #{$mobileMediumScreen} {
-      height: 25em;
+      height: 26em;
+    }
+
+    @media only screen and (max-width: 447px) {
+      height: 31em;
     }
 
     @media #{$mobileDownScreen} {
-      height: 31em;
+      height: 34em;
     }
   }
 }

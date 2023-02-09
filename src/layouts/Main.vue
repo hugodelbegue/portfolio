@@ -28,7 +28,7 @@ main {
     padding-bottom: 15em;
 
     @media #{$mobileMediumScreen} {
-        padding-bottom: 3em;
+        padding-bottom: 5em;
     }
 }
 
