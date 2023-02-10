@@ -9,10 +9,10 @@ a,
 .mentions__link {
   text-decoration: none;
   color: inherit;
-  transition: .3s;
 
   @media #{$desktopDownScreen} {
     &:hover {
+      transition: .3s;
       color: var(--color-link);
     }
   }
@@ -58,6 +58,7 @@ h3 {
   font-size: 1.1em;
   font-weight: var(--weight-bold);
   color: var(--color-heading);
+  transition: .4s;
 }
 
 
