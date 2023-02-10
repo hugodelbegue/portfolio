@@ -69,7 +69,6 @@
   // layout
   --size-project: var(--size-project-desktop);
   --size-project-desktop: 350px;
-  --size-project-mobile: 250px;
 
   --desktop-up: 1620px;
   --desktop-medium: 1440px;
@@ -81,11 +80,6 @@
 }
 
 /* semantic color variables for this project */
-@media only screen and (max-width: 450px) {
-  :root {
-    --size-project: var(--size-project-mobile);
-  }
-}
 
 .theme__light {
   --color-background: var(--linear-background-light);

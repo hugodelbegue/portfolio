@@ -20,13 +20,14 @@ import Legality from '@/components/Legality.vue'
 footer {
     display: flex;
     justify-content: center;
-    padding-top: 2.3em;
+    padding-top: 3em;
     padding-bottom: 2.3rem;
     font-size: .9em;
 
     @media #{$tabletScreen} {
         flex-direction: column-reverse;
         gap: 2em;
+        font-size: 1em;
     }
 }
 

@@ -265,12 +265,20 @@
 </template>
 
 <style lang="scss" scoped>
+@import '@/assets/scss/responsive.scss';
+
 .official {
     padding: 4em;
-    padding-top: 1em;
+    padding-top: 0;
     max-height: 100%;
     width: 100%;
     color: var(--text-light);
+
+    @media #{$mobileUpScreen} {
+        padding-bottom: 1em;
+        padding-left: 2em;
+        padding-right: .1em;
+    }
 
     h3 {
         color: var(--text-light);
@@ -290,8 +298,8 @@
 
     .scroll {
         overflow-y: scroll;
-        height: calc(84.8em - 1em);
-        padding: 1em;
+        height: calc(58vh - 1em);
+        padding-right: 2em;
         border-bottom: 2px solid var(--line-light);
     }
 }

@@ -13,18 +13,11 @@ import ReturnTop from './components/items/ReturnTop.vue';
     </div>
     <Main />
     <div class="footer__part">
+      <div :class="bandLeft"></div>
+      <div :class="bandRight"></div>
       <Footer />
-      <div class="layout__band">
-        <Transition name="transition__band__left" appear>
-          <div v-if="$route.name == 'ContactView'" class="band__left"></div>
-        </Transition>
-        <Transition name="transition__band__right" appear>
-          <div v-if="$route.name == 'ContactView'" class="band__right"></div>
-        </Transition>
-      </div>
       <ReturnTop @click="top" />
     </div>
-
   </div>
 </template>
 
@@ -40,7 +33,17 @@ export default {
   computed: {
     showPaint() {
       return {
-        paint: this.$route.name == 'HomeView'
+        paint: this.$route.name == 'HomeView',
+      }
+    },
+    bandLeft() {
+      return {
+        band__left: this.$route.name == 'ContactView',
+      }
+    },
+    bandRight() {
+      return {
+        band__right: this.$route.name == 'ContactView'
       }
     }
   }
@@ -87,6 +90,12 @@ main {
 footer {
   padding-left: max(5em, (calc(50% - var(--desktop-up) / 2)));
   padding-right: max(5em, (calc(50% - var(--desktop-up) / 2)));
+  position: relative;
+
+  @media #{$tabletScreen} {
+    padding-left: 2em;
+    padding-right: 2em;
+  }
 }
 
 // Label background
@@ -99,134 +108,92 @@ footer {
 }
 
 // Colored stripes footer
-.layout__band {
+.footer__part {
   position: relative;
-  width: 100%;
+}
 
-  .band__left {
-    z-index: -1;
+.band__left {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background: var(--color-background-band-1);
+  border-radius: 0% 100% 0% 0%;
+  animation: animationbandleft .8s ease;
+
+  &::before {
+    content: "";
     position: absolute;
     bottom: 0%;
+    display: flex;
+    height: 120%;
     width: 100%;
-    height: 14em;
-    background: var(--color-background-band-1);
+    background: var(--color-background-band-2);
     border-radius: 0% 100% 0% 0%;
-
-    &::before {
-      content: "";
-      position: absolute;
-      bottom: 0%;
-      display: flex;
-      height: 120%;
-      width: 100%;
-      background: var(--color-background-band-2);
-      border-radius: 0% 100% 0% 0%;
-    }
-
-    &::after {
-      content: "";
-      position: absolute;
-      bottom: 0%;
-      display: flex;
-      width: 100%;
-      height: 115%;
-      background: var(--color-background-band-3);
-      border-radius: 100% 100% 0% 0%;
-    }
-
-    @media #{$tabletScreen} {
-      height: 21em;
-    }
-
-    @media only screen and (max-width: 620px) {
-      height: 23em;
-    }
-
-    @media #{$mobileMediumScreen} {
-      height: 25em;
-    }
-
-    @media only screen and (max-width: 447px) {
-      height: 30em;
-    }
-
-    @media #{$mobileDownScreen} {
-      height: 33em;
-    }
   }
 
-  .band__right {
-    z-index: -2;
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: 0%;
+    display: flex;
+    width: 100%;
+    height: 115%;
+    background: var(--color-background-band-3);
+    border-radius: 100% 100% 0% 0%;
+  }
+}
+
+.band__right {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background: var(--color-background-band-1);
+  border-radius: 100% 0% 0% 0%;
+  animation: animationbandright .8s ease;
+
+  &::before {
+    content: "";
     position: absolute;
     bottom: 0%;
     right: 0%;
-    height: 15em;
-    width: 100%;
-    background: var(--color-background-band-1);
+    display: flex;
+    height: 115%;
+    width: 60%;
+    background: var(--color-background-band-2);
     border-radius: 100% 0% 0% 0%;
+  }
 
-    &::before {
-      content: "";
-      position: absolute;
-      bottom: 0%;
-      right: 0%;
-      display: flex;
-      height: 115%;
-      width: 60%;
-      background: var(--color-background-band-2);
-      border-radius: 100% 0% 0% 0%;
-      transition: .1s;
-    }
-
-    &::after {
-      content: "";
-      position: absolute;
-      bottom: 0%;
-      right: 0%;
-      display: flex;
-      height: 120%;
-      width: 70%;
-      background: var(--color-background-band-3);
-      border-radius: 100% 100% 0% 0%;
-    }
-
-    @media #{$tabletScreen} {
-      height: 22em;
-    }
-
-    @media only screen and (max-width: 620px) {
-      height: 24em;
-    }
-
-    @media #{$mobileMediumScreen} {
-      height: 26em;
-    }
-
-    @media only screen and (max-width: 447px) {
-      height: 31em;
-    }
-
-    @media #{$mobileDownScreen} {
-      height: 34em;
-    }
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: 0%;
+    right: 0%;
+    display: flex;
+    height: 120%;
+    width: 70%;
+    background: var(--color-background-band-3);
+    border-radius: 100% 100% 0% 0%;
   }
 }
 
-// Transitions
-.transition__band__left-enter-active,
-.transition__band__left-leave-active,
-.transition__band__right-enter-active,
-.transition__band__right-leave-active {
-  transition: transform .8s ease;
+// Animations
+@keyframes animationbandleft {
+  0% {
+    transform: translateX(-50%);
+  }
+
+  100% {
+    transform: translateX(0%);
+  }
 }
 
-.transition__band__left-enter-from,
-.transition__band__left-leave-to {
-  transform: translateX(-50%);
-}
+@keyframes animationbandright {
+  0% {
+    transform: translateX(50%);
+  }
 
-.transition__band__right-enter-from,
-.transition__band__right-leave-to {
-  transform: translateX(50%);
+  100% {
+    transform: translateX(0%);
+  }
 }
 </style>

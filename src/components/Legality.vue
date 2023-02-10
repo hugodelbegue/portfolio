@@ -6,8 +6,9 @@ import Mentions from '@/components/Mentions.vue'
 <template>
     <div class="legality">
         <div class="copyright">
-            <p>© Copyright 2023 - Hugo DELBEGUE | <a :class="classLink" @click="openMentions">Mentions Légales</a> | <a
-                    :class="classLink" href="https://www.infomaniak.com/fr/ecologie" target="_blank">Hébergé par
+            <p>© Copyright 2023 - Hugo DELBEGUE | <span class="mentions__link" :class="classLink"
+                    @click="openMentions">Mentions Légales</span>
+                | <a :class="classLink" href="https://www.infomaniak.com/fr/ecologie" target="_blank">Hébergé par
                     Infomaniak</a>.
                 <i>
                     <IconFingerprint />
@@ -32,7 +33,7 @@ export default {
     methods: {
         openMentions() {
             const { mentions } = this.$refs;
-            mentions.style.display = "block";
+            mentions.style.display = "flex";
             document.body.style.overflow = "hidden";
         },
         closeMentions() {
@@ -52,10 +53,21 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import '@/assets/scss/responsive.scss';
+
 .legality {
     font-size: .8em;
 
-    a {
+    @media #{$tabletScreen} {
+        font-size: .9em;
+    }
+
+    @media #{$mobileUpScreen} {
+        font-size: 1em;
+    }
+
+    a,
+    span {
         cursor: pointer;
     }
 
@@ -70,14 +82,15 @@ svg {
 }
 
 .mentions {
+    z-index: 1;
     display: none;
+    place-items: center;
     background-color: transparent;
     backdrop-filter: blur(10px);
     position: fixed;
     top: 0;
     left: 0;
     height: 100vh;
-    padding: 20em;
     padding-right: max(1em, (calc(50% - var(--mobile-up) / 2)));
     padding-left: max(1em, (calc(50% - var(--mobile-up) / 2)));
 }
@@ -86,6 +99,7 @@ svg {
     background: var(--parchment);
     border-radius: 5px;
     max-height: 100%;
+    overflow-y: hidden;
 }
 
 .header__mentions {

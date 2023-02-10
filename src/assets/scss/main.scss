@@ -5,7 +5,8 @@
 }
 
 a,
-.burger {
+.burger,
+.mentions__link {
   text-decoration: none;
   color: inherit;
   transition: .3s;
@@ -26,6 +27,10 @@ a,
     &:hover {
       color: var(--color-link-contact);
     }
+  }
+
+  &:active {
+    color: var(--color-link-contact);
   }
 }
 

@@ -96,8 +96,11 @@ export default {
         position: relative;
         display: flex;
         background-color: var(--color-background-project);
-        width: var(--size-project);
-        height: var(--size-project);
+        max-width: var(--size-project);
+        max-height: var(--size-project);
+        width: 100%;
+        height: auto;
+        aspect-ratio: 1/1;
         padding: .5em;
         border-radius: 3px;
         border: 2px solid var(--color-border-1);
@@ -110,8 +113,9 @@ export default {
             position: absolute;
             top: 2px;
             left: 2px;
-            width: var(--size-project);
-            height: var(--size-project);
+            width: 100%;
+            height: auto;
+            aspect-ratio: 1/1;
             box-shadow: 0 2px 4px var(--color-border-1);
             border-radius: 3px;
             background: var(--color-background-project);
@@ -126,8 +130,9 @@ export default {
             position: absolute;
             top: 3px;
             left: 2px;
-            width: var(--size-project);
-            height: var(--size-project);
+            width: 100%;
+            height: auto;
+            aspect-ratio: 1/1;
             box-shadow: 0 2px 4px var(--color-border-1);
             border-radius: 3px;
             background: var(--color-background-project);

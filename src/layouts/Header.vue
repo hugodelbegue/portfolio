@@ -25,7 +25,7 @@ import AboutMe from '@/components/AboutMe.vue'
             <div v-if="$route.name == 'HomeView'" class="layout__aboutme">
                 <Logo class="avatar">
                     <template #picture>
-                        <img alt="Avatar" src="@/assets/img/avatar.png" width="125" />
+                        <img class="avatar__img" alt="Avatar" src="@/assets/img/avatar.svg" />
                     </template>
                 </Logo>
                 <AboutMe />
@@ -86,6 +86,12 @@ header {
     @media #{$mobileMediumScreen} {
         display: none;
     }
+}
+
+.avatar__img {
+    width: 125px;
+    height: auto;
+    aspect-ratio: calc(264 / 447) / 1;
 }
 
 span {

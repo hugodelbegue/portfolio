@@ -97,6 +97,10 @@ export default {
             flex-wrap: wrap;
             gap: 1em;
         }
+
+        li {
+            padding: 0 1em;
+        }
     }
 
     svg {
