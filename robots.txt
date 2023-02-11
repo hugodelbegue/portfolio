@@ -1,0 +1,2 @@
+User-agent: Googlebot
+Sitemap: http://hugodelbegue.fr/sitemap.xml
