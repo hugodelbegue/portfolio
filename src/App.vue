@@ -127,7 +127,7 @@ footer {
     position: absolute;
     top: 0%;
     display: flex;
-    height: 120%;
+    height: 110%;
     width: 100%;
     background: var(--color-background-band-2);
     border-radius: 0% 0% 100% 0%;
@@ -138,22 +138,33 @@ footer {
     position: absolute;
     top: 0%;
     display: flex;
+    height: 95%;
     width: 100%;
-    height: 115%;
     background: var(--color-background-band-3);
     border-radius: 0% 0% 100% 100%;
   }
 
   @media #{$mobileUpScreen} {
-    height: 18em;
+    height: 16.5em;
+    border-radius: 0% 0% 80% 0%;
+
+    &::before {
+      border-radius: 0% 0% 80% 0%;
+      height: 105%;
+    }
+
+    &::after {
+      border-radius: 0% 0% 80% 80%;
+      height: 102.5%;
+    }
   }
 
   @media only screen and (max-width: 391px) {
-    height: 23.5em;
+    height: 21.5em;
   }
 
   @media only screen and (max-width: 300px) {
-    height: 29.5em;
+    height: 27.5em;
   }
 }
 
@@ -164,7 +175,7 @@ footer {
   width: 100%;
   background: var(--color-background-band-1);
   border-radius: 0% 0% 0% 100%;
-  animation: animationbandright .8s ease;
+  animation: animationbandright .5s ease;
 
   &::before {
     content: "";
@@ -172,7 +183,7 @@ footer {
     top: 0%;
     right: 0%;
     display: flex;
-    height: 115%;
+    height: 110%;
     width: 60%;
     background: var(--color-background-band-2);
     border-radius: 0% 0% 0% 100%;
@@ -191,22 +202,33 @@ footer {
   }
 
   @media #{$mobileUpScreen} {
-    height: 18em;
+    height: 16.5em;
+    border-radius: 0% 0% 0% 80%;
+
+    &::before {
+      border-radius: 0% 0% 0% 80%;
+      height: 102.5%;
+    }
+
+    &::after {
+      border-radius: 0% 0% 80% 80%;
+      height: 102.5%;
+    }
   }
 
   @media only screen and (max-width: 391px) {
-    height: 23.5em;
+    height: 21.5em;
   }
 
   @media only screen and (max-width: 300px) {
-    height: 29.5em;
+    height: 27.5em;
   }
 }
 
 // Animations
 @keyframes animationbandleft {
   0% {
-    transform: translateX(-50%);
+    transform: translateX(-20%);
   }
 
   100% {
@@ -216,7 +238,7 @@ footer {
 
 @keyframes animationbandright {
   0% {
-    transform: translateX(50%);
+    transform: translateX(20%);
   }
 
   100% {

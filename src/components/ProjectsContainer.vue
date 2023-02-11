@@ -93,7 +93,7 @@ export default {
         display: flex;
         justify-content: center;
         flex-wrap: wrap;
-        gap: 3.3em;
+        gap: 2.3em;
         min-height: calc((var(--size-project) * 2) + 3.3em);
     }
 

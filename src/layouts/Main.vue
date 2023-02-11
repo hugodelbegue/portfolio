@@ -15,7 +15,8 @@ main {
     padding-top: 3em;
     padding-bottom: 15em;
 
-    @media #{$mobileMediumScreen} {
+    @media #{$mobileUpScreen} {
+        padding-top: 2em;
         padding-bottom: 5em;
     }
 }
