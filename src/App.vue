@@ -7,14 +7,14 @@ import ReturnTop from './components/items/ReturnTop.vue';
 
 <template>
   <div class="layout" :class="showPaint">
+    <div :class="bandLeft" style="display: none;"></div>
+    <div :class="bandRight" style="display: none;"></div>
     <div ref="top" class="header__part">
       <Header />
       <hr class="line__header">
     </div>
     <Main />
     <div class="footer__part">
-      <div :class="bandLeft"></div>
-      <div :class="bandRight"></div>
       <Footer />
       <ReturnTop @click="top" />
     </div>
@@ -33,17 +33,17 @@ export default {
   computed: {
     showPaint() {
       return {
-        paint: this.$route.name == 'HomeView',
+        paint: this.$route.name == 'HomeView' || this.$route.name == 'ContactView'
       }
     },
     bandLeft() {
       return {
-        band__left: this.$route.name == 'ContactView',
+        band__left: this.$route.name == 'ProjectView'
       }
     },
     bandRight() {
       return {
-        band__right: this.$route.name == 'ContactView'
+        band__right: this.$route.name == 'ProjectView'
       }
     }
   }
@@ -75,11 +75,13 @@ export default {
   margin-right: max(5em, calc((50% - var(--desktop-up) / 2) + 5em));
   border: 2px solid var(--color-border-2);
   border-radius: 2px;
+  position: relative;
 }
 
 header {
   padding-left: max(1em, (calc(50% - var(--desktop-up) / 2)));
   padding-right: max(1em, (calc(50% - var(--desktop-up) / 2)));
+  position: relative;
 }
 
 main {
@@ -90,7 +92,6 @@ main {
 footer {
   padding-left: max(5em, (calc(50% - var(--desktop-up) / 2)));
   padding-right: max(5em, (calc(50% - var(--desktop-up) / 2)));
-  position: relative;
 
   @media #{$tabletScreen} {
     padding-left: 2em;
@@ -108,71 +109,97 @@ footer {
 }
 
 // Colored stripes footer
-.footer__part {
+.header__part {
   position: relative;
 }
 
 .band__left {
+  display: block !important;
   position: absolute;
-  height: 100%;
+  height: 17em;
   width: 100%;
   background: var(--color-background-band-1);
-  border-radius: 0% 100% 0% 0%;
+  border-radius: 0% 0% 100% 0%;
   animation: animationbandleft .8s ease;
 
   &::before {
     content: "";
     position: absolute;
-    bottom: 0%;
+    top: 0%;
     display: flex;
     height: 120%;
     width: 100%;
     background: var(--color-background-band-2);
-    border-radius: 0% 100% 0% 0%;
+    border-radius: 0% 0% 100% 0%;
   }
 
   &::after {
     content: "";
     position: absolute;
-    bottom: 0%;
+    top: 0%;
     display: flex;
     width: 100%;
     height: 115%;
     background: var(--color-background-band-3);
-    border-radius: 100% 100% 0% 0%;
+    border-radius: 0% 0% 100% 100%;
+  }
+
+  @media #{$mobileUpScreen} {
+    height: 18em;
+  }
+
+  @media only screen and (max-width: 391px) {
+    height: 23.5em;
+  }
+
+  @media only screen and (max-width: 300px) {
+    height: 29.5em;
   }
 }
 
 .band__right {
+  display: block !important;
   position: absolute;
-  height: 100%;
+  height: 12em;
   width: 100%;
   background: var(--color-background-band-1);
-  border-radius: 100% 0% 0% 0%;
+  border-radius: 0% 0% 0% 100%;
   animation: animationbandright .8s ease;
 
   &::before {
     content: "";
     position: absolute;
-    bottom: 0%;
+    top: 0%;
     right: 0%;
     display: flex;
     height: 115%;
     width: 60%;
     background: var(--color-background-band-2);
-    border-radius: 100% 0% 0% 0%;
+    border-radius: 0% 0% 0% 100%;
   }
 
   &::after {
     content: "";
     position: absolute;
-    bottom: 0%;
+    top: 0%;
     right: 0%;
     display: flex;
     height: 120%;
     width: 70%;
     background: var(--color-background-band-3);
-    border-radius: 100% 100% 0% 0%;
+    border-radius: 0% 0% 100% 100%;
+  }
+
+  @media #{$mobileUpScreen} {
+    height: 18em;
+  }
+
+  @media only screen and (max-width: 391px) {
+    height: 23.5em;
+  }
+
+  @media only screen and (max-width: 300px) {
+    height: 29.5em;
   }
 }
 

@@ -5,7 +5,7 @@ import { skillList } from '@/components/data/skills'
 </script>
 
 <template>
-    <h2><strong class="important">Compétences</strong>&nbsp;techniques</h2>
+    <h2><strong class="important">Compétences&nbsp;</strong>techniques</h2>
     <div class="AllSkills">
         <Skill v-for="skill in skillList" :number="skill.number">
             <template #text>

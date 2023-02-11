@@ -14,7 +14,7 @@ import IconPen from '@/components/icons/IconPen.vue'
         <div class="navbar">
             <!-- Menu desktop -->
             <div class="line_menu">
-                <RouterLink to="/">
+                <RouterLink to="/" :class="classLink">
                     <Link>
                     <template #icon>
                         <IconProfil />
@@ -24,7 +24,7 @@ import IconPen from '@/components/icons/IconPen.vue'
                     </template>
                     </Link>
                 </RouterLink>
-                <RouterLink to="/projects">
+                <RouterLink to="/projects" :class="classLink">
                     <Link>
                     <template #icon>
                         <IconPc />
@@ -34,7 +34,7 @@ import IconPen from '@/components/icons/IconPen.vue'
                     </template>
                     </Link>
                 </RouterLink>
-                <RouterLink to="/contact">
+                <RouterLink to="/contact" :class="classLink">
                     <Link>
                     <template #icon>
                         <IconPen />
@@ -48,7 +48,7 @@ import IconPen from '@/components/icons/IconPen.vue'
             <!-- Menu mobile -->
             <div class="burger_menu">
                 <input @change="toggleMenu" type="checkbox" id="burger">
-                <label ref="cross" for="burger" class="burger">
+                <label ref="cross" for="burger" class="burger" :class="classLink">
                     <div ref="animation" class="iconMenu"></div>
                 </label>
                 <div ref="burger_links" class="burger_links">
@@ -95,7 +95,7 @@ import IconPen from '@/components/icons/IconPen.vue'
             <!-- Link CV download -->
             <a ref="download" :href="downloadUrl('CV_HugoDELBEGUE.pdf')" target="_blank" rel="noreferrer"
                 download="CV_hugodelbegue" title="Téléchagement CV pdf">
-                <Link class="downloadCV">
+                <Link class="downloadCV" :class="classDownload">
                 <template #title>
                     <span>CV</span>
                 </template>
@@ -126,6 +126,18 @@ export default {
             cross.classList.toggle('elev');
             download.classList.toggle('elev');
             document.body.classList.toggle('hidden')
+        }
+    },
+    computed: {
+        classLink() {
+            return {
+                important__hover: this.$route.name == "ProjectView"
+            }
+        },
+        classDownload() {
+            return {
+                important__download: this.$route.name == "ProjectView"
+            }
         },
     }
 }

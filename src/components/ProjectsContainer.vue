@@ -7,7 +7,7 @@ import { dataList } from '@/components/data/data.js'
 </script>
 
 <template>
-    <h2>Mes&nbsp;<strong class="important">projets</strong>&nbsp;web</h2>
+    <h2 :class="classColor">Mes&nbsp;<strong class="important">projets</strong>&nbsp;web</h2>
     <div class="projectscontainer">
         <div class="selectors">
             <Button type="button" padding=".5" msg="Tous" @click="showAll" />
@@ -64,6 +64,11 @@ export default {
                     return items;
                 }
             })
+        },
+        classColor() {
+            return {
+                important__color: this.$route.name == "ProjectView"
+            }
         }
     },
     methods: {
@@ -203,6 +208,7 @@ export default {
 h2 {
     display: flex;
     flex-wrap: wrap;
+    position: relative;
 
     @media #{$mobileUpScreen} {
         place-content: center;

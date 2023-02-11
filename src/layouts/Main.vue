@@ -3,22 +3,10 @@ import { RouterView } from 'vue-router'
 </script>
 
 <template>
-    <main :class="bottom">
+    <main>
         <RouterView />
     </main>
 </template>
-
-<script>
-export default {
-    computed: {
-        bottom() {
-            return {
-                bottomSize: this.$route.name == 'ContactView'
-            }
-        }
-    }
-}
-</script>
 
 <style lang="scss" scoped>
 @import '@/assets/scss/responsive.scss';
@@ -30,9 +18,5 @@ main {
     @media #{$mobileMediumScreen} {
         padding-bottom: 5em;
     }
-}
-
-.bottomSize {
-    padding-bottom: 15em;
 }
 </style>

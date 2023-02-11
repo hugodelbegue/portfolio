@@ -11,7 +11,8 @@ import AboutMe from '@/components/AboutMe.vue'
             <Logo>
                 <template #picture>
                     <a href="/" title="Accueil">
-                        <img alt="PrimalProd logo" src="@/assets/img/logo.svg" width="50" height="50" />
+                        <img :class="classShadow" alt="PrimalProd logo" src="@/assets/img/logo.svg" width="50"
+                            height="50" />
                     </a>
                     <div class="layout__switch">
                         <SwitchButton />
@@ -33,6 +34,18 @@ import AboutMe from '@/components/AboutMe.vue'
         </Transition>
     </header>
 </template>
+
+<script>
+export default {
+    computed: {
+        classShadow() {
+            return {
+                important__shadow: this.$route.name == 'ProjectView',
+            }
+        }
+    }
+}
+</script>
 
 <style lang="scss" scoped>
 @import '@/assets/scss/responsive.scss';
