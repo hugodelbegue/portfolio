@@ -19,7 +19,7 @@ export const dataList = [
     {
         id: 2,
         url: "https://github.com/hugodelbegue/interactive-card-details-form-main",
-        img: "interactive_card_details_form_desktop.png",
+        img: "interactive_card_details_form.png",
         title: "Interactive card details form",
         frontend: true,
         backend: false,
@@ -34,7 +34,7 @@ export const dataList = [
     {
         id: 3,
         url: "https://github.com/hugodelbegue/notifications-page-main",
-        img: "notifications_page_desktop.png",
+        img: "notifications_page.png",
         title: "Notifications page",
         frontend: true,
         backend: false,
@@ -49,7 +49,7 @@ export const dataList = [
     {
         id: 4,
         url: "https://github.com/hugodelbegue/news-homepage-main",
-        img: "news_homepage_desktop.png",
+        img: "news_homepage.png",
         title: "News homepage",
         frontend: true,
         backend: false,
