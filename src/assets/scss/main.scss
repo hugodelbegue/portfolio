@@ -31,6 +31,7 @@ a,
   color: var(--color-link-important) !important;
 
   strong {
+    transition: .3s;
     color: var(--color-link-important) !important;
   }
 }
@@ -42,6 +43,7 @@ a,
     }
 
     &.router-link-active {
+      transition: .3s;
       color: var(--color-link-important) !important;
     }
   }
