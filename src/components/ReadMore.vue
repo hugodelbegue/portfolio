@@ -8,7 +8,7 @@
 
 <style lang="scss" scoped>
 .readmore {
-    border: 3px dashed var(--color-border-2);
+    border: 2px dashed var(--color-border-2);
     border-radius: 3px;
     padding: 1em;
     margin-bottom: 1em;

@@ -108,7 +108,7 @@ export default {
         aspect-ratio: 1/1;
         padding: .5em;
         border-radius: 3px;
-        border: 2px solid var(--color-border-1);
+        border: 1px solid var(--color-border-1);
         box-shadow: 0 2px 4px var(--color-border-1);
         transition: border .1s color .1s;
 
@@ -124,7 +124,7 @@ export default {
             box-shadow: 0 2px 4px var(--color-border-1);
             border-radius: 3px;
             background: var(--color-background-project);
-            border: 2px solid var(--color-border-1);
+            border: 1px solid var(--color-border-1);
             transition: transform .2s, border .2s;
             transform: rotate(-2.5deg);
         }
@@ -141,7 +141,7 @@ export default {
             box-shadow: 0 2px 4px var(--color-border-1);
             border-radius: 3px;
             background: var(--color-background-project);
-            border: 2px solid var(--color-border-1);
+            border: 1px solid var(--color-border-1);
             transition: transform .3s, border .3s;
             transform: rotate(.5deg);
         }
@@ -151,16 +151,16 @@ export default {
         .project:hover {
             cursor: pointer;
             color: var(--color-text-language);
-            border: 2px solid var(--color-text-language);
+            border: 1px solid var(--color-text-language);
 
             &::before {
                 transform: rotate(3deg);
-                border: 2px dashed var(--color-text-language);
+                border: 1px dashed var(--color-text-language);
             }
 
             &::after {
                 transform: rotate(8deg);
-                border: 2px dashed var(--color-text-language);
+                border: 1px dashed var(--color-text-language);
             }
         }
     }
@@ -168,16 +168,16 @@ export default {
     .project:active {
         cursor: pointer;
         color: var(--color-text-language);
-        border: 2px solid var(--color-text-language);
+        border: 1px solid var(--color-text-language);
 
         &::before {
             transform: rotate(3deg);
-            border: 2px dashed var(--color-text-language);
+            border: 1px dashed var(--color-text-language);
         }
 
         &::after {
             transform: rotate(8deg);
-            border: 2px dashed var(--color-text-language);
+            border: 1px dashed var(--color-text-language);
         }
     }
 

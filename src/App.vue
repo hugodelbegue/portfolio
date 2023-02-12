@@ -72,8 +72,8 @@ export default {
 
 .line__header {
   margin-left: max(5em, calc((50% - var(--desktop-up) / 2) + 4em));
-  margin-right: max(5em, calc((50% - var(--desktop-up) / 2) + 5em));
-  border: 2px solid var(--color-border-2);
+  margin-right: max(5em, calc((50% - var(--desktop-up) / 2) + 4em));
+  border: 1px solid var(--color-border-2);
   border-radius: 2px;
   position: relative;
 }

@@ -10,11 +10,8 @@ import VueWriter from 'vue-writer'
                 :iterations='1' />
         </h1>
         <p>
-            Dé<span class="letter">v</span>eloppeur web j<span class="letter">u</span>nior curi<span
-                class="letter">e</span>ux et impliqué, <span class="letter">j</span>e
-            <span class="letter">s</span>ouhaite mettre à
-            profit mes compétences pour mener à bien mes missions, en
-            cultivant de bonnes pratiques et un travail bien fait..
+            Développeur web junior curieux et impliqué, je souhaite mettre à profit mes compétences pour mener à bien
+            mes missions, en cultivant de <strong>bonnes pratiques</strong> et un <strong>travail bien fait</strong>..
         </p>
     </div>
 </template>
@@ -54,9 +51,8 @@ export default {
     p {
         font-size: 1.5em;
 
-        .letter {
-            font-family: 'Courier New', Courier, monospace;
-            color: var(--color-input);
+        strong {
+            font-weight: var(--weight-bold);
         }
     }
 }

@@ -314,7 +314,7 @@ label.elev {
         place-items: center;
         background-color: var(--color-background-download-25);
         color: var(--color-icon);
-        border: 3px dashed var(--color-button-border);
+        border: 2px dashed var(--color-button-border);
         border-radius: 5px;
         transition: background .3s, box-shadow .2s;
         padding: .3em .4em;

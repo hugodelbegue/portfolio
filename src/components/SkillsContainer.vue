@@ -36,7 +36,6 @@ h2 {
     display: flex;
     flex-wrap: wrap;
     place-content: center;
-    margin-bottom: 3em;
 
     @media #{$mobileMediumScreen} {
         margin-bottom: 1em;
