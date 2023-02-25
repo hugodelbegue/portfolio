@@ -1,7 +1,23 @@
 // Data projects
 export const dataList = [
     {
-        id: 1,
+        id: 9,
+        url: "https://github.com/hugodelbegue/space-tourism-website-main",
+        img: "space_tourism_website.png",
+        title: "Space tourism website",
+        frontend: true,
+        backend: false,
+        language: [
+            { name: "vue.js" },
+            { name: "javascript" },
+            { name: "sass" },
+            { name: "html" },
+            { name: "seo/référencement" },
+            { name: "node.js" }
+        ]
+    },
+    {
+        id: 8,
         url: "https://github.com/hugodelbegue/portfolio",
         img: "portfolio.png",
         title: "Portfolio",
@@ -17,7 +33,7 @@ export const dataList = [
         ]
     },
     {
-        id: 2,
+        id: 7,
         url: "https://github.com/hugodelbegue/interactive-card-details-form-main",
         img: "interactive_card_details_form.png",
         title: "Interactive card details form",
@@ -32,7 +48,7 @@ export const dataList = [
         ]
     },
     {
-        id: 3,
+        id: 6,
         url: "https://github.com/hugodelbegue/notifications-page-main",
         img: "notifications_page.png",
         title: "Notifications page",
@@ -47,7 +63,7 @@ export const dataList = [
         ]
     },
     {
-        id: 4,
+        id: 5,
         url: "https://github.com/hugodelbegue/news-homepage-main",
         img: "news_homepage.png",
         title: "News homepage",
@@ -61,7 +77,7 @@ export const dataList = [
         ]
     },
     {
-        id: 5,
+        id: 4,
         url: "https://github.com/hugodelbegue/vue",
         img: "vue.png",
         title: "Vue",
@@ -76,7 +92,7 @@ export const dataList = [
         ]
     },
     {
-        id: 6,
+        id: 3,
         url: "https://github.com/hugodelbegue/my-links",
         img: "my-links.png",
         title: "My links",
@@ -91,7 +107,7 @@ export const dataList = [
         ]
     },
     {
-        id: 7,
+        id: 2,
         url: "https://github.com/hugodelbegue/primalprod",
         img: "primalprod.png",
         title: "Primalprod",
@@ -105,7 +121,7 @@ export const dataList = [
         ]
     },
     {
-        id: 8,
+        id: 1,
         url: "https://github.com/hugodelbegue/teacozy",
         img: "teacozy.png",
         title: "Teacozy",
