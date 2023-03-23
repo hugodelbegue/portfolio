@@ -36,19 +36,19 @@ defineProps({
 
         @media #{$desktopDownScreen} {
             &:hover {
-                top: 3px;
-                left: 2.5px;
+                top: 4px;
+                left: 3px;
                 background: var(--color-button-hover);
-                border: 1px solid var(--color-button-hover);
-                box-shadow: 1px 1px 0px var(--color-border-1);
+                border: 1px solid var(--color-button-border);
+                box-shadow: 0px 0px 0px var(--color-border-1);
             }
         }
 
         &:active {
             top: 4px;
             left: 3px;
-            border: 1px solid var(--color-button-active);
             background: var(--color-button-active);
+            border: 1px solid var(--color-button-border);
             box-shadow: 0px 0px 10px 1px var(--color-border-1);
         }
 
