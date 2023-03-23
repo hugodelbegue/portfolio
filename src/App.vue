@@ -172,6 +172,10 @@ footer {
 .elev_band {
   z-index: 2;
 
+  @media #{$tabletScreen} {
+    height: 8em !important;
+  }
+
   @media #{$mobileMenuVisible} {
     z-index: initial;
   }
