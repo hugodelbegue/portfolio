@@ -1,13 +1,13 @@
 <script setup>
 import Skill from '@/components/items/Skill.vue'
 import RenderSkillIcon from '@/components/items/RenderSkillIcon.vue'
-import { skillList } from '@/components/data/skills'
+import JSONSKILL from '@/components/api/skills.json'
 </script>
 
 <template>
     <h2><strong class="important">Compétences&nbsp;</strong>techniques</h2>
     <div class="AllSkills">
-        <Skill v-for="skill in skillList" :number="skill.number">
+        <Skill v-for="skill in $options.skills" :number="skill.number">
             <template #text>
                 <p>{{ skill.name }}</p>
             </template>
@@ -17,6 +17,12 @@ import { skillList } from '@/components/data/skills'
         </Skill>
     </div>
 </template>
+
+<script>
+export default {
+    skills: JSONSKILL.skillList
+}
+</script>
 
 <style lang="scss" scoped>
 @import '@/assets/scss/responsive.scss';

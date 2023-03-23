@@ -8,7 +8,7 @@ import ReturnTop from './components/items/ReturnTop.vue';
 <template>
   <div class="layout" :class="showPaint">
     <div :class="bandLeft" style="display: none;"></div>
-    <div :class="bandRight" style="display: none;"></div>
+    <div ref="bandR" :class="bandRight" style="display: none;"></div>
     <div ref="top" class="header__part">
       <Header />
       <hr class="line__header">
@@ -165,6 +165,15 @@ footer {
 
   @media only screen and (max-width: 300px) {
     height: 27.5em;
+  }
+}
+
+// class for navbar
+.elev_band {
+  z-index: 2;
+
+  @media #{$mobileMenuVisible} {
+    z-index: initial;
   }
 }
 

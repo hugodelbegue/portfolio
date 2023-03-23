@@ -3,7 +3,7 @@ import Project from '@/components/items/Project.vue'
 import Language from '@/components/items/Language.vue'
 import Button from '@/components/items/Button.vue'
 import RenderProjectImg from '@/components/items/RenderProjectImg.vue';
-import { dataList } from '@/components/data/data.js'
+import JSONDATA from '@/components/api/data.json'
 </script>
 
 <template>
@@ -42,7 +42,7 @@ import { dataList } from '@/components/data/data.js'
 export default {
     data() {
         return {
-            dataList,
+            projects: JSONDATA,
             choice: "",
             cleanString(name) {
                 return name.replace(/[./\/]/g, "");
@@ -54,7 +54,7 @@ export default {
     },
     computed: {
         allData() {
-            return this.dataList.filter((items) => {
+            return this.projects.projectList.filter((items) => {
                 if (this.choice == "frontend") {
                     return items.frontend;
                 }

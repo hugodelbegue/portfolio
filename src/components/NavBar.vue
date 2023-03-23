@@ -110,6 +110,9 @@ import IconPen from '@/components/icons/IconPen.vue'
 
 <script>
 export default {
+    mounted() {
+        console.log(this.$root.$refs.bandR)
+    },
     data() {
         return {
             downloadUrl(file) {
@@ -125,6 +128,7 @@ export default {
             animation.classList.toggle('anim');
             cross.classList.toggle('elev');
             download.classList.toggle('elev');
+            this.$root.$refs.bandR.classList.toggle('elev_band');
             document.body.classList.toggle('hidden')
         }
     },
@@ -145,47 +149,6 @@ export default {
 
 <style lang="scss" scoped>
 @import '@/assets/scss/responsive.scss';
-
-.show {
-    display: flex !important;
-
-    @media #{$mobileMenuVisible} {
-        display: initial !important;
-    }
-}
-
-.elev {
-    position: fixed;
-    z-index: 2;
-
-    @media #{$mobileMenuVisible} {
-        position: static;
-    }
-}
-
-a.elev {
-    right: 1em;
-    top: 1em;
-}
-
-label.elev {
-    right: 6em;
-    top: 3em;
-}
-
-.anim {
-    transform: rotate(315deg);
-
-    &.iconMenu::before {
-        top: 0px !important;
-        transform: rotate(0deg);
-    }
-
-    &.iconMenu::after {
-        bottom: 3px !important;
-        transform: rotate(-90deg);
-    }
-}
 
 .navbar {
     display: flex;
@@ -248,18 +211,25 @@ label.elev {
             content: "";
             background: currentColor;
             display: block;
+            margin: auto;
             width: 2em;
             height: 3px;
             border-radius: 3px;
             position: relative;
-            transition: transform .3s;
+            transition: transform .25s, background .10s, bottom .20s;
         }
 
         .iconMenu::before {
+            background: currentColor;
+            width: 1.5em;
+            height: 3px;
             top: 10px;
         }
 
         .iconMenu::after {
+            background: currentColor;
+            width: 1.5em;
+            height: 3px;
             bottom: 13px;
         }
 
@@ -343,6 +313,42 @@ label.elev {
             width: 20px;
             height: 20px;
         }
+    }
+}
+
+// Added classes
+.show {
+    display: flex !important;
+
+    @media #{$mobileMenuVisible} {
+        display: initial !important;
+    }
+}
+
+.elev {
+    position: relative;
+    z-index: 2;
+
+    @media #{$mobileMenuVisible} {
+        position: static;
+    }
+}
+
+a.elev {
+    margin-right: 9px;
+}
+
+// Animation
+.anim {
+    transform: rotate(315deg);
+
+    &.iconMenu::before {
+        background: transparent !important;
+    }
+
+    &.iconMenu::after {
+        bottom: 3px !important;
+        transform: rotate(-90deg);
     }
 }
 </style>
