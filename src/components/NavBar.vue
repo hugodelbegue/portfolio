@@ -334,10 +334,6 @@ export default {
     }
 }
 
-a.elev {
-    margin-right: 9px;
-}
-
 // Animation
 .anim {
     transform: rotate(315deg);
