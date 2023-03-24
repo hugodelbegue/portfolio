@@ -271,6 +271,12 @@ input[type="email"] {
     place-items: center;
     column-gap: 1em;
 
+    a {
+        &:hover {
+            color: inherit !important;
+        }
+    }
+
     svg {
         width: 27px;
         height: 27px;

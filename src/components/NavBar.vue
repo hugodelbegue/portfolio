@@ -304,7 +304,8 @@ export default {
         }
 
         &:active {
-            background: var(--color-button-active);
+            // background: var(--color-button-active);
+            background: var(--color-button);
             box-shadow: 0 1px 6px var(--color-border-1);
         }
 
