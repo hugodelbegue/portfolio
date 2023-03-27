@@ -216,7 +216,7 @@ export default {
             height: 3px;
             border-radius: 3px;
             position: relative;
-            transition: transform .25s, background .10s, bottom .20s;
+            transition: transform .35s, background .20s, bottom .30s;
         }
 
         .iconMenu::before {

@@ -1,6 +1,22 @@
 {
     "projectList":  [
         {
+            "id": 10,
+            "url": "https://romanefaure.fr/",
+            "img": "association_romane_faure.png",
+            "title": "Association Romane Faure",
+            "frontend": true,
+            "backend": false,
+            "language": [
+                { "name": "vue.js" },
+                { "name": "javascript" },
+                { "name": "sass" },
+                { "name": "html" },
+                { "name": "seo/référencement" },
+                { "name": "node.js" }
+            ]
+        },
+        {
             "id": 9,
             "url": "https://github.com/hugodelbegue/space-tourism-website-main",
             "img": "space_tourism_website.png",
@@ -94,7 +110,7 @@
         {
             "id": 3,
             "url": "https://github.com/hugodelbegue/my-links",
-            "img": "my-links.png",
+            "img": "my_links.png",
             "title": "My links",
             "frontend": false,
             "backend": true,

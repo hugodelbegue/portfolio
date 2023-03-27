@@ -15,7 +15,7 @@ defineProps({
 <style lang="scss" scoped>
 .image {
     width: 100%;
-    max-height: 190px;
+    max-height: 220px;
     height: 100%;
     border-radius: 3px;
     overflow: hidden;

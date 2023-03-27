@@ -57,6 +57,8 @@
   --color-background-download-dark-6: rgba(255, 128, 37, 0.6);
   --color-background-project-light: #efdb9c;
   --color-background-project-dark: #86471a;
+  --color-background-project-back-light: #e1ce92;
+  --color-background-project-back-dark: #a85b24;
 
   // fonts
   --size: 15px;
@@ -71,6 +73,7 @@
   // layout
   --size-project: var(--size-project-desktop);
   --size-project-desktop: 350px;
+  --space-between-project: 2.55em;
 
   --desktop-up: 1620px;
   --desktop-medium: 1440px;
@@ -88,6 +91,7 @@
   --color-background-download-25: var(--color-background-download-light-25);
   --color-background-download-6: var(--color-background-download-light-6);
   --color-background-project: var(--color-background-project-light);
+  --color-background-project-back: var(--color-background-project-back-light);
   --color-background-band-1: var(--color-band-light-1);
   --color-background-band-2: var(--color-band-light-2);
   --color-background-band-3: var(--color-band-light-3);
@@ -127,6 +131,7 @@
   --color-background-download-25: var(--color-background-download-dark-25);
   --color-background-download-6: var(--color-background-download-dark-6);
   --color-background-project: var(--color-background-project-dark);
+  --color-background-project-back: var(--color-background-project-back-dark);
   --color-background-band-1: var(--color-band-dark-1);
   --color-background-band-2: var(--color-band-dark-2);
   --color-background-band-3: var(--color-band-dark-3);

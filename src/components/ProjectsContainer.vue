@@ -8,10 +8,10 @@ import JSONDATA from '@/components/api/data.json'
 
 <template>
     <h2 :class="classColor">Mes&nbsp;<strong class="important">projets</strong>&nbsp;web</h2>
-    <div class="projectscontainer">
+    <div class="projects_container">
         <div class="selectors">
             <Button type="button" padding=".5" msg="Tous" @click="showAll" />
-            <Button type="button" padding=".5" msg="Tout Frontend" @click="showFrontend" />
+            <Button type="button" padding=".5" msg="Frontend" @click="showFrontend" />
             <Button type="button" padding=".5" msg="Avec Backend" @click="showBackend" />
         </div>
         <div class="layout__project">
@@ -88,13 +88,14 @@ export default {
 <style lang="scss" scoped>
 @import '@/assets/scss/responsive.scss';
 
-.projectscontainer {
+.projects_container {
+
     .layout__project {
         display: flex;
         justify-content: center;
         flex-wrap: wrap;
-        gap: 2.3em;
-        min-height: calc((var(--size-project) * 2) + 3.3em);
+        gap: var(--space-between-project);
+        min-height: calc((var(--size-project) + (var(--space-between-project) * 2)) * 2);
     }
 
     .project {
@@ -106,11 +107,14 @@ export default {
         width: 100%;
         height: auto;
         aspect-ratio: 1/1;
-        padding: .5em;
         border-radius: 3px;
         border: 1px solid var(--color-border-1);
         box-shadow: 0 2px 4px var(--color-border-1);
         transition: border .1s color .1s;
+
+        @media #{$mobileDownScreen} {
+            aspect-ratio: auto;
+        }
 
         &::before {
             z-index: -1;
@@ -123,10 +127,15 @@ export default {
             aspect-ratio: 1/1;
             box-shadow: 0 2px 4px var(--color-border-1);
             border-radius: 3px;
-            background: var(--color-background-project);
+            background: var(--color-background-project-back);
             border: 1px solid var(--color-border-1);
             transition: transform .2s, border .2s;
             transform: rotate(-2.5deg);
+
+            @media #{$mobileDownScreen} {
+                aspect-ratio: auto;
+                height: -webkit-fill-available;
+            }
         }
 
         &::after {
@@ -140,10 +149,15 @@ export default {
             aspect-ratio: 1/1;
             box-shadow: 0 2px 4px var(--color-border-1);
             border-radius: 3px;
-            background: var(--color-background-project);
+            background: var(--color-background-project-back);
             border: 1px solid var(--color-border-1);
             transition: transform .3s, border .3s;
             transform: rotate(.5deg);
+
+            @media #{$mobileDownScreen} {
+                aspect-ratio: auto;
+                height: -webkit-fill-available;
+            }
         }
     }
 
@@ -180,29 +194,27 @@ export default {
             border: 1px dashed var(--color-text-language);
         }
     }
+}
 
-    .layout__title {
-        font-size: 1.3em;
-        font-weight: var(--weight-bold);
-        letter-spacing: .7px;
-        padding-bottom: .3em;
-        text-align: center;
-    }
+.layout__title {
+    font-size: 1.3em;
+    font-weight: var(--weight-bold);
+    letter-spacing: .7px;
+    text-align: center;
+}
 
-    .language {
-        padding: 0em .5em;
-        border-radius: 4px;
-    }
+.language {
+    padding: 0em .5em;
+    border-radius: 4px;
+}
 
-    .layout__language {
-        display: flex;
-        justify-content: flex-end;
-        flex-wrap: wrap;
-        gap: 5px;
-        width: 100%;
-        padding-top: .9em;
-        padding-right: .3em;
-    }
+.layout__language {
+    display: flex;
+    justify-content: flex-end;
+    flex-wrap: wrap-reverse;
+    gap: 5px;
+    width: 100%;
+    padding: .5em;
 }
 
 h2 {

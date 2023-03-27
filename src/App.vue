@@ -87,6 +87,11 @@ header {
 main {
   padding-left: max(3em, (calc(50% - var(--desktop-down) / 2)));
   padding-right: max(3em, (calc(50% - var(--desktop-down) / 2)));
+
+  @media #{$mobileMediumScreen} {
+    padding-left: 1.5em;
+    padding-right: 1.5em;
+  }
 }
 
 footer {
@@ -159,11 +164,11 @@ footer {
     }
   }
 
-  @media only screen and (max-width: 391px) {
-    height: 21.5em;
+  @media only screen and (max-width: 355px) {
+    height: 20.5em;
   }
 
-  @media only screen and (max-width: 300px) {
+  @media only screen and (max-width: 264px) {
     height: 27.5em;
   }
 }
@@ -229,11 +234,11 @@ footer {
     }
   }
 
-  @media only screen and (max-width: 391px) {
-    height: 21.5em;
+  @media only screen and (max-width: 355px) {
+    height: 20.5em;
   }
 
-  @media only screen and (max-width: 300px) {
+  @media only screen and (max-width: 264px) {
     height: 27.5em;
   }
 }

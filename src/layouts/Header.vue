@@ -16,7 +16,7 @@ import AboutMe from '@/components/AboutMe.vue'
                     </a>
                     <div class="layout__switch">
                         <SwitchButton />
-                        <span>| Thème.</span>
+                        <span class="indic">| Thème.</span>
                     </div>
                 </template>
             </Logo>
@@ -93,6 +93,12 @@ header {
     place-content: center;
     place-items: center;
     margin-left: 1em;
+
+    .indic {
+        @media #{$mobileUpScreen} {
+            display: none;
+        }
+    }
 }
 
 .avatar {
