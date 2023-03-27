@@ -8,12 +8,12 @@
             "frontend": true,
             "backend": false,
             "language": [
-                { "name": "vue.js" },
+                { "name": "seo/référencement" },
+                { "name": "node.js" },
                 { "name": "javascript" },
                 { "name": "sass" },
                 { "name": "html" },
-                { "name": "seo/référencement" },
-                { "name": "node.js" }
+                { "name": "vue.js" }
             ]
         },
         {
@@ -24,12 +24,12 @@
             "frontend": true,
             "backend": false,
             "language": [
-                { "name": "vue.js" },
+                { "name": "node.js" },
+                { "name": "seo/référencement" },
                 { "name": "javascript" },
                 { "name": "sass" },
-                { "name": "html" },
-                { "name": "seo/référencement" },
-                { "name": "node.js" }
+                { "name": "vue.js" },
+                { "name": "html" }
             ]
         },
         {
@@ -42,9 +42,9 @@
             "language": [
                 { "name": "vue.js" },
                 { "name": "sass" },
+                { "name": "seo/référencement" },
                 { "name": "javascript" },
                 { "name": "html" },
-                { "name": "seo/référencement" },
                 { "name": "node.js" }
             ]
         },
