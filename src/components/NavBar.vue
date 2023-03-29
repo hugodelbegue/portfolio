@@ -201,7 +201,7 @@ export default {
             align-items: center;
             justify-content: center;
             cursor: pointer;
-            width: 25px;
+            width: 35px;
             height: 25px;
         }
 
@@ -212,8 +212,8 @@ export default {
             background: currentColor;
             display: block;
             margin: auto;
-            width: 2em;
-            height: 3px;
+            width: 100%;
+            height: 4px;
             border-radius: 3px;
             position: relative;
             transition: transform .35s, background .20s, bottom .30s;
@@ -221,16 +221,16 @@ export default {
 
         .iconMenu::before {
             background: currentColor;
-            width: 1.5em;
-            height: 3px;
-            top: 10px;
+            width: 75%;
+            height: 4px;
+            top: 13px;
         }
 
         .iconMenu::after {
             background: currentColor;
-            width: 1.5em;
-            height: 3px;
-            bottom: 13px;
+            width: 75%;
+            height: 4px;
+            bottom: 17px;
         }
 
         .burger_links {
@@ -344,7 +344,7 @@ export default {
     }
 
     &.iconMenu::after {
-        bottom: 3px !important;
+        bottom: 4px !important;
         transform: rotate(-90deg);
     }
 }

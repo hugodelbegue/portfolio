@@ -46,8 +46,8 @@ export default {
     position: fixed;
     bottom: 1em;
     right: 1em;
-    width: 40px;
-    height: 40px;
+    width: 50px;
+    height: 50px;
     background-color: rgba(0, 0, 0, .2);
     margin: 0;
     border-radius: 5px;
