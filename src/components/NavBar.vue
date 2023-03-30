@@ -110,9 +110,6 @@ import IconPen from '@/components/icons/IconPen.vue'
 
 <script>
 export default {
-    mounted() {
-        console.log(this.$root.$refs.bandR)
-    },
     data() {
         return {
             downloadUrl(file) {
