@@ -45,6 +45,18 @@ import IconPen from '@/components/icons/IconPen.vue'
                     </Link>
                 </RouterLink>
             </div>
+            <!-- Link CV download -->
+            <a ref="download" id="download" :href="downloadUrl('CV_HugoDELBEGUE.pdf')" target="_blank" rel="noreferrer"
+                download="CV_hugodelbegue" title="Téléchagement CV pdf">
+                <Link class="downloadCV" :class="classDownload">
+                <template #title>
+                    <span>CV</span>
+                </template>
+                <template #icon>
+                    <IconDownload />
+                </template>
+                </Link>
+            </a>
             <!-- Menu mobile -->
             <div class="burger_menu">
                 <input @change="toggleMenu" type="checkbox" id="burger">
@@ -92,18 +104,6 @@ import IconPen from '@/components/icons/IconPen.vue'
                     </ul>
                 </div>
             </div>
-            <!-- Link CV download -->
-            <a ref="download" :href="downloadUrl('CV_HugoDELBEGUE.pdf')" target="_blank" rel="noreferrer"
-                download="CV_hugodelbegue" title="Téléchagement CV pdf">
-                <Link class="downloadCV" :class="classDownload">
-                <template #title>
-                    <span>CV</span>
-                </template>
-                <template #icon>
-                    <IconDownload />
-                </template>
-                </Link>
-            </a>
         </div>
     </nav>
 </template>
@@ -127,7 +127,7 @@ export default {
             burger_links.classList.toggle('show');
             animation.classList.toggle('anim');
             cross.classList.toggle('elev');
-            download.classList.toggle('elev');
+            download.classList.toggle('up');
             this.$root.$refs.bandR.classList.toggle('elev_band');
             document.body.classList.toggle('hidden')
         }
@@ -279,6 +279,12 @@ export default {
         }
     }
 
+    #download {
+        @media #{$mobileMenuHidden} {
+            display: none;
+        }
+    }
+
     .downloadCV {
         flex-direction: column-reverse;
         place-items: center;
@@ -328,6 +334,17 @@ export default {
 
 .elev {
     position: relative;
+    z-index: 2;
+
+    @media #{$mobileMenuVisible} {
+        position: static;
+    }
+}
+
+.up {
+    display: block !important;
+    position: absolute;
+    left: 1em;
     z-index: 2;
 
     @media #{$mobileMenuVisible} {
