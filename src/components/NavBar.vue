@@ -46,8 +46,8 @@ import IconPen from '@/components/icons/IconPen.vue'
                 </RouterLink>
             </div>
             <!-- Link CV download -->
-            <a ref="download" id="download" :href="downloadUrl('CV_HugoDELBEGUE.pdf')" target="_blank" rel="noreferrer"
-                download="CV_hugodelbegue" title="Téléchagement CV pdf">
+            <a ref="download" id="download" :class="offset" :href="downloadUrl('CV_HugoDELBEGUE.pdf')" target="_blank"
+                rel="noreferrer" download="CV_hugodelbegue" title="Téléchagement CV pdf">
                 <Link class="downloadCV" :class="classDownload">
                 <template #title>
                     <span>CV</span>
@@ -138,6 +138,11 @@ export default {
         classDownload() {
             return {
                 important__download: this.$route.name == "ProjectView"
+            }
+        },
+        offset() {
+            return {
+                offset: this.$route.name == 'ProjectView'
             }
         },
     }
@@ -347,6 +352,10 @@ export default {
     @media #{$mobileMenuVisible} {
         position: static;
     }
+}
+
+.offset {
+    top: 3em;
 }
 
 // Animation
