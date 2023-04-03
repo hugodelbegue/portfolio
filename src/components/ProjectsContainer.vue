@@ -17,7 +17,7 @@ import JSONDATA from '@/components/api/data.json'
         </div>
         <div class="layout__project">
             <TransitionGroup name="transition__projects" appear>
-                <div v-for="data in allData" :key="data" class="project">
+                <article v-for="data in allData" :key="data" class="project">
                     <!-- <Project :url="data.url" :title="data.title" @click="toggleInfos"> -->
                     <Project ref="load" :title="data.title" @click="onClick(data.title)">
                         <template #title>
@@ -30,7 +30,7 @@ import JSONDATA from '@/components/api/data.json'
                             <p>Développement web</p>
                         </template>
                     </Project>
-                </div>
+                </article>
             </TransitionGroup>
         </div>
         <!-- <DescriptionProject /> -->
@@ -52,7 +52,7 @@ import JSONDATA from '@/components/api/data.json'
                         <div class="preview__content">
                             <div class="preview__development">
                                 <h4>Infos du site</h4>
-                                <span>Année : {{ dataDescription.year }}</span>
+                                <span>Année :&ensp;<p class="year">{{ dataDescription.year }}</p></span>
                                 <p>{{ dataDescription.infos }}</p>
                             </div>
                             <div class="preview__infos">
@@ -149,7 +149,6 @@ export default {
             const { infos } = this.$refs;
             infos.classList.add('open');
             infos.classList.remove('close');
-            // this.$root.$refs.bandR.classList.toggle('elev_band');
             // TODO => mettre condition pour bloquer au changement de menu
             document.body.classList.add('hidden')
         },
@@ -159,7 +158,7 @@ export default {
             setTimeout(() => {
                 infos.classList.remove('open');
                 document.body.classList.remove('hidden')
-            }, 1250)
+            }, 750)
         }
     }
 }
@@ -244,13 +243,13 @@ export default {
             width: fit-content;
             padding: 0 .3em;
             font-variant-caps: all-small-caps;
+            border-radius: 6px;
+            background-color: var(--color-background-language);
             color: var(--color-text-language);
+            font-size: 11px;
             position: relative;
             top: -17px;
             right: -67px;
-            border-radius: 6px;
-            background-color: var(--color-background-language);
-            font-size: 11px;
 
             @media #{$mobileDownScreen} {
                 right: 0;
@@ -275,8 +274,11 @@ export default {
             }
 
             & p {
+                background-color: var(--color-border-2);
+                color: var(--gray);
                 opacity: .6;
                 z-index: -1;
+                top: -18px;
                 transition: opacity .2s;
             }
         }
@@ -298,8 +300,11 @@ export default {
         }
 
         & p {
-            opacity: .5;
+            background-color: var(--color-border-2);
+            color: var(--gray);
+            opacity: .6;
             z-index: -1;
+            top: -18px;
             transition: opacity .2s;
         }
     }
@@ -363,34 +368,34 @@ h2 {
     .close__infos {
         position: fixed;
         display: flex;
-
-        &::before {
-            content: "";
-            display: flex;
-            width: 32px;
-            height: 32px;
-            background: var(--color-button);
-            border-radius: 11px;
-            position: absolute;
-        }
+        border-radius: 11px;
+        background: transparent;
 
         svg {
             z-index: 1;
             cursor: pointer;
             border: 1px solid;
             border-radius: 11px;
+        }
 
-            @media #{$desktopDownScreen} {
-                &:hover {
-                    top: 5px;
-                    position: relative;
-                }
-            }
-
-            &:active {
+        @media #{$desktopDownScreen} {
+            &:hover svg {
                 top: 5px;
                 position: relative;
             }
+
+            &:hover {
+                background: var(--color-button);
+            }
+        }
+
+        &:active svg {
+            top: 5px;
+            position: relative;
+        }
+
+        &:active {
+            background: var(--color-button);
         }
     }
 
@@ -420,10 +425,17 @@ h2 {
 
     .preview__development {
         span {
+            display: inline-flex;
+
             &::before {
                 content: url(@/assets/img/designs/calendar.svg);
                 color: var(--color-button);
                 margin-right: .8em;
+            }
+
+            .year {
+                margin-top: 0;
+                font-weight: var(--weight-bold);
             }
         }
 
@@ -497,11 +509,11 @@ h2 {
 // Class infos
 .open {
     display: block !important;
-    animation: slideOpen 1.5s ease;
+    animation: slideOpen 1s ease;
 }
 
 .close {
-    animation: slideClose 1.5s ease;
+    animation: slideClose 1s ease;
     animation-fill-mode: both;
 }
 

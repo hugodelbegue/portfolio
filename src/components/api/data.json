@@ -176,8 +176,7 @@
             "git": "https://github.com/hugodelbegue/vue",
             "preview": "vue.png",
             "media": [
-                { "img": "vue.png"},
-                {"img": "vue.png"}
+                { "img": "vue.png"}
             ],
             "title": "Vue",
             "frontend": true,

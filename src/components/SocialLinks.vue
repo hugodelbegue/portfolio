@@ -10,7 +10,7 @@ import IconInstagram from '@/components/icons/IconInstagram.vue';
     <div class="sociallinks">
         <ul>
             <li>
-                <a href="mailto:hugodelbegue@gmail.com?subject=Question ou demande - Portfolio Hugo Delbegue."
+                <a href="mailto:hugodelbegue@gmail.com?subject=Portfolio Hugo Delbegue - Question ou demande."
                     target="_blank">
                     <Link color="">
                     <template #icon>

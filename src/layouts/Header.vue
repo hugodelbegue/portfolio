@@ -124,6 +124,7 @@ img {
 }
 
 // Transitions
+
 .transition__text-enter-active,
 .transition__text-leave-active {
     transition: 0.1s ease;
