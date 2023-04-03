@@ -166,9 +166,12 @@ export default {
         }
 
         &.router-link-active {
-            background: linear-gradient(0deg, var(--color-underline) 0%, transparent 10%);
             color: var(--color-link);
-            border-radius: 20%;
+        }
+
+        svg {
+            width: 12px;
+            height: 12px;
         }
     }
 
@@ -237,7 +240,7 @@ export default {
 
         .burger_links {
             cursor: default;
-            z-index: 1;
+            z-index: 2;
             background: var(--color-background-burger);
             backdrop-filter: blur(10px);
             position: absolute;
@@ -336,7 +339,7 @@ export default {
 
 .elev {
     position: relative;
-    z-index: 2;
+    z-index: 3;
 
     @media #{$mobileMenuVisible} {
         position: static;
@@ -347,7 +350,7 @@ export default {
     display: block !important;
     position: absolute;
     left: 1em;
-    z-index: 2;
+    z-index: 3;
 
     @media #{$mobileMenuVisible} {
         position: static;
@@ -356,6 +359,10 @@ export default {
 
 .offset {
     top: 3em;
+
+    @media #{$mobileUpScreen} {
+        top: 4.5em;
+    }
 }
 
 // Animation

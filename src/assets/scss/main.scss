@@ -2,6 +2,11 @@
 
 .hidden {
   overflow: hidden !important;
+
+  @media #{$mobileMenuVisible} {
+    // TODO : à adapter suivant les navigateurs
+    padding-right: 9px;
+  }
 }
 
 a,
@@ -94,6 +99,11 @@ h3 {
   transition: .4s;
 }
 
+h4 {
+  font-size: 1.4em;
+  font-variant-caps: all-small-caps;
+  margin-bottom: .5em;
+}
 
 i {
   display: inline-flex;
@@ -103,6 +113,12 @@ i {
 
 svg {
   background-color: transparent;
+}
+
+.button {
+  svg {
+    transition: .3s;
+  }
 }
 
 input,

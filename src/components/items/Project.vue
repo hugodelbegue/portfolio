@@ -1,10 +1,10 @@
 <template>
     <a :href="url" class="project__url" target="_blank">
         <div class="content">
+            <slot name="text"></slot>
             <slot name="title"></slot>
             <slot name="image"></slot>
         </div>
-        <slot name="language"></slot>
     </a>
 </template>
 

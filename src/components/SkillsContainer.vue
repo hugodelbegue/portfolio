@@ -5,7 +5,7 @@ import JSONSKILL from '@/components/api/skills.json'
 </script>
 
 <template>
-    <h2><strong class="important">Compétences</strong>&nbsp;techniques</h2>
+    <h2><strong class="important">.Compétences</strong>&nbsp;techniques.</h2>
     <div class="AllSkills">
         <Skill v-for="skill in $options.skills" :number="skill.number">
             <template #text>
@@ -45,26 +45,6 @@ h2 {
 
     @media #{$mobileMediumScreen} {
         margin-bottom: 1em;
-    }
-
-    &::before {
-        content: url(@/assets/img/designs/gear-fill.svg);
-        color: var(--color-icon);
-        margin-right: .5em;
-
-        @media #{$mobileUpScreen} {
-            display: none;
-        }
-    }
-
-    &::after {
-        content: url(@/assets/img/designs/tools.svg);
-        color: var(--color-icon);
-        margin-left: .5em;
-
-        @media #{$mobileUpScreen} {
-            display: none;
-        }
     }
 }
 

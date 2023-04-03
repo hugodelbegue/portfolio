@@ -3,7 +3,12 @@
         {
             "id": 10,
             "url": "https://romanefaure.fr/",
-            "img": "association_romane_faure.png",
+            "git": "",
+            "preview": "association_romane_faure.png",
+            "media": [
+                { "img": "association_romane_faure.png"},
+                {"img": "association_romane_faure.png"}
+            ],
             "title": "Association Romane Faure",
             "frontend": true,
             "backend": false,
@@ -14,12 +19,25 @@
                 { "name": "sass" },
                 { "name": "html" },
                 { "name": "vue.js" }
+            ],
+            "year": "2023",
+            "infos": "Bonjour, je suis en train d'écrire un text qui décris le site web qui a étét créé.",
+            "description": [
+                {"achievement":"kgkj"},
+                {"achievement":"jgjh"},
+                {"achievement":"kgkmlkmkj"},
+                {"achievement":"kgzqzqezkj"}
             ]
         },
         {
             "id": 9,
-            "url": "https://github.com/hugodelbegue/space-tourism-website-main",
-            "img": "space_tourism_website.png",
+            "url": "https://hugodelbegue.github.io/space-tourism-website-main",
+            "git": "https://github.com/hugodelbegue/space-tourism-website-main",
+            "preview": "space_tourism_website.png",
+            "media": [
+                { "img": "space_tourism_website.png"},
+                {"img": "space_tourism_website.png"}
+            ],
             "title": "Space tourism website",
             "frontend": true,
             "backend": false,
@@ -30,12 +48,25 @@
                 { "name": "sass" },
                 { "name": "vue.js" },
                 { "name": "html" }
+            ],
+            "year": "2023",
+            "infos" : "ok",
+            "description": [
+                {"achievement":"réalisation 1"},
+                {"achievement":"réalisation 2"},
+                {"achievement":"réalisation 3"},
+                {"achievement":"réalisation 4"}
             ]
         },
         {
             "id": 8,
-            "url": "https://github.com/hugodelbegue/portfolio",
-            "img": "portfolio.png",
+            "url": "https://hugodelbegue.fr",
+            "git": "https://github.com/hugodelbegue/portfolio",
+            "preview": "portfolio.png",
+            "media": [
+                { "img": "portfolio.png"},
+                {"img": "portfolio.png"}
+            ],
             "title": "Portfolio",
             "frontend": true,
             "backend": false,
@@ -46,12 +77,25 @@
                 { "name": "javascript" },
                 { "name": "html" },
                 { "name": "node.js" }
+            ],
+            "year": "2023",
+            "infos" : "ok",
+            "description": [
+                {"achievement":"réalisation 1"},
+                {"achievement":"réalisation 2"},
+                {"achievement":"réalisation 3"},
+                {"achievement":"réalisation 4"}
             ]
         },
         {
             "id": 7,
-            "url": "https://github.com/hugodelbegue/interactive-card-details-form-main",
-            "img": "interactive_card_details_form.png",
+            "url": "https://hugodelbegue.github.io/interactive-card-details-form-main",
+            "git": "https://github.com/hugodelbegue/interactive-card-details-form-main",
+            "preview": "interactive_card_details_form.png",
+            "media": [
+                { "img": "interactive_card_details_form.png"},
+                {"img": "interactive_card_details_form.png"}
+            ],
             "title": "Interactive card details form",
             "frontend": true,
             "backend": false,
@@ -61,12 +105,25 @@
                 { "name": "html" },
                 { "name": "sass" },
                 { "name": "seo/référencement" }
+            ],
+            "year": "2022",
+            "infos" : "ok",
+            "description": [
+                {"achievement":"réalisation 1"},
+                {"achievement":"réalisation 2"},
+                {"achievement":"réalisation 3"},
+                {"achievement":"réalisation 4"}
             ]
         },
         {
             "id": 6,
-            "url": "https://github.com/hugodelbegue/notifications-page-main",
-            "img": "notifications_page.png",
+            "url": "https://hugodelbegue.github.io/notifications-page-main",
+            "git": "https://github.com/hugodelbegue/notifications-page-main",
+            "preview": "notifications_page.png",
+            "media": [
+                { "img": "notifications_page.png"},
+                {"img": "notifications_page.png"}
+            ],
             "title": "Notifications page",
             "frontend": true,
             "backend": false,
@@ -76,12 +133,25 @@
                 { "name": "sass" },
                 { "name": "vue.js" },
                 { "name": "javascript" }
+            ],
+            "year": "2022",
+            "infos" : "ok",
+            "description": [
+                {"achievement":"réalisation 1"},
+                {"achievement":"réalisation 2"},
+                {"achievement":"réalisation 3"},
+                {"achievement":"réalisation 4"}
             ]
         },
         {
             "id": 5,
-            "url": "https://github.com/hugodelbegue/news-homepage-main",
-            "img": "news_homepage.png",
+            "url": "https://hugodelbegue.github.io/new-homepage-main",
+            "git": "https://github.com/hugodelbegue/news-homepage-main",
+            "preview": "news_homepage.png",
+            "media": [
+                { "img": "news_homepage.png"},
+                {"img": "news_homepage.png"}
+            ],
             "title": "News homepage",
             "frontend": true,
             "backend": false,
@@ -90,12 +160,25 @@
                 { "name": "html" },
                 { "name": "seo/référencement" },
                 { "name": "sass" }
+            ],
+            "year": "2022",
+            "infos" : "ok",
+            "description": [
+                {"achievement":"réalisation 1"},
+                {"achievement":"réalisation 2"},
+                {"achievement":"réalisation 3"},
+                {"achievement":"réalisation 4"}
             ]
         },
         {
             "id": 4,
-            "url": "https://github.com/hugodelbegue/vue",
-            "img": "vue.png",
+            "url": "",
+            "git": "https://github.com/hugodelbegue/vue",
+            "preview": "vue.png",
+            "media": [
+                { "img": "vue.png"},
+                {"img": "vue.png"}
+            ],
             "title": "Vue",
             "frontend": true,
             "backend": false,
@@ -105,12 +188,25 @@
                 { "name": "html" },
                 { "name": "seo/référencement" },
                 { "name": "sass" }
+            ],
+            "year": "2022",
+            "infos" : "ok",
+            "description": [
+                {"achievement":"réalisation 1"},
+                {"achievement":"réalisation 2"},
+                {"achievement":"réalisation 3"},
+                {"achievement":"réalisation 4"}
             ]
         },
         {
             "id": 3,
-            "url": "https://github.com/hugodelbegue/my-links",
-            "img": "my_links.png",
+            "url": "",
+            "git": "https://github.com/hugodelbegue/my-links",
+            "preview": "my_links.png",
+            "media": [
+                { "img": "my_links.png"},
+                {"img": "my_links.png"}
+            ],
             "title": "My links",
             "frontend": false,
             "backend": true,
@@ -120,12 +216,25 @@
                 { "name": "css" },
                 { "name": "html" },
                 { "name": "sql" }
+            ],
+            "year": "2021",
+            "infos" : "ok",
+            "description": [
+                {"achievement":"réalisation 1"},
+                {"achievement":"réalisation 2"},
+                {"achievement":"réalisation 3"},
+                {"achievement":"réalisation 4"}
             ]
         },
         {
             "id": 2,
-            "url": "https://github.com/hugodelbegue/primalprod",
-            "img": "primalprod.png",
+            "url": "https://primalprod.fr",
+            "git": "https://github.com/hugodelbegue/primalprod",
+            "preview": "primalprod.png",
+            "media": [
+                { "img": "primalprod.png"},
+                {"img": "primalprod.png"}
+            ],
             "title": "Primalprod",
             "frontend": false,
             "backend": true,
@@ -134,12 +243,25 @@
                 { "name": "html" },
                 { "name": "css" },
                 { "name": "javascript" }
+            ],
+            "year": "2021",
+            "infos" : "ok",
+            "description": [
+                {"achievement":"réalisation 1"},
+                {"achievement":"réalisation 2"},
+                {"achievement":"réalisation 3"},
+                {"achievement":"réalisation 4"}
             ]
         },
         {
             "id": 1,
-            "url": "https://github.com/hugodelbegue/teacozy",
-            "img": "teacozy.png",
+            "url": "https://hugodelbegue.github.io/teacozy",
+            "git": "https://github.com/hugodelbegue/teacozy",
+            "preview": "teacozy.png",
+            "media": [
+                { "img": "teacozy.png"},
+                {"img": "teacozy.png"}
+            ],
             "title": "Teacozy",
             "frontend": true,
             "backend": false,
@@ -147,6 +269,14 @@
                 { "name": "html" },
                 { "name": "css" },
                 { "name": "javascript" }
+            ],
+            "year": "2021",
+            "infos" : "ok",
+            "description": [
+                {"achievement":"réalisation 1"},
+                {"achievement":"réalisation 2"},
+                {"achievement":"réalisation 3"},
+                {"achievement":"réalisation 4"}
             ]
         }
     ]

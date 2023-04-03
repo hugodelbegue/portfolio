@@ -11,7 +11,7 @@ import ReturnTop from './components/items/ReturnTop.vue';
     <div ref="bandR" :class="bandRight" style="display: none;"></div>
     <div ref="top" class="header__part">
       <Header />
-      <hr class="line__header">
+      <hr :class="lineHeader" class="line__header">
     </div>
     <Main />
     <div class="footer__part">
@@ -45,6 +45,11 @@ export default {
       return {
         band__right: this.$route.name == 'ProjectView'
       }
+    },
+    lineHeader() {
+      return {
+        line__hidden: this.$route.name !== 'HomeView'
+      }
     }
   }
 }
@@ -71,11 +76,15 @@ export default {
 }
 
 .line__header {
-  margin-left: max(5em, calc((50% - var(--desktop-up) / 2) + 4em));
-  margin-right: max(5em, calc((50% - var(--desktop-up) / 2) + 4em));
+  margin-left: max(4.5em, calc((50% - var(--desktop-up) / 2) + 4em));
+  margin-right: max(4.5em, calc((50% - var(--desktop-up) / 2) + 4em));
   border: 1px solid var(--color-border-2);
   border-radius: 2px;
   position: relative;
+}
+
+.line__hidden {
+  display: none;
 }
 
 header {
@@ -175,10 +184,10 @@ footer {
 
 // class for navbar
 .elev_band {
-  z-index: 2;
+  z-index: 3;
 
   @media #{$tabletScreen} {
-    height: 8em !important;
+    height: 6em !important;
   }
 
   @media #{$mobileMenuVisible} {

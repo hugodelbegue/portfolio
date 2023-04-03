@@ -2,7 +2,8 @@
 import Project from '@/components/items/Project.vue'
 import Language from '@/components/items/Language.vue'
 import Button from '@/components/items/Button.vue'
-import RenderProjectImg from '@/components/items/RenderProjectImg.vue';
+import RenderProjectImg from '@/components/items/RenderProjectImg.vue'
+import DescriptionProject from '@/components/items/DescriptionProject.vue'
 import JSONDATA from '@/components/api/data.json'
 </script>
 
@@ -17,23 +18,77 @@ import JSONDATA from '@/components/api/data.json'
         <div class="layout__project">
             <TransitionGroup name="transition__projects" appear>
                 <div v-for="data in allData" :key="data" class="project">
-                    <Project :url="data.url" :title="data.title">
+                    <!-- <Project :url="data.url" :title="data.title" @click="toggleInfos"> -->
+                    <Project ref="load" :title="data.title" @click="onClick(data.title)">
                         <template #title>
                             <div class="layout__title">{{ data.title }}</div>
                         </template>
                         <template #image>
-                            <RenderProjectImg :src="imgUrl(data.img)" :alt="data.title" :title="data.title" />
+                            <RenderProjectImg :src="imgUrl(data.preview)" :alt="data.title" :title="data.title" />
                         </template>
-                        <template #language>
-                            <div class="layout__language">
-                                <div class="language" :class="cleanString(lang.name)" v-for="lang in data.language">
-                                    <Language :language="lang.name" style="box-shadow: 0 0 2px" />
-                                </div>
-                            </div>
+                        <template #text>
+                            <p>Développement web</p>
                         </template>
                     </Project>
                 </div>
             </TransitionGroup>
+        </div>
+        <!-- <DescriptionProject /> -->
+        <div ref="infos" class="project__description__content">
+            <div @click="closeInfos" class="close__infos">
+                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor"
+                    class="bi bi-arrow-down-square-fill" viewBox="0 0 16 16">
+                    <path
+                        d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm6.5 4.5v5.793l2.146-2.147a.5.5 0 0 1 .708.708l-3 3a.5.5 0 0 1-.708 0l-3-3a.5.5 0 1 1 .708-.708L7.5 10.293V4.5a.5.5 0 0 1 1 0z" />
+                </svg>
+            </div>
+            <div v-for=" dataDescription in projects.projectList">
+                <div v-if="dataDescription.title == this.title">
+
+                    <div class="title__description">
+                        <h3>{{ dataDescription.title }}</h3>
+                    </div>
+                    <div class="project__description__layout">
+                        <div class="preview__content">
+                            <div class="preview__development">
+                                <h4>Infos du site</h4>
+                                <span>Année : {{ dataDescription.year }}</span>
+                                <p>{{ dataDescription.infos }}</p>
+                            </div>
+                            <div class="preview__infos">
+                                <h4>
+                                    Réalisations
+                                </h4>
+                                <ul>
+                                    <li v-for="achievement in dataDescription.description">{{ achievement.achievement }}
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="preview__language">
+                                <h4>Compétences</h4>
+                                <div class="layout__language">
+                                    <div class="language" :class="cleanString(lang.name)"
+                                        v-for="lang in dataDescription.language">
+                                        <Language :language="lang.name" style="box-shadow: 0 0 2px" />
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="preview__link">
+                                <a :href="dataDescription.url" target="_blank">
+                                    <Button type="button" padding=".75" msg="Visiter le site" />
+                                </a>
+                                <a :href="dataDescription.git" target="_blank">
+                                    <Button type="button" padding=".75" msg="Github" />
+                                </a>
+                            </div>
+                        </div>
+                        <div class="preview__img">
+                            <img v-for="img in dataDescription.media" :src="imgUrl(img.img)" :alt="dataDescription.title">
+                        </div>
+                    </div>
+
+                </div>
+            </div>
         </div>
     </div>
 </template>
@@ -44,6 +99,7 @@ export default {
         return {
             projects: JSONDATA,
             choice: "",
+            title: "",
             cleanString(name) {
                 return name.replace(/[./\/]/g, "");
             },
@@ -69,7 +125,7 @@ export default {
             return {
                 important__color: this.$route.name == "ProjectView"
             }
-        }
+        },
     },
     methods: {
         showAll() {
@@ -80,6 +136,30 @@ export default {
         },
         showBackend() {
             return this.choice = "backend";
+        },
+        onClick(title) {
+            this.openInfos();
+            this.setTitle(title);
+        },
+        setTitle(title) {
+            this.title = title;
+        },
+        // Open and close infos projects
+        openInfos() {
+            const { infos } = this.$refs;
+            infos.classList.add('open');
+            infos.classList.remove('close');
+            // this.$root.$refs.bandR.classList.toggle('elev_band');
+            // TODO => mettre condition pour bloquer au changement de menu
+            document.body.classList.add('hidden')
+        },
+        closeInfos() {
+            const { infos } = this.$refs;
+            infos.classList.add('close');
+            setTimeout(() => {
+                infos.classList.remove('open');
+                document.body.classList.remove('hidden')
+            }, 1250)
         }
     }
 }
@@ -89,7 +169,6 @@ export default {
 @import '@/assets/scss/responsive.scss';
 
 .projects_container {
-
     .layout__project {
         display: flex;
         justify-content: center;
@@ -129,7 +208,7 @@ export default {
             border-radius: 3px;
             background: var(--color-background-project-back);
             border: 1px solid var(--color-border-1);
-            transition: transform .2s, border .2s;
+            transition: transform .2s;
             transform: rotate(-2.5deg);
 
             @media #{$mobileDownScreen} {
@@ -151,12 +230,30 @@ export default {
             border-radius: 3px;
             background: var(--color-background-project-back);
             border: 1px solid var(--color-border-1);
-            transition: transform .3s, border .3s;
+            transition: transform .2s;
             transform: rotate(.5deg);
 
             @media #{$mobileDownScreen} {
                 aspect-ratio: auto;
                 height: -webkit-fill-available;
+            }
+        }
+
+        p {
+            margin: auto;
+            width: fit-content;
+            padding: 0 .3em;
+            font-variant-caps: all-small-caps;
+            color: var(--color-text-language);
+            position: relative;
+            top: -17px;
+            right: -67px;
+            border-radius: 6px;
+            background-color: var(--color-background-language);
+            font-size: 11px;
+
+            @media #{$mobileDownScreen} {
+                right: 0;
             }
         }
     }
@@ -169,12 +266,18 @@ export default {
 
             &::before {
                 transform: rotate(3deg);
-                border: 1px dashed var(--color-text-language);
+                // border: 1px dashed var(--color-text-language);
             }
 
             &::after {
-                transform: rotate(8deg);
-                border: 1px dashed var(--color-text-language);
+                transform: rotate(6deg);
+                // border: 1px dashed var(--color-text-language);
+            }
+
+            & p {
+                opacity: .6;
+                z-index: -1;
+                transition: opacity .2s;
             }
         }
     }
@@ -186,35 +289,27 @@ export default {
 
         &::before {
             transform: rotate(3deg);
-            border: 1px dashed var(--color-text-language);
+            // border: 1px dashed var(--color-text-language);
         }
 
         &::after {
-            transform: rotate(8deg);
-            border: 1px dashed var(--color-text-language);
+            transform: rotate(6deg);
+            // border: 1px dashed var(--color-text-language);
+        }
+
+        & p {
+            opacity: .5;
+            z-index: -1;
+            transition: opacity .2s;
         }
     }
 }
 
 .layout__title {
-    font-size: 1.3em;
+    font-size: 1.2em;
     font-weight: var(--weight-bold);
     letter-spacing: .7px;
     text-align: center;
-}
-
-.language {
-    padding: 0em .5em;
-    border-radius: 4px;
-}
-
-.layout__language {
-    display: flex;
-    justify-content: flex-end;
-    flex-wrap: wrap-reverse;
-    gap: 5px;
-    width: 100%;
-    padding: .5em;
 }
 
 h2 {
@@ -238,7 +333,179 @@ h2 {
     }
 }
 
-// Class projects
+.project__description__content {
+    padding-left: max(1em, (calc(50% - var(--desktop-down) / 2)));
+    padding-right: max(1em, (calc(50% - var(--desktop-down) / 2)));
+    padding-top: 1em;
+    padding-bottom: 2em;
+    z-index: 1;
+    background: var(--color-background);
+    border-top: 3px solid var(--color-border-2);
+    width: 100%;
+    height: 70vh;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    flex-direction: column;
+    place-content: space-around;
+    display: none;
+    overflow-y: auto;
+    overflow-x: hidden;
+
+    .title__description {
+        display: flex;
+        margin-left: 4em;
+        margin-bottom: 1em;
+        padding-bottom: .3em;
+        border-bottom: 2px solid var(--color-text);
+    }
+
+    .close__infos {
+        position: fixed;
+        display: flex;
+
+        &::before {
+            content: "";
+            display: flex;
+            width: 32px;
+            height: 32px;
+            background: var(--color-button);
+            border-radius: 11px;
+            position: absolute;
+        }
+
+        svg {
+            z-index: 1;
+            cursor: pointer;
+            border: 1px solid;
+            border-radius: 11px;
+
+            @media #{$desktopDownScreen} {
+                &:hover {
+                    top: 5px;
+                    position: relative;
+                }
+            }
+
+            &:active {
+                top: 5px;
+                position: relative;
+            }
+        }
+    }
+
+    h3 {
+        font-size: 2em;
+        font-variant-caps: all-small-caps;
+        line-height: 1;
+    }
+
+    .project__description__layout {
+        display: flex;
+        place-content: space-between;
+        gap: 5em;
+        margin-left: 4em;
+
+        @media #{$tabletScreen} {
+            flex-direction: column;
+        }
+    }
+
+    .preview__content {
+        margin-top: 2em;
+        display: flex;
+        flex-direction: column;
+        gap: 3em;
+    }
+
+    .preview__development {
+        span {
+            &::before {
+                content: url(@/assets/img/designs/calendar.svg);
+                color: var(--color-button);
+                margin-right: .8em;
+            }
+        }
+
+        p {
+            margin-top: .3em;
+        }
+    }
+
+    .preview__infos {
+        ul {
+            padding-left: 0;
+            display: flex;
+            flex-direction: column;
+            gap: .7em;
+        }
+
+        li {
+            display: inline-flex;
+            align-items: center;
+            line-height: 1;
+
+            &:before {
+                content: url(@/assets/img/designs/check.svg);
+                color: var(--color-button);
+                margin-right: .8em;
+            }
+        }
+    }
+
+    .preview__language {
+        .language {
+            padding: 0em .5em;
+            border-radius: 4px;
+        }
+
+        .layout__language {
+            display: flex;
+            flex-wrap: wrap-reverse;
+            gap: 10px;
+            width: 100%;
+        }
+    }
+
+    .preview__link {
+        display: flex;
+        gap: 2em;
+        border-top: 2px solid var(--color-border-2);
+        padding-top: 1em;
+    }
+
+    .preview__img {
+        display: flex;
+        flex-direction: column;
+        place-items: flex-end;
+        gap: 1em;
+
+        @media #{$tabletScreen} {
+            flex-direction: row;
+            place-content: center;
+            flex-wrap: wrap;
+        }
+
+        img {
+            width: 100%;
+            max-width: 400px;
+            height: auto;
+        }
+    }
+}
+
+// Class infos
+.open {
+    display: block !important;
+    animation: slideOpen 1.5s ease;
+}
+
+.close {
+    animation: slideClose 1.5s ease;
+    animation-fill-mode: both;
+}
+
+// Class languages projects
 .vuejs {
     color: rgb(65, 184, 131);
     background-color: rgb(65, 184, 131, 0.2);
@@ -295,5 +562,26 @@ h2 {
 .transition__projects-leave-to {
     opacity: 0;
     transform: translateY(-30px);
+}
+
+@keyframes slideOpen {
+    from {
+        transform: translateY(100%);
+    }
+
+    to {
+        transform: translateY(0%);
+    }
+}
+
+@keyframes slideClose {
+    from {
+        transform: translateY(0%);
+    }
+
+    to {
+        transform: translateY(100%);
+        visibility: hidden;
+    }
 }
 </style>

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" href="/favicon.ico" />
@@ -18,9 +18,29 @@
       content="Découvrez mon profil de développeur web passionné de front-end, Vue.js, Javascript, Sass, Html/Css, Node. Je cherche continuellement à m'améliorer et reste ouvert à tout type d'opportunités."
     />
     <title>Portfolio | Hugo DELBEGUE</title>
+    <style>
+      body {
+        margin: 0;
+      }
+      .loading {
+        position: absolute;
+        width: 100vw;
+        height: 100vh;
+        background: #da6220;
+        z-index: 1;
+        overflow: hidden;
+      }
+    </style>
   </head>
   <body>
+    <div class="loading"></div>
     <div id="app"></div>
+    <script>
+      const load = document.querySelector(".loading");
+      window.addEventListener("load", () => {
+        load.remove();
+      });
+    </script>
     <script type="module" src="/src/main.js" defer></script>
   </body>
 </html>
