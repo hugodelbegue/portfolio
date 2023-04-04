@@ -84,12 +84,14 @@ export default {
 }
 
 .line__hidden {
-  display: none;
+  @media #{$tabletScreen} {
+    display: none;
+  }
 }
 
 header {
-  padding-left: max(1em, (calc(50% - var(--desktop-up) / 2)));
-  padding-right: max(1em, (calc(50% - var(--desktop-up) / 2)));
+  padding-left: calc(50% - var(--desktop-up) / 2);
+  padding-right: calc(50% - var(--desktop-up) / 2);
   position: relative;
 }
 

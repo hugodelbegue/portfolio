@@ -18,7 +18,6 @@ import JSONDATA from '@/components/api/data.json'
         <div class="layout__project">
             <TransitionGroup name="transition__projects" appear>
                 <article v-for="data in allData" :key="data" class="project">
-                    <!-- <Project :url="data.url" :title="data.title" @click="toggleInfos"> -->
                     <Project ref="load" :title="data.title" @click="onClick(data.title)">
                         <template #title>
                             <div class="layout__title">{{ data.title }}</div>
@@ -149,7 +148,6 @@ export default {
             const { infos } = this.$refs;
             infos.classList.add('open');
             infos.classList.remove('close');
-            // TODO => mettre condition pour bloquer au changement de menu
             document.body.classList.add('hidden')
         },
         closeInfos() {
@@ -517,7 +515,41 @@ h2 {
     animation-fill-mode: both;
 }
 
-// Class languages projects
+// Transitions
+.transition__projects-move,
+.transition__projects-enter-active,
+.transition__projects-leave-active {
+    transition: all 0.5s ease;
+}
+
+.transition__projects-enter-from,
+.transition__projects-leave-to {
+    opacity: 0;
+    transform: translateY(-30px);
+}
+
+@keyframes slideOpen {
+    from {
+        transform: translateY(100%);
+    }
+
+    to {
+        transform: translateY(0%);
+    }
+}
+
+@keyframes slideClose {
+    from {
+        transform: translateY(0%);
+    }
+
+    to {
+        transform: translateY(100%);
+        visibility: hidden;
+    }
+}
+
+// Languages projects
 .vuejs {
     color: rgb(65, 184, 131);
     background-color: rgb(65, 184, 131, 0.2);
@@ -561,39 +593,5 @@ h2 {
 .sql {
     color: rgb(172, 185, 193);
     background-color: rgb(172, 185, 193, 0.2);
-}
-
-// Transitions
-.transition__projects-move,
-.transition__projects-enter-active,
-.transition__projects-leave-active {
-    transition: all 0.5s ease;
-}
-
-.transition__projects-enter-from,
-.transition__projects-leave-to {
-    opacity: 0;
-    transform: translateY(-30px);
-}
-
-@keyframes slideOpen {
-    from {
-        transform: translateY(100%);
-    }
-
-    to {
-        transform: translateY(0%);
-    }
-}
-
-@keyframes slideClose {
-    from {
-        transform: translateY(0%);
-    }
-
-    to {
-        transform: translateY(100%);
-        visibility: hidden;
-    }
 }
 </style>

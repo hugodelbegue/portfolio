@@ -38,7 +38,7 @@
   --color-language-dark: var(--gray-light);
   --color-moon: #dfdabd;
   --color-sun: #e3a11c;
-  --color-ball-light: #ffa500;
+  --color-ball-light: var(--parchment);
   --color-ball-dark: var(--cinnabar);
   --color-band-light-1: rgba(218, 97, 32);
   --color-band-light-2: rgba(218, 97, 32, 0.4);
@@ -123,6 +123,8 @@
 
   --gauge-empty: var(--line-light);
   --gauge-full: var(--orange);
+
+  --display-moon: none;
 }
 
 .theme__dark {
@@ -163,6 +165,8 @@
 
   --gauge-empty: var(--line-dark);
   --gauge-full: var(--fluorescent-orange);
+
+  --display-sun: none;
 }
 
 *,

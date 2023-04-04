@@ -2,7 +2,7 @@
     <div class="switch">
         <input ref="switchInput" @change="swicthButton" type="checkbox" class="checkbox" id="toggle" :checked="checked">
         <label for="toggle" class="label">
-            <div class="ball"></div>
+            <div ref="ball" id="ball" class="ball" :style="{ '--display': display }"></div>
         </label>
     </div>
 </template>
@@ -11,7 +11,7 @@
 export default {
     data() {
         return {
-            checked: false
+            checked: false,
         }
     },
     mounted() {
@@ -39,6 +39,8 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import '@/assets/scss/responsive.scss';
+
 .checkbox {
     display: none;
 }
@@ -47,42 +49,50 @@ export default {
     cursor: pointer;
     position: relative;
     background: transparent;
-    padding: .4rem;
     border-radius: 15px;
     box-shadow: 0 0 3px 2px var(--color-ball-light);
-    height: 15px;
-    width: 50px;
+    margin-right: 3px;
+    height: 2px;
+    width: 40px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    transition: background .15s;
-
-    &::before {
-        content: url(@/assets/img/designs/moon-fill.svg);
-        position: relative;
-        top: 2px;
-        right: 4px;
-    }
-
-    &::after {
-        content: url(@/assets/img/designs/brightness-low-fill.svg);
-        position: relative;
-        top: 3px;
-        left: 6px;
-    }
+    transition: background .15s box-shadow .15s;
+    background: var(--color-ball-light);
 }
 
 .ball {
     z-index: 1;
     position: absolute;
-    left: 0px;
+    left: 0;
     background: var(--color-ball-light);
-    height: 17px;
-    width: 25px;
-    box-shadow: 1px 0.5px 2px;
-    border-radius: 17px;
-    transform: translateX(0px) scale(1.1);
+    height: 20px;
+    width: 20px;
+    box-shadow: 1px 0.5px 2px var(--color-border-1);
+    border-radius: 20px;
+    transform: translateX(-5px) scale(1.1);
     transition: transform .15s cubic-bezier(.88, .64, .67, 1.49);
+
+    &::before {
+        content: url(@/assets/img/designs/moon.svg);
+        height: 14px;
+        position: absolute;
+        line-height: 0;
+        bottom: 3px;
+        left: 3px;
+        display: var(--display-moon);
+        font-weight: bold;
+    }
+
+    &::after {
+        content: url(@/assets/img/designs/sun.svg);
+        height: 14px;
+        position: absolute;
+        line-height: 0;
+        top: 3px;
+        left: 3px;
+        display: var(--display-sun);
+    }
 }
 
 .checkbox:checked+.label .ball {
@@ -91,10 +101,11 @@ export default {
 
 .theme__dark .label {
     box-shadow: 0 0 3px 2px var(--color-ball-dark);
+    background: var(--color-ball-dark);
 }
 
 .theme__dark .ball {
     background: var(--color-ball-dark);
-    box-shadow: -1px 0.5px 2px;
+    box-shadow: -1px 0.5px 2px var(--color-border-1);
 }
 </style>

@@ -14,7 +14,7 @@ import IconPen from '@/components/icons/IconPen.vue'
         <div class="navbar">
             <!-- Menu desktop -->
             <div class="line_menu">
-                <RouterLink to="/" :class="classLink">
+                <RouterLink to="/" :class="classLink" @click="closeHidden">
                     <Link>
                     <template #icon>
                         <IconProfil />
@@ -24,7 +24,7 @@ import IconPen from '@/components/icons/IconPen.vue'
                     </template>
                     </Link>
                 </RouterLink>
-                <RouterLink to="/projects" :class="classLink">
+                <RouterLink to="/projects" :class="classLink" @click="closeHidden">
                     <Link>
                     <template #icon>
                         <IconPc />
@@ -34,7 +34,7 @@ import IconPen from '@/components/icons/IconPen.vue'
                     </template>
                     </Link>
                 </RouterLink>
-                <RouterLink to="/contact" :class="classLink">
+                <RouterLink to="/contact" :class="classLink" @click="closeHidden">
                     <Link>
                     <template #icon>
                         <IconPen />
@@ -59,7 +59,7 @@ import IconPen from '@/components/icons/IconPen.vue'
             </a>
             <!-- Menu mobile -->
             <div class="burger_menu">
-                <input @change="toggleMenu" type="checkbox" id="burger">
+                <input @change="toggleMenu" @click="closeHidden" type="checkbox" id="burger">
                 <label ref="cross" for="burger" class="burger" :class="classLink">
                     <div ref="animation" class="iconMenu"></div>
                 </label>
@@ -127,6 +127,11 @@ export default {
             download.classList.toggle('up');
             this.$root.$refs.bandR.classList.toggle('elev_band');
             document.body.classList.toggle('hidden')
+        },
+        closeHidden() {
+            if (document.body.classList[1] === 'hidden' && this.$route.name == "ProjectView") {
+                document.body.classList.remove('hidden')
+            }
         }
     },
     computed: {
@@ -144,7 +149,7 @@ export default {
             return {
                 offset: this.$route.name == 'ProjectView'
             }
-        },
+        }
     }
 }
 </script>

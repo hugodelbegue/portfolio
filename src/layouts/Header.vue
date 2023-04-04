@@ -11,8 +11,8 @@ import AboutMe from '@/components/AboutMe.vue'
             <Logo>
                 <template #picture>
                     <a href="/" title="Accueil">
-                        <img :class="classShadow" alt="PrimalProd logo" src="@/assets/img/logo.svg" width="50"
-                            height="50" />
+                        <img :class="classShadow" alt="PrimalProd logo" src="@/assets/img/logo.svg" width="40"
+                            height="40" />
                     </a>
                     <div class="layout__switch">
                         <SwitchButton />
@@ -59,10 +59,20 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-top: 2em;
+    padding-top: 1.4em;
+    padding-left: 1em;
+    padding-right: 1em;
+
+    @media #{$tabletScreen} {
+        padding-top: 1em;
+    }
 
     a {
         display: flex;
+    }
+
+    img {
+        filter: drop-shadow(0 0 1px var(--indigo));
     }
 }
 
