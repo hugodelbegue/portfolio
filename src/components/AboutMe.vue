@@ -30,6 +30,11 @@ export default {
 @import '@/assets/scss/responsive.scss';
 
 .aboutme {
+    width: 60%;
+
+    @media #{$tabletScreen} {
+        width: initial;
+    }
 
     h1,
     p {
