@@ -129,6 +129,7 @@ export default {
             document.body.classList.toggle('hidden')
         },
         closeHidden() {
+            // TODO : bug à l'ouverture/fermeture du menu
             if (document.body.classList[1] === 'hidden' && this.$route.name == "ProjectView") {
                 document.body.classList.remove('hidden')
             }

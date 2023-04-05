@@ -161,7 +161,7 @@ footer {
   }
 
   @media #{$mobileUpScreen} {
-    height: 16.5em;
+    height: 14.5em;
     border-radius: 0% 0% 80% 0%;
 
     &::before {
@@ -176,11 +176,11 @@ footer {
   }
 
   @media only screen and (max-width: 355px) {
-    height: 20.5em;
+    height: 19.5em;
   }
 
   @media only screen and (max-width: 264px) {
-    height: 27.5em;
+    height: 24.5em;
   }
 }
 
@@ -231,7 +231,7 @@ footer {
   }
 
   @media #{$mobileUpScreen} {
-    height: 16.5em;
+    height: 14.5em;
     border-radius: 0% 0% 0% 80%;
 
     &::before {
@@ -246,11 +246,11 @@ footer {
   }
 
   @media only screen and (max-width: 355px) {
-    height: 20.5em;
+    height: 19.5em;
   }
 
   @media only screen and (max-width: 264px) {
-    height: 27.5em;
+    height: 24.5em;
   }
 }
 

@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Rock+Salt&display=swap');
 @import './responsive.scss';
 
 :root {
@@ -116,6 +117,7 @@
   --color-link-important: var(--link-light);
   --color-background-download-6-important: rgba(239, 213, 128, 0.6);
   --color-underline: var(--color-background-download-light-25);
+  --color-ball: var(--color-ball-light);
 
   --color-input: var(--gray);
   --color-caret: var(--color-text);
@@ -158,7 +160,7 @@
   --color-link-important: var(--link-dark);
   --color-background-download-6-important: rgba(140, 74, 26, 0.6);
   --color-underline: var(--color-background-download-dark-25);
-
+  --color-ball: var(--color-ball-dark);
   --color-input: var(--text-dark);
   --color-caret: var(--color-text);
   --color-error: var(--cinnabar);

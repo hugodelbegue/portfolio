@@ -50,7 +50,7 @@ export default {
     position: relative;
     background: transparent;
     border-radius: 15px;
-    box-shadow: 0 0 3px 2px var(--color-ball-light);
+    box-shadow: 0 0 3px 2px var(--color-ball);
     margin-right: 3px;
     height: 2px;
     width: 40px;
@@ -58,14 +58,15 @@ export default {
     justify-content: space-between;
     align-items: center;
     transition: background .15s box-shadow .15s;
-    background: var(--color-ball-light);
+    background: var(--color-ball);
 }
 
 .ball {
     z-index: 1;
     position: absolute;
     left: 0;
-    background: var(--color-ball-light);
+    background: var(--color-ball);
+    border: 1px solid var(--color-ball);
     height: 20px;
     width: 20px;
     box-shadow: 1px 0.5px 2px var(--color-border-1);
@@ -78,8 +79,8 @@ export default {
         height: 14px;
         position: absolute;
         line-height: 0;
-        bottom: 3px;
-        left: 3px;
+        bottom: 2px;
+        left: 2px;
         display: var(--display-moon);
         font-weight: bold;
     }
@@ -89,8 +90,8 @@ export default {
         height: 14px;
         position: absolute;
         line-height: 0;
-        top: 3px;
-        left: 3px;
+        top: 2px;
+        left: 2px;
         display: var(--display-sun);
     }
 }
@@ -99,13 +100,7 @@ export default {
     transform: translateX(25px) scale(1.1);
 }
 
-.theme__dark .label {
-    box-shadow: 0 0 3px 2px var(--color-ball-dark);
-    background: var(--color-ball-dark);
-}
-
 .theme__dark .ball {
-    background: var(--color-ball-dark);
     box-shadow: -1px 0.5px 2px var(--color-border-1);
 }
 </style>
