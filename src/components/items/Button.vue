@@ -1,7 +1,6 @@
 <template>
     <div class="button">
-        <input :class="stop" :type="type" :style="{ 'padding': padding + 'em', 'width': width + '%' }" :value="msg"
-            :disabled="disabled">
+        <input :type="type" :style="{ 'padding': padding + 'em', 'width': width + '%' }" :value="msg" :disabled="disabled">
     </div>
 </template>
 
@@ -12,22 +11,10 @@ defineProps({
     padding: String,
     width: String,
     disabled: {
-        type: String,
+        type: Boolean,
         default: false
     }
 })
-</script>
-
-<script>
-export default {
-    computed: {
-        stop() {
-            return {
-                stop: this.$props.disabled == "true"
-            }
-        }
-    }
-}
 </script>
 
 <style lang="scss" scoped>
@@ -74,7 +61,8 @@ export default {
         }
     }
 
-    .stop {
+    input[type="button"]:disabled,
+    input[type="submit"]:disabled {
         cursor: auto !important;
         pointer-events: none;
         opacity: .2;

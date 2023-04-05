@@ -51,21 +51,19 @@ import JSONDATA from '@/components/api/data.json'
                     <div class="project__description__layout">
                         <div class="preview__content">
                             <div class="preview__development">
-                                <h4>Infos du site</h4>
-                                <span>Année :&ensp;<p class="year">{{ dataDescription.year }}</p></span>
+                                <h4>Développement complet</h4>
                                 <p>{{ dataDescription.infos }}</p>
                             </div>
-                            <div class="preview__infos">
-                                <h4>
-                                    Réalisations
-                                </h4>
+                            <div class="preview__skills">
                                 <ul>
                                     <li v-for="achievement in dataDescription.description">{{ achievement.achievement }}
                                     </li>
                                 </ul>
                             </div>
-                            <div class="preview__language">
-                                <h4>Compétences</h4>
+                            <div class="preview__infos">
+                                <h4>Infos</h4>
+                                <span class="layout__year">Année :&ensp;<p class="year">{{ dataDescription.year }}</p>
+                                </span>
                                 <div class="layout__language">
                                     <div class="language" :class="cleanString(lang.name)"
                                         v-for="lang in dataDescription.language">
@@ -75,13 +73,13 @@ import JSONDATA from '@/components/api/data.json'
                             </div>
                             <div class="preview__link">
                                 <div v-if="dataDescription.url == ''">
-                                    <Button type="button" padding=".75" msg="Indisponible" disabled="true" />
+                                    <Button type="button" padding=".75" msg="Indisponible" disabled />
                                 </div>
                                 <a v-else :href="dataDescription.url" target="_blank">
                                     <Button type="button" padding=".75" msg="Visiter le site" />
                                 </a>
                                 <div v-if="dataDescription.git == ''">
-                                    <Button type="button" padding=".75" msg="Indisponible" disabled="true" />
+                                    <Button type="button" padding=".75" msg="Indisponible" disabled />
                                 </div>
                                 <a v-else :href="dataDescription.git" target="_blank">
                                     <Button type="button" padding=".75" msg="Github" />
@@ -429,27 +427,12 @@ h2 {
     }
 
     .preview__development {
-        span {
-            display: inline-flex;
-
-            &::before {
-                content: url(@/assets/img/designs/calendar.svg);
-                color: var(--color-button);
-                margin-right: .8em;
-            }
-
-            .year {
-                margin-top: 0;
-                font-weight: var(--weight-bold);
-            }
-        }
-
         p {
             margin-top: .3em;
         }
     }
 
-    .preview__infos {
+    .preview__skills {
         ul {
             padding-left: 0;
             display: flex;
@@ -470,7 +453,25 @@ h2 {
         }
     }
 
-    .preview__language {
+    .preview__infos {
+
+        // TODO : adapter les marges de manière esthétique
+        span.layout__year {
+            display: inline-flex;
+            margin-bottom: .8em;
+
+            &::before {
+                content: url(@/assets/img/designs/calendar.svg);
+                color: var(--color-button);
+                margin-right: .8em;
+            }
+
+            .year {
+                margin-top: 0;
+                font-weight: var(--weight-bold);
+            }
+        }
+
         .language {
             padding: 0em .5em;
             border-radius: 4px;

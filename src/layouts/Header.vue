@@ -179,7 +179,7 @@ img {
         border-radius: 50%;
     }
 
-    24% {
+    28% {
         opacity: 1;
         filter: blur(0px);
         transform: translate(-180%, -20%) scale(1);
@@ -194,8 +194,8 @@ img {
     }
 
     36% {
-        opacity: .8;
         border: 0px solid transparent;
+        opacity: .8;
         filter: blur(5px);
         transform: translate(-180%, -20%) matrix(1, 2, 1, 1, 5, 6);
         background: #ff0000;
@@ -210,7 +210,7 @@ img {
         transform: translate(-180%, -20%);
         background: var(--gray-very-light);
         border-radius: 50%;
-        content: "Hello";
+        content: "Hey !";
         font-size: 14px;
         height: 50px;
     }
@@ -228,7 +228,7 @@ img {
         filter: blur(0px);
         transform: translate(397%, -152%) scale(0.05);
         border-radius: 50%;
-        content: "Hello";
+        content: "Hey !";
         font-size: 9px;
         border-left: 0;
         border-right: 0;
