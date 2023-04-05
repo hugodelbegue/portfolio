@@ -7,6 +7,7 @@ import AboutMe from '@/components/AboutMe.vue'
 
 <template>
     <header>
+        <!-- TODO : fixer la bar de navigation ainsi que l'adapter avec une animation -->
         <div class="layout__navbar">
             <Logo>
                 <template #picture>

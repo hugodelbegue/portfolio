@@ -58,6 +58,7 @@ import IconPen from '@/components/icons/IconPen.vue'
                 </Link>
             </a>
             <!-- Menu mobile -->
+            <!-- TODO : navmobile à mettre dans un component différent -->
             <div class="burger_menu">
                 <input @change="toggleMenu" @click="closeHidden" type="checkbox" id="burger">
                 <label ref="cross" for="burger" class="burger" :class="classLink">
@@ -129,7 +130,7 @@ export default {
             document.body.classList.toggle('hidden')
         },
         closeHidden() {
-            // TODO : bug à l'ouverture/fermeture du menu
+            // TODO : bug à l'ouverture/fermeture du menu pour la page ProjectView (class hidden)
             if (document.body.classList[1] === 'hidden' && this.$route.name == "ProjectView") {
                 document.body.classList.remove('hidden')
             }

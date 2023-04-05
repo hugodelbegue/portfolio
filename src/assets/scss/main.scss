@@ -4,7 +4,7 @@
   overflow: hidden !important;
 
   @media #{$mobileMenuVisible} {
-    // TODO : à adapter suivant les navigateurs
+    // TODO : padding à adapter suivant les navigateurs
     padding-right: 9px;
   }
 }

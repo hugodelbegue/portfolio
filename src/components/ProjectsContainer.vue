@@ -33,6 +33,7 @@ import JSONDATA from '@/components/api/data.json'
             </TransitionGroup>
         </div>
         <!-- <DescriptionProject /> -->
+        <!-- TODO : mettre le descriptionproject dans un component différent -->
         <div ref="infos" class="project__description__content">
             <div @click="closeInfos" class="close__infos">
                 <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor"
