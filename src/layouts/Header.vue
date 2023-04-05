@@ -127,6 +127,7 @@ header {
         background: var(--color-button);
         position: absolute;
         animation: opacity 4750ms ease;
+        animation-delay: 500ms;
         opacity: 0;
         display: flex;
         place-content: center;
@@ -148,7 +149,7 @@ header {
         transform: translate(-333%, 110%);
         background: var(--gray-very-light);
         animation: visibility 1625ms ease;
-        animation-delay: 1925ms;
+        animation-delay: 2425ms;
     }
 }
 
@@ -184,7 +185,7 @@ img {
         border-radius: 0%;
     }
 
-    32% {
+    34% {
         filter: blur(15px);
         transform: translate(-180%, -20%) scale(1.3);
         background: var(--color-button);
@@ -196,7 +197,7 @@ img {
         border: 0px solid transparent;
         filter: blur(5px);
         transform: translate(-180%, -20%) matrix(1, 2, 1, 1, 5, 6);
-        background: red;
+        background: #ff0000;
         content: "";
         height: 70px;
     }

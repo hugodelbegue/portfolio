@@ -6,7 +6,7 @@ import VueWriter from 'vue-writer'
     <div class="aboutme">
         <h1>Hello !<br>Je suis&nbsp;<strong class="important">Hugo Delbegue</strong>&nbsp;!<br>Je recherche un poste de
             développeur&nbsp;!
-            <VueWriter :array="words" :start="4800" :typeSpeed="150" :delay="800" :eraseSpeed="50" :intervals="200"
+            <VueWriter :array="words" :start="5800" :typeSpeed="150" :delay="800" :eraseSpeed="50" :intervals="200"
                 :iterations='1' />
         </h1>
         <p>

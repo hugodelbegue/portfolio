@@ -73,10 +73,16 @@ import JSONDATA from '@/components/api/data.json'
                                 </div>
                             </div>
                             <div class="preview__link">
-                                <a :href="dataDescription.url" target="_blank">
+                                <div v-if="dataDescription.url == ''">
+                                    <Button type="button" padding=".75" msg="Indisponible" disabled="true" />
+                                </div>
+                                <a v-else :href="dataDescription.url" target="_blank">
                                     <Button type="button" padding=".75" msg="Visiter le site" />
                                 </a>
-                                <a :href="dataDescription.git" target="_blank">
+                                <div v-if="dataDescription.git == ''">
+                                    <Button type="button" padding=".75" msg="Indisponible" disabled="true" />
+                                </div>
+                                <a v-else :href="dataDescription.git" target="_blank">
                                     <Button type="button" padding=".75" msg="Github" />
                                 </a>
                             </div>

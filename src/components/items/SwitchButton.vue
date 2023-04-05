@@ -2,7 +2,7 @@
     <div class="switch">
         <input ref="switchInput" @change="swicthButton" type="checkbox" class="checkbox" id="toggle" :checked="checked">
         <label for="toggle" class="label">
-            <div ref="ball" id="ball" class="ball" :style="{ '--display': display }"></div>
+            <div ref="ball" id="ball" class="ball"></div>
         </label>
     </div>
 </template>

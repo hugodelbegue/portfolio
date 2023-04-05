@@ -1,6 +1,7 @@
 <template>
     <div class="button">
-        <input :type="type" :style="{ 'padding': padding + 'em', 'width': width + '%' }" :value="msg">
+        <input :class="stop" :type="type" :style="{ 'padding': padding + 'em', 'width': width + '%' }" :value="msg"
+            :disabled="disabled">
     </div>
 </template>
 
@@ -9,8 +10,24 @@ defineProps({
     type: String,
     msg: String,
     padding: String,
-    width: String
+    width: String,
+    disabled: {
+        type: String,
+        default: false
+    }
 })
+</script>
+
+<script>
+export default {
+    computed: {
+        stop() {
+            return {
+                stop: this.$props.disabled == "true"
+            }
+        }
+    }
+}
 </script>
 
 <style lang="scss" scoped>
@@ -55,6 +72,12 @@ defineProps({
         @media #{$tabletScreen} {
             font-size: 1em;
         }
+    }
+
+    .stop {
+        cursor: auto !important;
+        pointer-events: none;
+        opacity: .2;
     }
 }
 </style>
