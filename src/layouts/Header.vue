@@ -8,7 +8,7 @@ import AboutMe from '@/components/AboutMe.vue'
 <template>
     <header>
         <!-- TODO : fixer la bar de navigation ainsi que l'adapter avec une animation -->
-        <div class="layout__navbar">
+        <div ref="navigation" class="layout__navbar">
             <Logo>
                 <template #picture>
                     <a href="/" title="Accueil">
@@ -21,10 +21,10 @@ import AboutMe from '@/components/AboutMe.vue'
                     </div>
                 </template>
             </Logo>
-            <NavBar />
+            <NavBar ref="navbar" />
         </div>
         <Transition name="transition__text" appear>
-            <div v-if="$route.name == 'HomeView'" class="layout__aboutme">
+            <div v-if="$route.name == 'HomeView'" ref="aboutme" class="layout__aboutme">
                 <Logo class="avatar">
                     <template #picture>
                         <img class="avatar__img" alt="Avatar" src="@/assets/img/avatar.svg" />
@@ -38,11 +38,47 @@ import AboutMe from '@/components/AboutMe.vue'
 
 <script>
 export default {
+    beforeMount() {
+        window.addEventListener('scroll', this.setOfNavigation);
+        // window.addEventListener('wheel', this.scrollTop);
+    },
+    mounted() {
+    },
     computed: {
         classShadow() {
             return {
                 important__shadow: this.$route.name == 'ProjectView',
             }
+        },
+
+    },
+    methods: {
+        setOfNavigation() {
+            const cv = this.$refs.navbar.$refs.cv
+            const { navigation, aboutme } = this.$refs
+            if (window.scrollY > 26.5) {
+                cv.style.display = 'none';
+                // aboutme.classList.add("add__padding");
+                navigation.classList.add("navigation");
+            } else {
+                cv.style.display = 'block';
+                navigation.classList.remove("navigation");
+                // aboutme.classList.remove("add__padding");
+            }
+        },
+        scrollTop() {
+            let lastScrollTop = 0;
+            let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+            if (scrollTop < lastScrollTop) {
+                console.log("scroll at top")
+                // L'utilisateur est en train de faire défiler vers le haut
+                // Faites quelque chose ici...
+            } else {
+                console.log('hello');
+                // L'utilisateur est en train de faire défiler vers le bas
+                // Faites quelque chose ici...
+            }
+            lastScrollTop = scrollTop;
         }
     }
 }
@@ -50,6 +86,23 @@ export default {
 
 <style lang="scss" scoped>
 @import '@/assets/scss/responsive.scss';
+
+.navigation {
+    z-index: 1;
+    position: fixed;
+    width: 100%;
+    background: rgb(165, 83, 23, .9);
+    padding-top: 0 !important;
+    overflow: hidden;
+}
+
+.add__padding {
+    padding-top: 76px;
+}
+
+.is__hidden {
+    transform: translateY(-100%);
+}
 
 header {
     display: flex;

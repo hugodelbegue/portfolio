@@ -65,7 +65,7 @@ defineProps({
     input[type="submit"]:disabled {
         cursor: auto !important;
         pointer-events: none;
-        opacity: .2;
+        opacity: .3;
     }
 }
 </style>

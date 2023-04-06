@@ -7,6 +7,7 @@ import ReturnTop from './components/items/ReturnTop.vue';
 
 <template>
   <div class="layout" :class="showPaint">
+    <!-- TODO : ajouter div.padding pour l'évènement du scroll de la navigation   -->
     <div :class="bandLeft" style="display: none;"></div>
     <div ref="bandR" :class="bandRight" style="display: none;"></div>
     <div ref="top" class="header__part">

@@ -50,7 +50,7 @@ import IconPen from '@/components/icons/IconPen.vue'
                 rel="noreferrer" download="CV_hugodelbegue" title="Téléchagement CV pdf">
                 <Link class="downloadCV" :class="classDownload">
                 <template #title>
-                    <span>CV</span>
+                    <span ref="cv">CV</span>
                 </template>
                 <template #icon>
                     <IconDownload />
@@ -58,7 +58,7 @@ import IconPen from '@/components/icons/IconPen.vue'
                 </Link>
             </a>
             <!-- Menu mobile -->
-            <!-- TODO : navmobile à mettre dans un component différent -->
+            <!-- TODO : navMobile à mettre dans un component différent -->
             <div class="burger_menu">
                 <input @change="toggleMenu" @click="closeHidden" type="checkbox" id="burger">
                 <label ref="cross" for="burger" class="burger" :class="classLink">

@@ -33,7 +33,7 @@ import JSONDATA from '@/components/api/data.json'
             </TransitionGroup>
         </div>
         <!-- <DescriptionProject /> -->
-        <!-- TODO : mettre le descriptionproject dans un component différent -->
+        <!-- TODO : mettre le DescriptionProject dans un component différent -->
         <div ref="infos" class="project__description__content">
             <div @click="closeInfos" class="close__infos">
                 <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor"
@@ -62,8 +62,14 @@ import JSONDATA from '@/components/api/data.json'
                             </div>
                             <div class="preview__infos">
                                 <h4>Infos</h4>
-                                <span class="layout__year">Année :&ensp;<p class="year">{{ dataDescription.year }}</p>
-                                </span>
+                                <div class="layout__category">
+                                    <span class="year">Année :&ensp;<p class="text">{{ dataDescription.year }}</p>
+                                    </span>
+                                    <span class="category">Catégorie :&ensp;
+                                        <p v-if="dataDescription.frontend" class="text">Frontend</p>
+                                        <p v-if="dataDescription.backend" class="text">Avec backend</p>
+                                    </span>
+                                </div>
                                 <div class="layout__language">
                                     <div class="language" :class="cleanString(lang.name)"
                                         v-for="lang in dataDescription.language">
@@ -129,7 +135,7 @@ export default {
             return {
                 important__color: this.$route.name == "ProjectView"
             }
-        },
+        }
     },
     methods: {
         showAll() {
@@ -373,18 +379,19 @@ h2 {
         display: flex;
         border-radius: 11px;
         background: transparent;
+        transition: background .4s;
 
         svg {
             z-index: 1;
             cursor: pointer;
             border: 1px solid;
             border-radius: 11px;
+            transition: transform .3s;
         }
 
         @media #{$desktopDownScreen} {
             &:hover svg {
-                top: 5px;
-                position: relative;
+                transform: translateY(6px);
             }
 
             &:hover {
@@ -393,8 +400,7 @@ h2 {
         }
 
         &:active svg {
-            top: 5px;
-            position: relative;
+            transform: translateY(10px);
         }
 
         &:active {
@@ -454,23 +460,47 @@ h2 {
     }
 
     .preview__infos {
-
-        // TODO : adapter les marges de manière esthétique
-        span.layout__year {
-            display: inline-flex;
+        h4 {
             margin-bottom: .8em;
+        }
 
-            &::before {
-                content: url(@/assets/img/designs/calendar.svg);
-                color: var(--color-button);
-                margin-right: .8em;
+        .layout__category {
+            display: flex;
+            flex-direction: column;
+            gap: .5em;
+            margin-bottom: 1.8em;
+
+            span.year {
+                display: inline-flex;
+
+                &::before {
+                    content: url(@/assets/img/designs/calendar.svg);
+                    color: var(--color-button);
+                    margin-right: .8em;
+                }
+
+                .text {
+                    margin-top: 0;
+                    font-weight: var(--weight-bold);
+                }
             }
 
-            .year {
-                margin-top: 0;
-                font-weight: var(--weight-bold);
+            span.category {
+                display: inline-flex;
+
+                &::before {
+                    content: url(@/assets/img/designs/tags-fill.svg);
+                    color: var(--color-button);
+                    margin-right: .8em;
+                }
+
+                .text {
+                    margin-top: 0;
+                    font-weight: var(--weight-bold);
+                }
             }
         }
+
 
         .language {
             padding: 0em .5em;
@@ -481,7 +511,7 @@ h2 {
             display: flex;
             flex-wrap: wrap-reverse;
             gap: 10px;
-            width: 100%;
+            width: 60%;
         }
     }
 
