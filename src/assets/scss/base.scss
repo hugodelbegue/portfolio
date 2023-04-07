@@ -27,9 +27,11 @@
   --linear-background-dark: linear-gradient(25deg, var(--black-soft) 0%, var(--brown-orange) 100%), var(--black-soft);
 
   --shadow-light: rgba(60, 60, 60, 0.29);
-  --line-light: rgba(60, 60, 60, 0.12);
   --shadow-dark: rgba(84, 84, 84, 0.65);
+  --line-light: rgba(60, 60, 60, 0.12);
   --line-dark: rgba(84, 84, 84, 0.48);
+  // --line-header-light: var(--gray-very-light);
+  // --line-header-dark: var(--gray);
 
   --text-light: var(--indigo);
   --text-dark: var(--orange-text);
@@ -60,6 +62,8 @@
   --color-background-project-dark: #86471a;
   --color-background-project-back-light: #e1ce92;
   --color-background-project-back-dark: #a85b24;
+  --color-background-navigation-light: rgba(238, 223, 172, .9);
+  --color-background-navigation-dark: rgba(90, 55, 30, .9);
 
   // fonts
   --size: 15px;
@@ -96,6 +100,7 @@
   --color-background-band-1: var(--color-band-light-1);
   --color-background-band-2: var(--color-band-light-2);
   --color-background-band-3: var(--color-band-light-3);
+  --color-background-navigation: var(--color-background-navigation-light);
 
   --color-background-language: rgba(218, 97, 32, 0.2);
   --color-text-language: var(--orange);
@@ -103,6 +108,7 @@
 
   --color-border-1: var(--shadow-light);
   --color-border-2: var(--line-light);
+  // --color-line-header: var(--line-header-light);
   --color-border-hover: var(--orange);
   --color-border-active: var(--orange);
   --color-button: var(--orange);
@@ -139,6 +145,8 @@
   --color-background-band-1: var(--color-band-dark-1);
   --color-background-band-2: var(--color-band-dark-2);
   --color-background-band-3: var(--color-band-dark-3);
+  --color-background-navigation: var(--color-background-navigation-dark);
+
 
   --color-background-language: rgba(255, 128, 37, 0.2);
   --color-text-language: var(--fluorescent-orange);
@@ -146,6 +154,7 @@
 
   --color-border-1: var(--shadow-dark);
   --color-border-2: var(--line-dark);
+  // --color-line-header: var(--line-header-dark);
   --color-border-hover: var(--fluorescent-orange);
   --color-border-active: var(--fluorescent-orange);
   --color-button: var(--fluorescent-orange);

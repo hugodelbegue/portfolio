@@ -14,6 +14,7 @@ import ReturnTop from './components/items/ReturnTop.vue';
       <Header />
       <hr :class="lineHeader" class="line__header">
     </div>
+    <div ref="padding" style="width: 100%;"></div>
     <Main />
     <div class="footer__part">
       <Footer />
@@ -77,23 +78,26 @@ export default {
 }
 
 .line__header {
-  margin-left: max(4.5em, calc((50% - var(--desktop-up) / 2) + 4em));
-  margin-right: max(4.5em, calc((50% - var(--desktop-up) / 2) + 4em));
-  border: 1px solid var(--color-border-2);
+  margin-left: max(4.5em, calc(50% - var(--mobile-up) / 2));
+  margin-right: max(4.5em, calc(50% - var(--mobile-up) / 2));
+  border: 1px solid var(--color-button);
   border-radius: 2px;
   position: relative;
 }
 
 .line__hidden {
-  @media #{$tabletScreen} {
-    display: none;
-  }
+  display: none;
+
+  // @media #{$tabletScreen} {
+  //   display: none;
+  // }
 }
 
+// TODO : modifier les paddings des côtés et les mettre uniformes sur l'ensemble du site
+
 header {
-  padding-left: calc(50% - var(--desktop-up) / 2);
-  padding-right: calc(50% - var(--desktop-up) / 2);
-  position: relative;
+  // padding-left: calc(50% - var(--desktop-down) / 2);
+  // padding-right: calc(50% - var(--desktop-down) / 2);
 }
 
 main {

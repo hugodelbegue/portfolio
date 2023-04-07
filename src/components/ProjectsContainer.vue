@@ -410,6 +410,7 @@ h2 {
 
     h3 {
         font-size: 2em;
+        // TODO : choisir entre typography majuscule ou miniscule pour le titre 
         font-variant-caps: all-small-caps;
         line-height: 1;
     }

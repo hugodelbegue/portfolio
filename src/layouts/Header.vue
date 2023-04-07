@@ -7,22 +7,26 @@ import AboutMe from '@/components/AboutMe.vue'
 
 <template>
     <header>
-        <!-- TODO : fixer la bar de navigation ainsi que l'adapter avec une animation -->
-        <div ref="navigation" class="layout__navbar">
-            <Logo>
-                <template #picture>
-                    <a href="/" title="Accueil">
-                        <img :class="classShadow" alt="PrimalProd logo" src="@/assets/img/logo.svg" width="40"
-                            height="40" />
-                    </a>
-                    <div class="layout__switch">
-                        <SwitchButton />
-                        <span class="indic">| Thème.</span>
-                    </div>
-                </template>
-            </Logo>
-            <NavBar ref="navbar" />
+        <!-- TODO : finir la bar de navigation ainsi que l'adapter avec une animation -->
+
+        <div ref="navigation" class="background__navigation">
+            <div ref="borderBottom" class="layout__navbar">
+                <Logo>
+                    <template #picture>
+                        <a href="/" title="Accueil">
+                            <img :class="classShadow" alt="PrimalProd logo" src="@/assets/img/logo.svg" width="40"
+                                height="40" />
+                        </a>
+                        <div class="layout__switch">
+                            <SwitchButton />
+                            <span class="indic">| Thème.</span>
+                        </div>
+                    </template>
+                </Logo>
+                <NavBar ref="navbar" />
+            </div>
         </div>
+
         <Transition name="transition__text" appear>
             <div v-if="$route.name == 'HomeView'" ref="aboutme" class="layout__aboutme">
                 <Logo class="avatar">
@@ -55,15 +59,25 @@ export default {
     methods: {
         setOfNavigation() {
             const cv = this.$refs.navbar.$refs.cv
-            const { navigation, aboutme } = this.$refs
-            if (window.scrollY > 26.5) {
+            const { navigation, aboutme, borderBottom } = this.$refs
+            if (window.scrollY > 36 && window.innerWidth > 970) {
                 cv.style.display = 'none';
-                // aboutme.classList.add("add__padding");
+                borderBottom.classList.add('line__hidden');
+                if (this.$route.name == 'HomeView') {
+                    aboutme.classList.add("add__padding");
+                } else if (this.$route.name == 'ProjectView' || this.$route.name == 'ContactView') {
+                    this.$root.$refs.padding.classList.add('add__padding')
+                }
                 navigation.classList.add("navigation");
             } else {
                 cv.style.display = 'block';
+                borderBottom.classList.remove('line__hidden');
                 navigation.classList.remove("navigation");
-                // aboutme.classList.remove("add__padding");
+                if (this.$route.name == 'HomeView') {
+                    aboutme.classList.remove("add__padding");
+                } else if (this.$route.name == 'ProjectView' || this.$route.name == 'ContactView') {
+                    this.$root.$refs.padding.classList.remove('add__padding')
+                }
             }
         },
         scrollTop() {
@@ -91,17 +105,18 @@ export default {
     z-index: 1;
     position: fixed;
     width: 100%;
-    background: rgb(165, 83, 23, .9);
+    background: var(--color-background-navigation);
     padding-top: 0 !important;
     overflow: hidden;
-}
-
-.add__padding {
-    padding-top: 76px;
+    // transition: all .1s;
 }
 
 .is__hidden {
     transform: translateY(-100%);
+}
+
+.line__hidden {
+    border-bottom: 0px solid transparent !important;
 }
 
 header {
@@ -109,16 +124,26 @@ header {
     flex-direction: column;
 }
 
-.layout__navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+.background__navigation {
+    // background: red;    
     padding-top: 1.4em;
-    padding-left: 1em;
-    padding-right: 1em;
 
     @media #{$tabletScreen} {
         padding-top: 1em;
+    }
+}
+
+.layout__navbar {
+    margin-left: max(1em, (calc(50% - var(--desktop-down) / 2)));
+    margin-right: max(1em, (calc(50% - var(--desktop-down) / 2)));
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid var(--color-border-2);
+    border-radius: 1px;
+
+    @media #{$tabletScreen} {
+        border-bottom: 0px solid transparent;
     }
 
     a {
@@ -131,12 +156,14 @@ header {
 }
 
 .layout__aboutme {
+    padding-left: max(3em, (calc(50% - var(--desktop-down) / 2)));
+    padding-right: max(3em, (calc(50% - var(--desktop-down) / 2)));
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 7em;
-    margin: 5.3em auto 7em;
-    width: 80%;
+    margin-top: 5.3em;
+    margin-bottom: 7em;
 
     @media #{$desktopScreen} {
         gap: 5em;
