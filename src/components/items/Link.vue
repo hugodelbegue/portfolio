@@ -17,6 +17,5 @@ defineProps({
 .link {
     display: flex;
     place-items: flex-start;
-    border-radius: 5px;
 }
 </style>

@@ -25,6 +25,8 @@ import AboutMe from '@/components/AboutMe.vue'
                 </Logo>
                 <NavBar ref="navbar" />
             </div>
+            <!-- TODO : voir pour mettre une ancre pour le déclenchement de l'event -->
+            <div ref="anchor"></div>
         </div>
 
         <div v-if="$route.name == 'HomeView'" ref="aboutme" class="layout__aboutme">
@@ -57,8 +59,8 @@ export default {
     methods: {
         setOfNavigation() {
             const cv = this.$refs.navbar.$refs.cv
-            const { navigation, aboutme, borderBottom } = this.$refs
-            if (window.scrollY > 36 && window.innerWidth > 970) {
+            const { navigation, aboutme, borderBottom, anchor } = this.$refs
+            if (window.scrollY > 35 && window.innerWidth > 970) {
                 cv.style.display = 'none';
                 borderBottom.classList.add('line__hidden');
                 if (this.$route.name == 'HomeView') {
@@ -162,7 +164,6 @@ header {
     gap: 7em;
     margin-top: 5.3em;
     margin-bottom: 7em;
-    animation: animationDown .3s ease;
 
     @media #{$desktopScreen} {
         gap: 5em;
@@ -333,18 +334,6 @@ img {
 
     100% {
         visibility: hidden;
-    }
-}
-
-@keyframes animationDown {
-    from {
-        opacity: 0;
-        transform: translateY(-100px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateY(0px);
     }
 }
 </style>

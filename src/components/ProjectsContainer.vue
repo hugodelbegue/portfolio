@@ -20,16 +20,16 @@ import JSONDATA from '@/components/api/data.json'
                 <article v-for="data in allData" :key="data" class="project">
                     <Project ref="load" :title="data.title" @click="onClick(data.title)">
                         <template #title>
-                            <div class="layout__title">{{ data.title }}</div>
+                        <div class="layout__title">{{ data.title }}</div>
                         </template>
                         <template #image>
                             <RenderProjectImg :src="imgUrl(data.preview)" :alt="data.title" :title="data.title" />
                         </template>
                         <template #text>
-                            <!-- <p>Développement web</p> -->
+                            <p>Développement web</p>
                             <!-- TODO : choisir le rendu -->
-                            <p v-if="data.frontend">Frontend</p>
-                            <p v-if="data.backend">Backend</p>
+                            <!-- <p v-if="data.frontend">Frontend</p>
+                                        <p v-if="data.backend">Backend</p> -->
                         </template>
                     </Project>
                 </article>
@@ -387,7 +387,6 @@ h2 {
         svg {
             z-index: 1;
             cursor: pointer;
-            border: 1px solid;
             border-radius: 11px;
             transition: transform .3s;
         }

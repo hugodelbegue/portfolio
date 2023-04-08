@@ -199,6 +199,7 @@ export default {
 
         a .link {
             font-weight: var(--weight-bold);
+            line-height: initial;
         }
     }
 
@@ -301,6 +302,7 @@ export default {
     .downloadCV {
         flex-direction: column-reverse;
         place-items: center;
+        // gap: 5px;
         background-color: var(--color-background-download-25);
         color: var(--color-icon);
         border: 2px dashed var(--color-button-border);
