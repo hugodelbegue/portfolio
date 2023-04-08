@@ -78,8 +78,8 @@ export default {
 }
 
 .line__header {
-  margin-left: max(4.5em, calc(50% - var(--mobile-up) / 2));
-  margin-right: max(4.5em, calc(50% - var(--mobile-up) / 2));
+  margin-left: max(var(--body-padding), calc(50% - var(--mobile-up) / 2));
+  margin-right: max(var(--body-padding), calc(50% - var(--mobile-up) / 2));
   border: 1px solid var(--color-button);
   border-radius: 2px;
   position: relative;
@@ -87,13 +87,7 @@ export default {
 
 .line__hidden {
   display: none;
-
-  // @media #{$tabletScreen} {
-  //   display: none;
-  // }
 }
-
-// TODO : modifier les paddings des côtés et les mettre uniformes sur l'ensemble du site
 
 header {
   // padding-left: calc(50% - var(--desktop-down) / 2);
@@ -101,23 +95,13 @@ header {
 }
 
 main {
-  padding-left: max(3em, (calc(50% - var(--desktop-down) / 2)));
-  padding-right: max(3em, (calc(50% - var(--desktop-down) / 2)));
-
-  @media #{$mobileMediumScreen} {
-    padding-left: 1.5em;
-    padding-right: 1.5em;
-  }
+  padding-left: max(var(--body-padding), (calc(50% - var(--desktop-down) / 2)));
+  padding-right: max(var(--body-padding), (calc(50% - var(--desktop-down) / 2)));
 }
 
 footer {
-  padding-left: max(5em, (calc(50% - var(--desktop-up) / 2)));
-  padding-right: max(5em, (calc(50% - var(--desktop-up) / 2)));
-
-  @media #{$tabletScreen} {
-    padding-left: 2em;
-    padding-right: 2em;
-  }
+  padding-left: max(var(--body-padding), (calc(50% - var(--desktop-up) / 2)));
+  padding-right: max(var(--body-padding), (calc(50% - var(--desktop-up) / 2)));
 }
 
 // Label background

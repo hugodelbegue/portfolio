@@ -27,16 +27,14 @@ import AboutMe from '@/components/AboutMe.vue'
             </div>
         </div>
 
-        <Transition name="transition__text" appear>
-            <div v-if="$route.name == 'HomeView'" ref="aboutme" class="layout__aboutme">
-                <Logo class="avatar">
-                    <template #picture>
-                        <img class="avatar__img" alt="Avatar" src="@/assets/img/avatar.svg" />
-                    </template>
-                </Logo>
-                <AboutMe />
-            </div>
-        </Transition>
+        <div v-if="$route.name == 'HomeView'" ref="aboutme" class="layout__aboutme">
+            <Logo class="avatar">
+                <template #picture>
+                    <img class="avatar__img" alt="Avatar" src="@/assets/img/avatar.svg" />
+                </template>
+            </Logo>
+            <AboutMe />
+        </div>
     </header>
 </template>
 
@@ -134,8 +132,8 @@ header {
 }
 
 .layout__navbar {
-    margin-left: max(1em, (calc(50% - var(--desktop-down) / 2)));
-    margin-right: max(1em, (calc(50% - var(--desktop-down) / 2)));
+    margin-left: max(var(--body-padding), (calc(50% - var(--desktop-down) / 2)));
+    margin-right: max(var(--body-padding), (calc(50% - var(--desktop-down) / 2)));
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -156,14 +154,15 @@ header {
 }
 
 .layout__aboutme {
-    padding-left: max(3em, (calc(50% - var(--desktop-down) / 2)));
-    padding-right: max(3em, (calc(50% - var(--desktop-down) / 2)));
+    padding-left: max(var(--body-padding), (calc(50% - var(--desktop-down) / 2)));
+    padding-right: max(var(--body-padding), (calc(50% - var(--desktop-down) / 2)));
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 7em;
     margin-top: 5.3em;
     margin-bottom: 7em;
+    animation: animationDown .3s ease;
 
     @media #{$desktopScreen} {
         gap: 5em;
@@ -337,15 +336,15 @@ img {
     }
 }
 
-// Transitions
-.transition__text-enter-active,
-.transition__text-leave-active {
-    transition: 0.1s ease;
-}
+@keyframes animationDown {
+    from {
+        opacity: 0;
+        transform: translateY(-100px);
+    }
 
-.transition__text-enter-from,
-.transition__text-leave-to {
-    transform: translateY(-100px);
-    opacity: 0;
+    to {
+        opacity: 1;
+        transform: translateY(0px);
+    }
 }
 </style>

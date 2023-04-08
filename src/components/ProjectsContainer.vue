@@ -26,7 +26,10 @@ import JSONDATA from '@/components/api/data.json'
                             <RenderProjectImg :src="imgUrl(data.preview)" :alt="data.title" :title="data.title" />
                         </template>
                         <template #text>
-                            <p>Développement web</p>
+                            <!-- <p>Développement web</p> -->
+                            <!-- TODO : choisir le rendu -->
+                            <p v-if="data.frontend">Frontend</p>
+                            <p v-if="data.backend">Backend</p>
                         </template>
                     </Project>
                 </article>

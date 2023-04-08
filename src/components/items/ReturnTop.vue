@@ -28,6 +28,7 @@ export default {
                     button.style.backgroundColor = "rgba(0, 0, 0, .7)";
                 }
                 timer = setTimeout(function () {
+                    // TODO : adapter le button return suivant le cas
                     button.style.backgroundColor = "rgba(0, 0, 0, .2)";
                 }, 2000);
             }, false);
@@ -46,6 +47,7 @@ export default {
     position: fixed;
     bottom: 1em;
     right: 1em;
+    // TODO : augmenter la taille en mode desktop
     width: 50px;
     height: 50px;
     background-color: rgba(0, 0, 0, .2);

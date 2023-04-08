@@ -46,6 +46,7 @@ import IconPen from '@/components/icons/IconPen.vue'
                 </RouterLink>
             </div>
             <!-- Link CV download -->
+            <!-- TODO : voir comment arranger la position du CV download -->
             <a ref="download" id="download" :class="offset" :href="downloadUrl('CV_HugoDELBEGUE.pdf')" target="_blank"
                 rel="noreferrer" download="CV_hugodelbegue" title="Téléchagement CV pdf">
                 <Link class="downloadCV" :class="classDownload">
