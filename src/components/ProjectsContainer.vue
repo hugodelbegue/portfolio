@@ -29,7 +29,7 @@ import JSONDATA from '@/components/api/data.json'
                             <p>Développement web</p>
                             <!-- TODO : choisir le rendu -->
                             <!-- <p v-if="data.frontend">Frontend</p>
-                                        <p v-if="data.backend">Backend</p> -->
+                                                                    <p v-if="data.backend">Backend</p> -->
                         </template>
                     </Project>
                 </article>
@@ -359,15 +359,17 @@ h2 {
     background: var(--color-background);
     border-top: 3px solid var(--color-border-2);
     width: 100%;
-    height: 70vh;
+    height: auto;
     position: fixed;
     bottom: 0;
     left: 0;
-    flex-direction: column;
-    place-content: space-around;
     display: none;
     overflow-y: auto;
     overflow-x: hidden;
+
+    @media #{$tabletScreen} {
+        height: -webkit-fill-available;
+    }
 
     .title__description {
         display: flex;
@@ -412,7 +414,6 @@ h2 {
 
     h3 {
         font-size: 2em;
-        // TODO : choisir entre typography majuscule ou miniscule pour le titre 
         font-variant-caps: all-small-caps;
         line-height: 1;
     }

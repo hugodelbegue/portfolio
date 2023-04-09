@@ -6,8 +6,7 @@ import VueWriter from 'vue-writer'
     <div class="aboutme">
         <h1>Hello !<br>Je suis&nbsp;<strong class="important">Hugo Delbegue</strong>&nbsp;!<br>Je recherche un poste de
             développeur&nbsp;!
-            <!-- TODO : modifier le temps de départ de l'animation -->
-            <VueWriter :array="words" :start="5800" :typeSpeed="150" :delay="800" :eraseSpeed="50" :intervals="200"
+            <VueWriter :array="words" :start="time" :typeSpeed="150" :delay="800" :eraseSpeed="50" :intervals="200"
                 :iterations='1' />
         </h1>
         <p>
@@ -20,8 +19,15 @@ import VueWriter from 'vue-writer'
 <script>
 export default {
     data() {
+        if (window.innerWidth < 520) {
+            return {
+                words: ["Frontend &..", "< Vue.js /> Frontend !"],
+                time: 1200
+            }
+        }
         return {
-            words: ["Frontend &..", "< Vue.js /> Frontend !"]
+            words: ["Frontend &..", "< Vue.js /> Frontend !"],
+            time: 5800
         };
     },
 };

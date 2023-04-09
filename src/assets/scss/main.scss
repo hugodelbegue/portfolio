@@ -5,12 +5,12 @@
 
   @media #{$mobileMenuVisible} {
     // TODO : padding à adapter suivant les navigateurs
-    padding-right: 9px;
+    padding-right: 9px !important;
   }
 }
 
 .add__padding {
-  padding-top: 76px;
+  padding-top: 56px;
 }
 
 a,
@@ -63,7 +63,6 @@ a,
 }
 
 .important__download {
-  border-color: var(--color-link-important) !important;
 
   @media #{$desktopDownScreen} {
     &:hover {

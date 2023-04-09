@@ -46,18 +46,13 @@ import IconPen from '@/components/icons/IconPen.vue'
                 </RouterLink>
             </div>
             <!-- Link CV download -->
-            <!-- TODO : voir comment arranger la position du CV download -->
-            <a ref="download" id="download" :class="offset" :href="downloadUrl('CV_HugoDELBEGUE.pdf')" target="_blank"
-                rel="noreferrer" download="CV_hugodelbegue" title="Téléchagement CV pdf">
-                <Link class="downloadCV" :class="classDownload">
-                <template #title>
-                    <span ref="cv">CV</span>
-                </template>
-                <template #icon>
-                    <IconDownload />
-                </template>
-                </Link>
-            </a>
+            <Link class="downloadLink">
+            <template #title>
+                <a class="downloadCV" ref="download" id="download" :class="offset, classDownload"
+                    :href="downloadUrl('CV_HugoDELBEGUE.pdf')" target="_blank" rel="noreferrer" download="CV_hugodelbegue"
+                    title="Téléchagement CV pdf">CV</a>
+            </template>
+            </Link>
             <!-- Menu mobile -->
             <!-- TODO : navMobile à mettre dans un component différent -->
             <div class="burger_menu">
@@ -163,7 +158,7 @@ export default {
 .navbar {
     display: flex;
     align-items: center;
-    column-gap: 1em;
+    gap: 1.5em;
 
     a {
         font-size: var(--size-navbar);
@@ -185,6 +180,7 @@ export default {
 
     .line_menu {
         display: flex;
+        place-items: center;
         gap: 2rem;
 
         @media #{$mobileMenuHidden} {
@@ -299,42 +295,28 @@ export default {
         }
     }
 
+    .downloadLink {
+        padding-left: 1em;
+        border-left: 1px solid;
+        line-height: initial;
+        border-color: var(--color-border-2);
+    }
+
     .downloadCV {
-        flex-direction: column-reverse;
-        place-items: center;
-        // gap: 5px;
-        background-color: var(--color-background-download-25);
-        color: var(--color-icon);
-        border: 2px dashed var(--color-button-border);
-        border-radius: 5px;
-        transition: background .3s, box-shadow .2s;
-        padding: .3em .4em;
+        color: var(--color-text);
+        font-family: 'Bungee Spice', cursive;
+        // transform: scale(1.5);
         cursor: pointer;
 
-        span {
-            color: var(--color-icon);
-            font-size: .8em;
-            font-weight: var(--weight-bold);
-        }
+        // @media #{$desktopDownScreen} {
+        //     &:hover {
+        //         background-color: var(--color-background-download-6);
+        //     }
+        // }
 
-        @media #{$desktopDownScreen} {
-            &:hover {
-                background-color: var(--color-background-download-6);
-                box-shadow: 0 1px 3px var(--color-border-1);
-            }
-        }
-
-        &:active {
-            // background: var(--color-button-active);
-            background: var(--color-button);
-            box-shadow: 0 1px 6px var(--color-border-1);
-        }
-
-        svg {
-            background: transparent;
-            width: 20px;
-            height: 20px;
-        }
+        // &:active {
+        //     background: var(--color-button);
+        // }
     }
 }
 
@@ -359,6 +341,7 @@ export default {
 .up {
     display: block !important;
     position: absolute;
+    top: 1em;
     left: 1em;
     z-index: 3;
 
@@ -368,10 +351,10 @@ export default {
 }
 
 .offset {
-    top: 3em;
+    top: 2em;
 
     @media #{$mobileUpScreen} {
-        top: 4.5em;
+        top: 3em;
     }
 }
 

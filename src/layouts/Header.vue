@@ -9,24 +9,22 @@ import AboutMe from '@/components/AboutMe.vue'
     <header>
         <!-- TODO : finir la bar de navigation ainsi que l'adapter avec une animation -->
 
-        <div ref="navigation" class="background__navigation">
-            <div ref="borderBottom" class="layout__navbar">
+        <div ref="navigation" :class="setColorNavigation">
+            <div ref="anchor" class="layout__navbar">
                 <Logo>
                     <template #picture>
-                        <a href="/" title="Accueil">
-                            <img :class="classShadow" alt="PrimalProd logo" src="@/assets/img/logo.svg" width="40"
-                                height="40" />
+                        <a ref="logo" href="/" title="Accueil">
+                            <img :class="classShadow" alt="PrimalProd logo" src="@/assets/img/logo.svg" width="30"
+                                height="30" />
                         </a>
                         <div class="layout__switch">
                             <SwitchButton />
-                            <span class="indic">| Thème.</span>
+                            <span ref="togg" class="indic">| Thème.</span>
                         </div>
                     </template>
                 </Logo>
                 <NavBar ref="navbar" />
             </div>
-            <!-- TODO : voir pour mettre une ancre pour le déclenchement de l'event -->
-            <div ref="anchor"></div>
         </div>
 
         <div v-if="$route.name == 'HomeView'" ref="aboutme" class="layout__aboutme">
@@ -54,16 +52,20 @@ export default {
                 important__shadow: this.$route.name == 'ProjectView',
             }
         },
-
+        setColorNavigation() {
+            return {
+                background__navigation: this.$route.name == 'ProjectView',
+            }
+        }
     },
     methods: {
         setOfNavigation() {
-            // TODO : retirer le toggle dark mode en navigation flottante
-            const cv = this.$refs.navbar.$refs.cv
-            const { navigation, aboutme, borderBottom, anchor } = this.$refs
-            if (window.scrollY > 35 && window.innerWidth > 970) {
-                cv.style.display = 'none';
-                borderBottom.classList.add('line__hidden');
+            // const cv = this.$refs.navbar.$refs.cv
+            const { navigation, aboutme, anchor, togg, logo } = this.$refs
+            if (window.scrollY > anchor.offsetTop && window.innerWidth > 970) {
+                togg.style.display = 'none';
+                logo.style.display = 'none';
+                anchor.classList.add('line__hidden');
                 if (this.$route.name == 'HomeView') {
                     aboutme.classList.add("add__padding");
                 } else if (this.$route.name == 'ProjectView' || this.$route.name == 'ContactView') {
@@ -71,8 +73,9 @@ export default {
                 }
                 navigation.classList.add("navigation");
             } else {
-                cv.style.display = 'block';
-                borderBottom.classList.remove('line__hidden');
+                togg.style.display = 'flex';
+                logo.style.display = 'flex';
+                anchor.classList.remove('line__hidden');
                 navigation.classList.remove("navigation");
                 if (this.$route.name == 'HomeView') {
                     aboutme.classList.remove("add__padding");
@@ -81,6 +84,7 @@ export default {
                 }
             }
         },
+        // test
         scrollTop() {
             let lastScrollTop = 0;
             let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
@@ -107,13 +111,9 @@ export default {
     position: fixed;
     width: 100%;
     background: var(--color-background-navigation);
-    padding-top: 0 !important;
     overflow: hidden;
-    // transition: all .1s;
-}
-
-.is__hidden {
-    transform: translateY(-100%);
+    transform: translateY(-.9em);
+    // transition: all .2s;
 }
 
 .line__hidden {
@@ -126,12 +126,8 @@ header {
 }
 
 .background__navigation {
-    // background: red;    
-    padding-top: 1.4em;
-
-    @media #{$tabletScreen} {
-        padding-top: 1em;
-    }
+    // TODO : opacifier la couleur
+    background: var(--color-background-band-1);
 }
 
 .layout__navbar {
@@ -142,9 +138,14 @@ header {
     align-items: center;
     border-bottom: 1px solid var(--color-border-2);
     border-radius: 1px;
+    padding-top: .5em;
+    padding-bottom: .5em;
+    margin-top: .9em;
 
     @media #{$tabletScreen} {
         border-bottom: 0px solid transparent;
+        padding-top: 1em;
+        margin-top: 0;
     }
 
     a {
