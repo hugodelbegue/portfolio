@@ -5,13 +5,11 @@ import IconDownload from '@/components/icons/IconDownload.vue'
 import IconPc from '@/components/icons/IconPc.vue'
 import IconProfil from '@/components/icons/IconProfil.vue'
 import IconPen from '@/components/icons/IconPen.vue'
-import NavMobile from '@/components/NavMobile.vue'
 </script>
 
 <template>
     <nav>
         <div class="navbar">
-            <!-- Menu desktop -->
             <div class="line_menu">
                 <RouterLink to="/" :class="classLink" @click="closeHidden">
                     <Link>
@@ -51,8 +49,6 @@ import NavMobile from '@/components/NavMobile.vue'
                     target="_blank" rel="noreferrer" download="CV_hugodelbegue" title="Téléchagement CV pdf">CV</a>
             </template>
             </Link>
-            <!-- Menu mobile -->
-            <NavMobile ref="navmobile" />
         </div>
     </nav>
 </template>

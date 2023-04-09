@@ -2,6 +2,7 @@
 import Logo from '@/components/items/Logo.vue'
 import SwitchButton from '@/components/items/SwitchButton.vue'
 import NavBar from '@/components/NavBar.vue'
+import NavMobile from '@/components/NavMobile.vue'
 import AboutMe from '@/components/AboutMe.vue'
 </script>
 
@@ -22,7 +23,10 @@ import AboutMe from '@/components/AboutMe.vue'
                         </div>
                     </template>
                 </Logo>
+                <!-- Menu desktop -->
                 <NavBar ref="navbar" />
+                <!-- Menu mobile -->
+                <NavMobile ref="navmobile" />
             </div>
             <div ref="anchor"></div>
         </div>
@@ -45,7 +49,7 @@ export default {
     },
     data() {
         return {
-            lastScrollPosition: 0
+            lastScrollPosition: 0,
         }
     },
     computed: {
@@ -76,6 +80,7 @@ export default {
             }
             let scrollDirection = currentScrollPosition > this.lastScrollPosition ? "down" : "up";
             this.lastScrollPosition = currentScrollPosition;
+            // if (true) {
             if (window.innerWidth > 970) {
                 if (scrollDirection === "up") {
                     togg.style.display = 'none';

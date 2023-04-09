@@ -7,7 +7,7 @@ import IconPen from '@/components/icons/IconPen.vue'
 </script>
 
 <template>
-    <div class="burger_menu">
+    <nav class="burger_menu">
         <input @change="toggleMenu" type="checkbox" id="burger">
         <label ref="cross" for="burger" class="burger" :class="classLink">
             <div ref="animation" class="iconMenu"></div>
@@ -52,7 +52,7 @@ import IconPen from '@/components/icons/IconPen.vue'
                 </li>
             </ul>
         </div>
-    </div>
+    </nav>
 </template>
 
 <script>
@@ -60,7 +60,7 @@ export default {
     methods: {
         // Open and close links menu
         toggleMenu() {
-            const download = this.$parent.$refs.download
+            const download = this.$parent.$refs.navbar.$refs.download
             const { burger_links, animation, cross } = this.$refs;
             burger_links.classList.toggle('show');
             animation.classList.toggle('anim');
@@ -91,6 +91,10 @@ export default {
 
 .burger_menu {
     background: transparent;
+
+    @media #{$mobileMenuVisible} {
+        display: none;
+    }
 
     input[type="checkbox"] {
         display: none;
@@ -172,10 +176,6 @@ export default {
         a.router-link-active {
             background: transparent;
         }
-    }
-
-    @media #{$mobileMenuVisible} {
-        display: none;
     }
 }
 
