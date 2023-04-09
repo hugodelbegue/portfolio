@@ -58,6 +58,7 @@ export default {
     },
     methods: {
         setOfNavigation() {
+            // TODO : retirer le toggle dark mode en navigation flottante
             const cv = this.$refs.navbar.$refs.cv
             const { navigation, aboutme, borderBottom, anchor } = this.$refs
             if (window.scrollY > 35 && window.innerWidth > 970) {
