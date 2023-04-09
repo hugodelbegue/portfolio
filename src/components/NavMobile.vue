@@ -66,8 +66,8 @@ export default {
             animation.classList.toggle('anim');
             cross.classList.toggle('elev');
             download.classList.toggle('up');
-            this.$route.name == 'ProjectView' ? download.classList.toggle('offset') : console.log('erreur')
-            this.$root.$refs.bandR.classList.toggle('elev_band');
+            this.$route.name == 'ProjectView' ? download.classList.toggle('offset') : console.log('erreur offset');
+            this.$route.name == 'ProjectView' ? this.$root.$refs.bandR.classList.toggle('elev_band') : console.log('erreur elev_band');
             document.body.classList.toggle('hidden')
         },
         closeHidden() {

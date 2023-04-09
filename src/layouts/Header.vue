@@ -72,14 +72,15 @@ export default {
             const otherPages = this.$route.name == 'ProjectView' || this.$route.name == 'ContactView';
             const addPadding = (homePage, otherPages) => {
                 return homePage ? aboutme.classList.add("add__padding") :
-                    otherPages ? this.$root.$refs.padding.classList.add('add__padding') : console.log('erreur');
+                    otherPages ? this.$root.$refs.padding.classList.add('add__padding') : console.log('erreur addPadding');
             }
             const removePadding = (homePage, otherPages) => {
                 return homePage ? aboutme.classList.remove("add__padding") :
-                    otherPages ? this.$root.$refs.padding.classList.remove('add__padding') : console.log('erreur');
+                    otherPages ? this.$root.$refs.padding.classList.remove('add__padding') : console.log('erreur removePadding');
             }
             let scrollDirection = currentScrollPosition > this.lastScrollPosition ? "down" : "up";
             this.lastScrollPosition = currentScrollPosition;
+            // TODO : voir comment afficher la navigation en mode mobile
             // if (true) {
             if (window.innerWidth > 970) {
                 if (scrollDirection === "up") {
