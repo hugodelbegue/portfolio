@@ -7,7 +7,7 @@ import AboutMe from '@/components/AboutMe.vue'
 
 <template>
     <header>
-
+        <!-- Section navigation -->
         <div ref="nav__content" class="nav__content" :class="setColorNavigation">
             <div ref="navigation" class="layout__navbar">
                 <Logo>
@@ -26,7 +26,7 @@ import AboutMe from '@/components/AboutMe.vue'
             </div>
             <div ref="anchor"></div>
         </div>
-
+        <!-- Section aboutme -->
         <div v-if="$route.name == 'HomeView'" ref="aboutme" class="layout__aboutme">
             <Logo class="avatar">
                 <template #picture>

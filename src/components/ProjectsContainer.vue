@@ -20,23 +20,22 @@ import JSONDATA from '@/components/api/data.json'
                 <article v-for="data in allData" :key="data" class="project">
                     <Project ref="load" :title="data.title" @click="onClick(data.title)">
                         <template #title>
-                        <div class="layout__title">{{ data.title }}</div>
+                            <div class="layout__title">{{ data.title }}</div>
                         </template>
                         <template #image>
                             <RenderProjectImg :src="imgUrl(data.preview)" :alt="data.title" :title="data.title" />
                         </template>
                         <template #text>
-                            <p>Développement web</p>
-                            <!-- TODO : choisir le rendu -->
-                            <!-- <p v-if="data.frontend">Frontend</p>
-                               <p v-if="data.backend">Backend</p> -->
+                            <!-- TODO : peut-être modifier suivant le rendu choisi -->
+                            <p v-if="data.frontend">Développement web</p>
+                            <p v-if="data.backend">Développement web</p>
                         </template>
                     </Project>
                 </article>
             </TransitionGroup>
         </div>
         <!-- <DescriptionProject /> -->
-        <!-- TODO : mettre le DescriptionProject dans un component différent -->
+        <!-- TODO : mettre le DescriptionProject dans un component externe -->
         <div ref="infos" class="project__description__content">
             <div @click="closeInfos" class="close__infos">
                 <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor"
@@ -45,6 +44,7 @@ import JSONDATA from '@/components/api/data.json'
                         d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm6.5 4.5v5.793l2.146-2.147a.5.5 0 0 1 .708.708l-3 3a.5.5 0 0 1-.708 0l-3-3a.5.5 0 1 1 .708-.708L7.5 10.293V4.5a.5.5 0 0 1 1 0z" />
                 </svg>
             </div>
+
             <div v-for=" dataDescription in projects.projectList">
                 <div v-if="dataDescription.title == this.title">
 
@@ -99,10 +99,11 @@ import JSONDATA from '@/components/api/data.json'
                             <img v-for="img in dataDescription.media" :src="imgUrl(img.img)" :alt="dataDescription.title">
                         </div>
                     </div>
-
                 </div>
             </div>
+
         </div>
+
     </div>
 </template>
 
@@ -351,8 +352,8 @@ h2 {
 }
 
 .project__description__content {
-    padding-left: max(1em, (calc(50% - var(--desktop-down) / 2)));
-    padding-right: max(1em, (calc(50% - var(--desktop-down) / 2)));
+    padding-left: max(var(--body-padding), (calc(50% - var(--desktop-down) / 2)));
+    padding-right: max(var(--body-padding), (calc(50% - var(--desktop-down) / 2)));
     padding-top: 1em;
     padding-bottom: 2em;
     z-index: 1;
@@ -385,6 +386,10 @@ h2 {
         border-radius: 11px;
         background: transparent;
         transition: background .4s;
+
+        @media #{$mobileDownScreen} {
+            position: absolute;
+        }
 
         svg {
             z-index: 1;
@@ -422,7 +427,6 @@ h2 {
         display: flex;
         place-content: space-between;
         gap: 5em;
-        margin-left: 4em;
 
         @media #{$tabletScreen} {
             flex-direction: column;
@@ -434,6 +438,11 @@ h2 {
         display: flex;
         flex-direction: column;
         gap: 3em;
+        margin-left: 4em;
+
+        @media #{$mobileDownScreen} {
+            margin-left: 0;
+        }
     }
 
     .preview__development {
@@ -491,6 +500,7 @@ h2 {
 
             span.category {
                 display: inline-flex;
+                flex-wrap: wrap;
 
                 &::before {
                     content: url(@/assets/img/designs/tags-fill.svg);
@@ -521,9 +531,14 @@ h2 {
 
     .preview__link {
         display: flex;
+        flex-wrap: wrap;
         gap: 2em;
         border-top: 2px solid var(--color-border-2);
         padding-top: 1em;
+
+        @media #{$mobileDownScreen} {
+            place-content: center;
+        }
     }
 
     .preview__img {

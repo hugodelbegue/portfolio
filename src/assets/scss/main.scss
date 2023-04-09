@@ -3,6 +3,7 @@
 .hidden {
   overflow: hidden !important;
 
+  // TODO : vérifier pour le rendu en mode mobile
   @media #{$mobileMenuVisible} {
     padding-right: 9px !important;
   }
