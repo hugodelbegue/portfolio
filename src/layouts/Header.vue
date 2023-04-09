@@ -7,10 +7,9 @@ import AboutMe from '@/components/AboutMe.vue'
 
 <template>
     <header>
-        <!-- TODO : finir la bar de navigation ainsi que l'adapter avec une animation -->
 
-        <div ref="navigation" :class="setColorNavigation">
-            <div ref="anchor" class="layout__navbar">
+        <div ref="nav__content" class="nav__content" :class="setColorNavigation">
+            <div ref="navigation" class="layout__navbar">
                 <Logo>
                     <template #picture>
                         <a ref="logo" href="/" title="Accueil">
@@ -25,6 +24,7 @@ import AboutMe from '@/components/AboutMe.vue'
                 </Logo>
                 <NavBar ref="navbar" />
             </div>
+            <div ref="anchor"></div>
         </div>
 
         <div v-if="$route.name == 'HomeView'" ref="aboutme" class="layout__aboutme">
@@ -42,9 +42,11 @@ import AboutMe from '@/components/AboutMe.vue'
 export default {
     beforeMount() {
         window.addEventListener('scroll', this.setOfNavigation);
-        // window.addEventListener('wheel', this.scrollTop);
     },
-    mounted() {
+    data() {
+        return {
+            lastScrollPosition: 0
+        }
     },
     computed: {
         classShadow() {
@@ -60,44 +62,41 @@ export default {
     },
     methods: {
         setOfNavigation() {
-            // const cv = this.$refs.navbar.$refs.cv
-            const { navigation, aboutme, anchor, togg, logo } = this.$refs
-            if (window.scrollY > anchor.offsetTop && window.innerWidth > 970) {
-                togg.style.display = 'none';
-                logo.style.display = 'none';
-                anchor.classList.add('line__hidden');
-                if (this.$route.name == 'HomeView') {
-                    aboutme.classList.add("add__padding");
-                } else if (this.$route.name == 'ProjectView' || this.$route.name == 'ContactView') {
-                    this.$root.$refs.padding.classList.add('add__padding')
+            const { nav__content, aboutme, navigation, togg, logo, anchor } = this.$refs
+            const currentScrollPosition = window.pageYOffset || document.documentElement.scrollTop;
+            const homePage = this.$route.name == 'HomeView';
+            const otherPages = this.$route.name == 'ProjectView' || this.$route.name == 'ContactView';
+            const addPadding = (homePage, otherPages) => {
+                return homePage ? aboutme.classList.add("add__padding") :
+                    otherPages ? this.$root.$refs.padding.classList.add('add__padding') : console.log('erreur');
+            }
+            const removePadding = (homePage, otherPages) => {
+                return homePage ? aboutme.classList.remove("add__padding") :
+                    otherPages ? this.$root.$refs.padding.classList.remove('add__padding') : console.log('erreur');
+            }
+            let scrollDirection = currentScrollPosition > this.lastScrollPosition ? "down" : "up";
+            this.lastScrollPosition = currentScrollPosition;
+            if (window.innerWidth > 970) {
+                if (scrollDirection === "up") {
+                    togg.style.display = 'none';
+                    logo.style.display = 'none';
+                    navigation.classList.add('line__hidden');
+                    nav__content.classList.remove("hidden__nav");
+                    addPadding(homePage, otherPages);
+                    nav__content.classList.add("fixe__nav");
+                } else {
+                    if (currentScrollPosition > anchor.offsetTop) {
+                        nav__content.classList.add("hidden__nav");
+                    }
                 }
-                navigation.classList.add("navigation");
-            } else {
+            }
+            if (window.scrollY < anchor.offsetTop) {
                 togg.style.display = 'flex';
                 logo.style.display = 'flex';
-                anchor.classList.remove('line__hidden');
-                navigation.classList.remove("navigation");
-                if (this.$route.name == 'HomeView') {
-                    aboutme.classList.remove("add__padding");
-                } else if (this.$route.name == 'ProjectView' || this.$route.name == 'ContactView') {
-                    this.$root.$refs.padding.classList.remove('add__padding')
-                }
+                navigation.classList.remove('line__hidden');
+                nav__content.classList.remove("fixe__nav");
+                removePadding(homePage, otherPages);
             }
-        },
-        // test
-        scrollTop() {
-            let lastScrollTop = 0;
-            let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-            if (scrollTop < lastScrollTop) {
-                console.log("scroll at top")
-                // L'utilisateur est en train de faire défiler vers le haut
-                // Faites quelque chose ici...
-            } else {
-                console.log('hello');
-                // L'utilisateur est en train de faire défiler vers le bas
-                // Faites quelque chose ici...
-            }
-            lastScrollTop = scrollTop;
         }
     }
 }
@@ -106,28 +105,13 @@ export default {
 <style lang="scss" scoped>
 @import '@/assets/scss/responsive.scss';
 
-.navigation {
-    z-index: 1;
-    position: fixed;
-    width: 100%;
-    background: var(--color-background-navigation);
-    overflow: hidden;
-    transform: translateY(-.9em);
-    // transition: all .2s;
-}
-
-.line__hidden {
-    border-bottom: 0px solid transparent !important;
-}
-
 header {
     display: flex;
     flex-direction: column;
 }
 
-.background__navigation {
-    // TODO : opacifier la couleur
-    background: var(--color-background-band-1);
+.nav__content {
+    transition: transform .5s;
 }
 
 .layout__navbar {
@@ -164,7 +148,7 @@ header {
     justify-content: center;
     align-items: center;
     gap: 7em;
-    margin-top: 5.3em;
+    margin-top: 7em;
     margin-bottom: 7em;
 
     @media #{$desktopScreen} {
@@ -174,9 +158,12 @@ header {
     @media #{$tabletScreen} {
         flex-direction: column;
         gap: 2.5em;
+        margin-top: 6em;
+        margin-bottom: 6em;
     }
 
     @media #{$mobileMediumScreen} {
+        margin-top: 5em;
         margin-bottom: 5em;
     }
 }
@@ -250,6 +237,30 @@ span {
 
 img {
     place-content: none;
+}
+
+// class navigation
+.hidden__nav {
+    transform: translateY(-100%);
+    // transform: translateY(-.9em);
+}
+
+.line__hidden {
+    border-bottom: 0px solid transparent !important;
+    margin-top: 0 !important;
+}
+
+.fixe__nav {
+    z-index: 1;
+    position: fixed;
+    width: 100%;
+    background: var(--color-background-navigation);
+    overflow: hidden;
+    border-bottom: 1px solid var(--color-border-2);
+}
+
+.background__navigation {
+    background: var(--color-background-navigation-project);
 }
 
 // Animation

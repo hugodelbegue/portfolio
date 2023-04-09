@@ -29,7 +29,7 @@ import JSONDATA from '@/components/api/data.json'
                             <p>Développement web</p>
                             <!-- TODO : choisir le rendu -->
                             <!-- <p v-if="data.frontend">Frontend</p>
-                                                                    <p v-if="data.backend">Backend</p> -->
+                               <p v-if="data.backend">Backend</p> -->
                         </template>
                     </Project>
                 </article>

@@ -31,8 +31,6 @@
   --shadow-dark: rgba(84, 84, 84, 0.65);
   --line-light: rgba(60, 60, 60, 0.12);
   --line-dark: rgba(84, 84, 84, 0.48);
-  // --line-header-light: var(--gray-very-light);
-  // --line-header-dark: var(--gray);
 
   --text-light: var(--indigo);
   --text-dark: var(--orange-text);
@@ -55,16 +53,14 @@
   --color-background-focus: var(--white);
   --color-background-burger-light: rgba(242, 198, 68, 0.75);
   --color-background-burger-dark: rgba(218, 97, 32, 0.75);
-  // --color-background-download-light-25: rgba(218, 97, 32, 0.25);
-  // --color-background-download-light-6: rgba(218, 97, 32, 0.6);
-  // --color-background-download-dark-25: rgba(255, 128, 37, 0.25);
-  // --color-background-download-dark-6: rgba(255, 128, 37, 0.6);
   --color-background-project-light: #efdb9c;
   --color-background-project-dark: #86471a;
   --color-background-project-back-light: #e1ce92;
   --color-background-project-back-dark: #a85b24;
-  --color-background-navigation-light: rgba(238, 223, 172, .9);
-  --color-background-navigation-dark: rgba(90, 55, 30, .9);
+  --color-background-navigation-light: rgba(241, 209, 110, .9);
+  --color-background-navigation-dark: rgba(158, 80, 24, .9);
+  --color-background-navigation-project-light: rgba(218, 97, 32, .9);
+  --color-background-navigation-project-dark: rgba(255, 128, 37, .9);
 
   // fonts
   --size: 15px;
@@ -79,9 +75,15 @@
   // layout
   --body-padding: 1em;
 
+  // projects
   --size-project: var(--size-project-desktop);
   --size-project-desktop: 285px;
   --space-between-project: 2.45em;
+
+  // skills
+  --width-skill: 16.6em;
+  --height-skill: 16.6em;
+  --space-between-skill: 3em;
 
   --desktop-up: 1620px;
   --desktop-medium: 1440px;
@@ -96,14 +98,13 @@
 .theme__light {
   --color-background: var(--linear-background-light);
   --color-background-burger: var(--color-background-burger-light);
-  // --color-background-download-25: var(--color-background-download-light-25);
-  // --color-background-download-6: var(--color-background-download-light-6);
   --color-background-project: var(--color-background-project-light);
   --color-background-project-back: var(--color-background-project-back-light);
   --color-background-band-1: var(--color-band-light-1);
   --color-background-band-2: var(--color-band-light-2);
   --color-background-band-3: var(--color-band-light-3);
   --color-background-navigation: var(--color-background-navigation-light);
+  --color-background-navigation-project: var(--color-background-navigation-project-light);
 
   --color-background-language: rgba(218, 97, 32, 0.2);
   --color-text-language: var(--orange);
@@ -111,7 +112,6 @@
 
   --color-border-1: var(--shadow-light);
   --color-border-2: var(--line-light);
-  // --color-line-header: var(--line-header-light);
   --color-border-hover: var(--orange);
   --color-border-active: var(--orange);
   --color-button: var(--orange);
@@ -124,8 +124,6 @@
   --color-icon: var(--black);
   --color-link: var(--orange);
   --color-link-important: var(--link-light);
-  --color-background-download-6-important: rgba(239, 213, 128, 0.6);
-  --color-underline: var(--color-background-download-light-25);
   --color-ball: var(--color-ball-light);
 
   --color-input: var(--gray);
@@ -141,14 +139,13 @@
 .theme__dark {
   --color-background: var(--linear-background-dark);
   --color-background-burger: var(--color-background-burger-dark);
-  // --color-background-download-25: var(--color-background-download-dark-25);
-  // --color-background-download-6: var(--color-background-download-dark-6);
   --color-background-project: var(--color-background-project-dark);
   --color-background-project-back: var(--color-background-project-back-dark);
   --color-background-band-1: var(--color-band-dark-1);
   --color-background-band-2: var(--color-band-dark-2);
   --color-background-band-3: var(--color-band-dark-3);
   --color-background-navigation: var(--color-background-navigation-dark);
+  --color-background-navigation-project: var(--color-background-navigation-project-dark);
 
 
   --color-background-language: rgba(255, 128, 37, 0.2);
@@ -157,7 +154,6 @@
 
   --color-border-1: var(--shadow-dark);
   --color-border-2: var(--line-dark);
-  // --color-line-header: var(--line-header-dark);
   --color-border-hover: var(--fluorescent-orange);
   --color-border-active: var(--fluorescent-orange);
   --color-button: var(--fluorescent-orange);
@@ -170,8 +166,6 @@
   --color-icon: var(--white);
   --color-link: var(--fluorescent-orange);
   --color-link-important: var(--link-dark);
-  --color-background-download-6-important: rgba(140, 74, 26, 0.6);
-  --color-underline: var(--color-background-download-dark-25);
   --color-ball: var(--color-ball-dark);
   --color-input: var(--text-dark);
   --color-caret: var(--color-text);

@@ -43,8 +43,8 @@ defineProps({
     place-items: center;
     place-content: center;
     background-color: transparent;
-    width: 16.6em;
-    height: 16.6em;
+    width: var(--width-skill);
+    height: var(--height-skill);
 }
 
 .skill_horizontal {
@@ -61,8 +61,8 @@ defineProps({
         flex-direction: column;
         place-content: center;
         background-color: transparent;
-        width: 16.6em;
-        height: 9.6em;
+        width: var(--width-skill);
+        height: calc(var(--height-skill) / 2);
 
         .content__skill {
             display: flex;

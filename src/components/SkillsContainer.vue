@@ -30,7 +30,7 @@ export default {
 .AllSkills {
     display: flex;
     flex-wrap: wrap;
-    gap: 1.5em 3em;
+    gap: var(--space-between-skill);
     justify-content: space-evenly;
 
     @media #{$mobileUpScreen} {

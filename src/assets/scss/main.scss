@@ -4,7 +4,6 @@
   overflow: hidden !important;
 
   @media #{$mobileMenuVisible} {
-    // TODO : padding à adapter suivant les navigateurs
     padding-right: 9px !important;
   }
 }
@@ -59,19 +58,6 @@ a,
 
   &:active {
     color: var(--color-link-important);
-  }
-}
-
-.important__download {
-
-  @media #{$desktopDownScreen} {
-    &:hover {
-      background-color: var(--color-background-download-6-important) !important;
-    }
-  }
-
-  &:active {
-    background-color: var(--color-link-important) !important;
   }
 }
 
