@@ -80,7 +80,7 @@ export default {
             }
             let scrollDirection = currentScrollPosition > this.lastScrollPosition ? "down" : "up";
             this.lastScrollPosition = currentScrollPosition;
-            // TODO : voir comment afficher la navigation en mode mobile
+            // TODO : afficher la navigation fixe en mode mobile
             // if (true) {
             if (window.innerWidth > 970) {
                 if (scrollDirection === "up") {
