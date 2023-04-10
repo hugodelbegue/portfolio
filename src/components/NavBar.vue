@@ -57,9 +57,18 @@ import IconPen from '@/components/icons/IconPen.vue'
 export default {
     data() {
         return {
+            download: null,
             downloadUrl(file) {
                 return new URL(`../assets/upload/${file}`, import.meta.url).href;
             }
+        }
+    },
+    mounted() {
+        const { download } = this.$refs
+        this.download = download
+        if (window.innerWidth > 970) {
+            download.addEventListener('mouseenter', this.rotateGo);
+            download.addEventListener('mouseout', this.rotateReturn);
         }
     },
     methods: {
@@ -67,6 +76,14 @@ export default {
             if (document.body.classList[1] === 'hidden' && this.$route.name == "ProjectView") {
                 document.body.classList.remove('hidden')
             }
+        },
+        rotateGo() {
+            this.download.classList.remove('rotateReturn')
+            this.download.classList.add('rotateGo')
+        },
+        rotateReturn() {
+            this.download.classList.remove('rotateGo')
+            this.download.classList.add('rotateReturn')
         }
     },
     computed: {
@@ -89,13 +106,8 @@ export default {
 
     a {
         font-size: var(--size-navbar);
-        color: inherit;
 
         &:hover {
-            color: var(--color-link);
-        }
-
-        &.router-link-active {
             color: var(--color-link);
         }
 
@@ -145,24 +157,12 @@ export default {
     font-family: 'Bungee Spice', cursive;
     transform: scale(1.5);
     cursor: pointer;
-
-    @media #{$desktopDownScreen} {
-        &:hover {
-            animation: speedRotate .5s ease;
-            animation-fill-mode: both;
-        }
-    }
-
-    &:active {
-        animation: speedRotate .5s ease;
-        animation-fill-mode: both;
-    }
 }
 
 // Added classes
 .up {
     display: block !important;
-    position: absolute;
+    position: fixed;
     top: 1em;
     left: 1em;
     z-index: 3;
@@ -180,15 +180,34 @@ export default {
     }
 }
 
-// Animation
+.rotateGo {
+    animation: rotateGo .5s ease;
+    animation-fill-mode: both;
+}
 
-@keyframes speedRotate {
+.rotateReturn {
+    animation: rotateReturn .5s ease;
+    animation-fill-mode: both;
+}
+
+// Animation
+@keyframes rotateGo {
     from {
         transform: rotate(0deg);
     }
 
     to {
+        transform: rotate(720deg) scale(1.2);
+    }
+}
+
+@keyframes rotateReturn {
+    from {
         transform: rotate(720deg);
+    }
+
+    to {
+        transform: rotate(0deg) scale(1.5);
     }
 }
 </style>

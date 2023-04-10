@@ -13,8 +13,8 @@ import IconPen from '@/components/icons/IconPen.vue'
             <div ref="animation" class="iconMenu"></div>
         </label>
         <div ref="burger_links" class="burger_links">
-            <ul class="layout_burger_links">
-                <li>
+            <ul class="layout_navmobile_links">
+                <li class="linkOne">
                     <RouterLink to="/" @click="toggleMenu">
                         <Link>
                         <template #icon>
@@ -26,7 +26,7 @@ import IconPen from '@/components/icons/IconPen.vue'
                         </Link>
                     </RouterLink>
                 </li>
-                <li>
+                <li class="linkTwo">
                     <RouterLink to="/projects" @click="toggleMenu">
                         <Link>
                         <template #icon>
@@ -38,7 +38,7 @@ import IconPen from '@/components/icons/IconPen.vue'
                         </Link>
                     </RouterLink>
                 </li>
-                <li>
+                <li class="linkThree">
                     <RouterLink to="/contact" @click="toggleMenu">
                         <Link>
                         <template #icon>
@@ -60,18 +60,21 @@ export default {
     methods: {
         // Open and close links menu
         toggleMenu() {
-            const download = this.$parent.$refs.navbar.$refs.download
+            const download = this.$parent.$refs.navbar.$refs.download;
+            const content = this.$parent.$refs.nav__content;
+            const anchor = this.$parent.$refs.anchor;
             const { burger_links, animation, cross } = this.$refs;
             burger_links.classList.toggle('show');
             animation.classList.toggle('anim');
             cross.classList.toggle('elev');
             download.classList.toggle('up');
-            this.$route.name == 'ProjectView' ? download.classList.toggle('offset') : console.log('erreur offset');
-            this.$route.name == 'ProjectView' ? this.$root.$refs.bandR.classList.toggle('elev_band') : console.log('erreur elev_band');
-            document.body.classList.toggle('hidden')
+            window.scrollY > anchor.offsetTop ? content.classList.toggle('fixe__nav') : null;
+            this.$route.name == 'ProjectView' ? download.classList.toggle('offset') : null;
+            this.$route.name == 'ProjectView' ? this.$root.$refs.bandR.classList.toggle('elev_band') : null;
+            document.body.classList.toggle('hidden');
         },
         closeHidden() {
-            if (document.body.classList[1] === 'hidden' && this.$route.name == "ProjectView") {
+            if (document.body.classList.contains('hidden') && this.$route.name == "ProjectView") {
                 document.body.classList.remove('hidden')
             }
         }
@@ -81,7 +84,7 @@ export default {
             return {
                 important__hover: this.$route.name == "ProjectView"
             }
-        },
+        }
     }
 }
 </script>
@@ -142,7 +145,7 @@ export default {
         z-index: 2;
         background: var(--color-background-burger);
         backdrop-filter: blur(10px);
-        position: absolute;
+        position: fixed;
         top: 0;
         left: 0;
         display: none;
@@ -152,11 +155,30 @@ export default {
         width: 100%;
         height: 100vh;
 
-        .layout_burger_links {
+        .layout_navmobile_links {
             padding: 0;
             display: flex;
             flex-direction: column;
-            gap: 1.5em;
+            gap: 2em;
+
+            li {
+                line-height: initial;
+            }
+
+            .linkOne {
+                animation: moveBottom .2s ease 0ms both;
+                opacity: 0;
+            }
+
+            .linkTwo {
+                animation: moveBottom .2s ease 100ms both;
+                opacity: 0;
+            }
+
+            .linkThree {
+                animation: moveBottom .2s ease 200ms both;
+                opacity: 0;
+            }
         }
 
         a .link {
@@ -189,7 +211,9 @@ export default {
 }
 
 .elev {
-    position: relative;
+    position: fixed;
+    top: 1em;
+    right: 1em;
     z-index: 3;
 
     @media #{$mobileMenuVisible} {
@@ -208,6 +232,17 @@ export default {
     &.iconMenu::after {
         bottom: 4px !important;
         transform: rotate(-90deg);
+    }
+}
+
+@keyframes moveBottom {
+    from {
+        transform: translateY(10px);
+    }
+
+    to {
+        transform: translateY(0px);
+        opacity: 1;
     }
 }
 </style>

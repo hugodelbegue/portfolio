@@ -3,7 +3,6 @@
 .hidden {
   overflow: hidden !important;
 
-  // TODO : vérifier pour le rendu en mode mobile
   @media #{$mobileMenuVisible} {
     padding-right: 9px !important;
   }
@@ -31,6 +30,11 @@ a,
   }
 }
 
+a.router-link-active {
+  // transition: .3s;
+  color: var(--color-link);
+}
+
 .important__shadow {
   transition: .4s;
   filter: drop-shadow(2px 2px 2px var(--color-border-1));
@@ -50,11 +54,11 @@ a,
     &:hover {
       color: var(--color-link-important) !important;
     }
+  }
 
-    &.router-link-active {
-      transition: .3s;
-      color: var(--color-link-important) !important;
-    }
+  &.router-link-active {
+    // transition: .3s;
+    color: var(--color-link-important) !important;
   }
 
   &:active {

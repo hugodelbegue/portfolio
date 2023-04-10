@@ -72,17 +72,15 @@ export default {
             const otherPages = this.$route.name == 'ProjectView' || this.$route.name == 'ContactView';
             const addPadding = (homePage, otherPages) => {
                 return homePage ? aboutme.classList.add("add__padding") :
-                    otherPages ? this.$root.$refs.padding.classList.add('add__padding') : console.log('erreur addPadding');
+                    otherPages ? this.$root.$refs.padding.classList.add('add__padding') : null;
             }
             const removePadding = (homePage, otherPages) => {
                 return homePage ? aboutme.classList.remove("add__padding") :
-                    otherPages ? this.$root.$refs.padding.classList.remove('add__padding') : console.log('erreur removePadding');
+                    otherPages ? this.$root.$refs.padding.classList.remove('add__padding') : null;
             }
             let scrollDirection = currentScrollPosition > this.lastScrollPosition ? "down" : "up";
             this.lastScrollPosition = currentScrollPosition;
-            // TODO : afficher la navigation fixe en mode mobile
-            // if (true) {
-            if (window.innerWidth > 970) {
+            if (this.lastScrollPosition) {
                 if (scrollDirection === "up") {
                     togg.style.display = 'none';
                     logo.style.display = 'none';
@@ -135,6 +133,7 @@ header {
     @media #{$tabletScreen} {
         border-bottom: 0px solid transparent;
         padding-top: 1em;
+        padding-bottom: 1em;
         margin-top: 0;
     }
 
@@ -248,7 +247,6 @@ img {
 // class navigation
 .hidden__nav {
     transform: translateY(-100%);
-    // transform: translateY(-.9em);
 }
 
 .line__hidden {

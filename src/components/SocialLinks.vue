@@ -10,7 +10,7 @@ import IconInstagram from '@/components/icons/IconInstagram.vue';
     <div class="sociallinks">
         <ul>
             <li>
-                <!-- TODO : vérifier si le lien fonctionne bien -->
+                <!-- TODO : vérifier si le lien fonctionne bien online-->
                 <a href="mailto:hugodelbegue@gmail.com?subject=Portfolio Hugo Delbegue - Question ou demande."
                     target="_blank">
                     <Link color="">

@@ -109,7 +109,6 @@ export default {
         justify-content: center;
         flex-wrap: wrap;
         gap: var(--space-between-project);
-        min-height: calc((var(--size-project) + (var(--space-between-project) * 2)) * 2);
     }
 
     .project {

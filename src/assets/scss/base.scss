@@ -36,7 +36,7 @@
   --text-dark: var(--orange-text);
   --link-light: #efd580;
   --link-dark: #8c4a1a;
-  --text-infos-light: #8f8f8f;
+  --text-infos-light: #415b76;
   --text-infos-dark: #d8d7d7;
   --color-language-light: var(--gray);
   --color-language-dark: var(--gray-light);
@@ -195,7 +195,7 @@ body {
   min-height: 100vh;
   color: var(--color-text);
   background: var(--color-background);
-  transition: color 0.5s, background 0.5s;
+  transition: background 0.5s;
   line-height: var(--line-height);
   letter-spacing: var(--spacing);
   font-family: var(--family);
