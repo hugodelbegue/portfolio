@@ -31,7 +31,7 @@ import JSONDATA from '@/components/api/data.json'
                             </ul>
                         </div>
                         <div class="preview__infos">
-                            <h4>Infos</h4>
+                            <h4>Infos du projet</h4>
                             <div class="layout__category">
                                 <span class="year">Année :&ensp;<p class="text">{{ dataDescription.year }}</p>
                                 </span>
@@ -187,16 +187,25 @@ export default {
     }
 
     .preview__content {
+        color: var(--color-text-infos);
         margin-top: 2em;
         display: flex;
         flex-direction: column;
         gap: 3em;
         margin-left: 4em;
+        margin-right: 4em;
+
+        // TODO : adapter avec la class :not()
+        h4 {
+            color: var(--color-text);
+        }
 
         @media #{$mobileDownScreen} {
             margin-left: 0;
+            margin-right: 0;
         }
     }
+
 
     .preview__development {
         p {
@@ -245,10 +254,12 @@ export default {
                     margin-right: .8em;
                 }
 
-                .text {
-                    margin-top: 0;
-                    font-weight: var(--weight-bold);
-                }
+            }
+
+            .text {
+                color: var(--color-text);
+                margin-top: 0;
+                font-weight: var(--weight-bold);
             }
 
             span.category {
@@ -259,11 +270,6 @@ export default {
                     content: url(@/assets/img/designs/tags-fill.svg);
                     color: var(--color-button);
                     margin-right: .8em;
-                }
-
-                .text {
-                    margin-top: 0;
-                    font-weight: var(--weight-bold);
                 }
             }
         }

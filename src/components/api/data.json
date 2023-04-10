@@ -22,12 +22,17 @@
                 { "name": "vue.js" }
             ],
             "year": "2023",
-            "infos": "Bonjour, je suis en train d'écrire un text qui décris le site web qui a étét créé.",
+            "infos": "Développement du site romanefaure.fr, pour l'Association Romane Faure située en Isère (38). L’association a pour objectif de soutenir des enfants atteints de maladies ou de handicaps.",
             "description": [
-                {"achievement":"kgkj"},
-                {"achievement":"jgjh"},
-                {"achievement":"kgkmlkmkj"},
-                {"achievement":"kgzqzqezkj"}
+                { "achievement":"Conception graphique & Webdesign (Charte graphique)" },
+                { "achievement":"Intégration native en HTML - CSS (Sass)" },
+                { "achievement":"Développement sur la base du framework Vue.js" },
+                { "achievement":"Emailing à partir d'un outil sécurisé tiers (EmailJS)" },
+                { "achievement":"Animation / Dynamise des pages en Javascript" },
+                { "achievement":"Compilation de l'écosystème avec bundler (Vite)" },
+                { "achievement":"Site Responsive (compatible tous supports)" },
+                { "achievement":"Référencement naturel SEO" },
+                { "achievement":"Mises à jour réguliaires en fonction des besoins" }
             ]
         },
         {

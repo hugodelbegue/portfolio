@@ -36,6 +36,8 @@
   --text-dark: var(--orange-text);
   --link-light: #efd580;
   --link-dark: #8c4a1a;
+  --text-infos-light: #8f8f8f;
+  --text-infos-dark: #d8d7d7;
   --color-language-light: var(--gray);
   --color-language-dark: var(--gray-light);
   --color-moon: #dfdabd;
@@ -121,6 +123,7 @@
 
   --color-heading: var(--text-light);
   --color-text: var(--text-light);
+  --color-text-infos: var(--text-infos-light);
   --color-icon: var(--black);
   --color-link: var(--orange);
   --color-link-important: var(--link-light);
@@ -163,6 +166,7 @@
 
   --color-heading: var(--text-dark);
   --color-text: var(--text-dark);
+  --color-text-infos: var(--text-infos-dark);
   --color-icon: var(--white);
   --color-link: var(--fluorescent-orange);
   --color-link-important: var(--link-dark);
