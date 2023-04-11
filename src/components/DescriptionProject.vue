@@ -195,8 +195,7 @@ export default {
         margin-left: 4em;
         margin-right: 4em;
 
-        // TODO : adapter avec la class :not()
-        h4 {
+        h4:not(.preview__content) {
             color: var(--color-text);
         }
 
@@ -205,6 +204,8 @@ export default {
             margin-right: 0;
         }
     }
+
+
 
 
     .preview__development {
