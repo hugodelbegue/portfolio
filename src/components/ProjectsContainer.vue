@@ -142,7 +142,7 @@ export default {
             border-radius: 3px;
             background: var(--color-background-project-back);
             border: 1px solid var(--color-border-1);
-            transition: transform .2s;
+            transition: transform .2s, background .3s;
             transform: rotate(-2.5deg);
 
             @media #{$mobileDownScreen} {
@@ -164,7 +164,7 @@ export default {
             border-radius: 3px;
             background: var(--color-background-project-back);
             border: 1px solid var(--color-border-1);
-            transition: transform .2s;
+            transition: transform .2s, background .3s;
             transform: rotate(.5deg);
 
             @media #{$mobileDownScreen} {
@@ -185,6 +185,7 @@ export default {
             position: relative;
             top: -17px;
             right: -67px;
+            transition: all .2s;
 
             @media #{$mobileDownScreen} {
                 right: 0;
@@ -199,13 +200,13 @@ export default {
             border: 1px solid var(--color-text-language);
 
             &::before {
-                transform: rotate(3deg);
-                // border: 1px dashed var(--color-text-language);
+                transform: rotate(0deg) translate(-13px, -13px);
+                // background: rgba(218, 97, 32, 0.6);
             }
 
             &::after {
-                transform: rotate(6deg);
-                // border: 1px dashed var(--color-text-language);
+                transform: rotate(0deg) translate(9px, 9px);
+                // background: rgba(218, 97, 32, 0.6);
             }
 
             & p {
@@ -213,8 +214,10 @@ export default {
                 color: var(--gray);
                 opacity: .6;
                 z-index: -1;
-                top: -18px;
-                transition: opacity .2s;
+                top: -10px;
+                right: -95px;
+                transform: rotate(10deg);
+                transition: all .2s;
             }
         }
     }
@@ -225,13 +228,11 @@ export default {
         border: 1px solid var(--color-text-language);
 
         &::before {
-            transform: rotate(3deg);
-            // border: 1px dashed var(--color-text-language);
+            transform: rotate(-4deg) translate(-9px, -9px);
         }
 
         &::after {
-            transform: rotate(6deg);
-            // border: 1px dashed var(--color-text-language);
+            transform: rotate(4deg) translate(6px, 3px);
         }
 
         & p {
@@ -239,8 +240,10 @@ export default {
             color: var(--gray);
             opacity: .6;
             z-index: -1;
-            top: -18px;
-            transition: opacity .2s;
+            top: -10px;
+            right: -95px;
+            transform: rotate(10deg);
+            transition: all .2s;
         }
     }
 }
