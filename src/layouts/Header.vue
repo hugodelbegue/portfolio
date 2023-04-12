@@ -9,7 +9,7 @@ import AboutMe from '@/components/AboutMe.vue'
 <template>
     <header>
         <!-- Section navigation -->
-        <div ref="nav__content" class="nav__content" :class="setColorNavigation">
+        <div ref="nav__content" class="nav__part" :class="setColorNavigation">
             <div ref="navigation" class="layout__navbar">
                 <Logo>
                     <template #picture>
@@ -114,7 +114,7 @@ header {
     flex-direction: column;
 }
 
-.nav__content {
+.nav__part {
     transition: transform .5s;
 }
 

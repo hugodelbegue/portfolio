@@ -24,14 +24,6 @@ import ReturnTop from './components/items/ReturnTop.vue';
 
 <script>
 export default {
-  mounted() {
-    const header = document.getElementsByClassName('header__part')[0].offsetHeight;
-    const footer = document.getElementsByClassName('footer__part')[0].offsetHeight;
-    const main = document.getElementById('main__part');
-    const sumOfSizes = header + footer;
-
-    // this.$route.name !== 'HomeView' ? main.style.minHeight = `calc(100vh - ${sumOfSizes}px)` : main.style.minHeight = `calc(100vh - (${footer}px + 60px))`;
-  },
   methods: {
     // Return to the top
     top() {
@@ -98,7 +90,6 @@ export default {
 }
 
 main {
-  min-height: calc(100vh - (220px + 60px));
   padding-left: max(var(--body-padding), (calc(50% - var(--desktop-down) / 2)));
   padding-right: max(var(--body-padding), (calc(50% - var(--desktop-down) / 2)));
 }

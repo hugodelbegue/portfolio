@@ -30,4 +30,12 @@ const router = createRouter({
   ]
 })
 
+router.beforeEach((to) => {
+  const navbar = document.getElementsByClassName('nav__part')[0].offsetHeight;
+  const footer = document.getElementsByClassName('footer__part')[0].offsetHeight;
+  const main = document.getElementById('main__part');
+  const sumOfSizes = navbar + footer;
+  to.name == 'ProjectView' ? main.style.minHeight = `calc(100vh - ${sumOfSizes}px)` : main.style.minHeight = 'auto';
+})
+
 export default router;

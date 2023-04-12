@@ -185,7 +185,6 @@ export default {
             position: relative;
             top: -17px;
             right: -67px;
-            transition: all .2s;
 
             @media #{$mobileDownScreen} {
                 right: 0;
@@ -212,12 +211,7 @@ export default {
             & p {
                 background-color: var(--color-border-2);
                 color: var(--gray);
-                opacity: .6;
-                z-index: -1;
-                top: -10px;
-                right: -95px;
-                transform: rotate(10deg);
-                transition: all .2s;
+                animation: label .2s ease both;
             }
         }
     }
@@ -238,12 +232,7 @@ export default {
         & p {
             background-color: var(--color-border-2);
             color: var(--gray);
-            opacity: .6;
-            z-index: -1;
-            top: -10px;
-            right: -95px;
-            transform: rotate(10deg);
-            transition: all .2s;
+            animation: label .2s ease both;
         }
     }
 }
@@ -273,6 +262,23 @@ h2 {
 
     @media #{$mobileUpScreen} {
         place-content: center;
+    }
+}
+
+// Animation
+@keyframes label {
+    from {
+        z-index: -1;
+        top: -17px;
+        right: -67px;
+    }
+
+    to {
+        z-index: -1;
+        opacity: .6;
+        top: -10px;
+        right: -95px;
+        transform: rotate(10deg);
     }
 }
 
