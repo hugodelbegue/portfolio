@@ -5,10 +5,10 @@
             "id": 10,
             "url": "https://romanefaure.fr/",
             "git": "",
-            "preview": "association_romane_faure.png",
+            "preview": "romanefaure/romanefaure_1.png",
             "media": [
-                { "img": "association_romane_faure.png"},
-                {"img": "association_romane_faure.png"}
+                { "img": "romanefaure/romanefaure_1.png" },
+                { "img": "romanefaure/romanefaure_2.png" }
             ],
             "title": "Association Romane Faure",
             "frontend": true,

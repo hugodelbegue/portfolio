@@ -30,12 +30,23 @@ const router = createRouter({
   ]
 })
 
+function setHeightSub() {
+  // calculates the sum of nav height + footer height
+  const navbarHeight = document.getElementsByClassName('nav__part')[0].offsetHeight;
+  const footerHeight = document.getElementsByClassName('footer__part')[0].offsetHeight;
+  return navbarHeight + footerHeight;
+}
+
+function setHeightMain(route, heightSub) {
+  // define main height
+  const mainHeigth = document.getElementById('main__part');
+  route == 'ProjectView' ? mainHeigth.style.minHeight = `calc(100vh - ${heightSub}px)` : mainHeigth.style.minHeight = 'auto';
+}
+
 router.beforeEach((to) => {
-  const navbar = document.getElementsByClassName('nav__part')[0].offsetHeight;
-  const footer = document.getElementsByClassName('footer__part')[0].offsetHeight;
-  const main = document.getElementById('main__part');
-  const sumOfSizes = navbar + footer;
-  to.name == 'ProjectView' ? main.style.minHeight = `calc(100vh - ${sumOfSizes}px)` : main.style.minHeight = 'auto';
+  // call function on every route change
+  const heightSub = setHeightSub();
+  setHeightMain(to.name, heightSub)
 })
 
 export default router;

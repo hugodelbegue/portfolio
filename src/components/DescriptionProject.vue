@@ -191,6 +191,7 @@ export default {
         margin-top: 2em;
         display: flex;
         flex-direction: column;
+        flex: 50%;
         gap: 3em;
         margin-left: 4em;
         margin-right: 4em;
@@ -225,7 +226,6 @@ export default {
         li {
             display: inline-flex;
             align-items: center;
-            line-height: 1;
 
             &:before {
                 content: url(@/assets/img/designs/check.svg);

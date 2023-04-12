@@ -212,6 +212,11 @@ export default {
                 background-color: var(--color-border-2);
                 color: var(--gray);
                 animation: label .2s ease both;
+
+                @media #{$mobileDownScreen} {
+                    z-index: -1;
+                    animation: none;
+                }
             }
         }
     }
@@ -233,6 +238,11 @@ export default {
             background-color: var(--color-border-2);
             color: var(--gray);
             animation: label .2s ease both;
+
+            @media #{$mobileDownScreen} {
+                z-index: -1;
+                animation: none;
+            }
         }
     }
 }
