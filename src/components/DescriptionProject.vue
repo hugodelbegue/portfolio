@@ -26,8 +26,8 @@ import JSONDATA from '@/components/api/data.json'
                         </div>
                         <div class="preview__skills">
                             <ul>
-                                <li v-for="achievement in dataDescription.description">{{ achievement.achievement }}
-                                </li>
+                                <li v-for="achievement in dataDescription.description"
+                                    v-html="italicWord(achievement.achievement)" />
                             </ul>
                         </div>
                         <div class="preview__infos">
@@ -81,6 +81,9 @@ export default {
             projects: JSONDATA,
             cleanString(name) {
                 return name.replace(/[./\/]/g, "");
+            },
+            italicWord(word) {
+                return word.replace(/\((.*?)\)/g, "(<i>$1</i>)");
             },
             imgUrl(file) {
                 return new URL(`../assets/img/previews/${file}`, import.meta.url).href;
