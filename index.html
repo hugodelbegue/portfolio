@@ -21,14 +21,50 @@
     <style>
       body {
         margin: 0;
+        overflow: hidden;
       }
       .loading {
         position: absolute;
+        display: flex;
+        place-content: center;
+        place-items: center;
         width: 100vw;
         height: 100vh;
         background: #da6220;
-        z-index: 1;
-        overflow: hidden;
+        z-index: 3;
+      }
+      .loading::before {
+        position: absolute;
+        content: "";
+        border: 5px solid #2c3e50;
+        height: 50px;
+        width: 50px;
+        animation-name: rotateLoading;
+        animation-duration: 5000ms;
+        animation-timing-function: ease;
+        animation-iteration-count: infinite;
+      }
+      .loading::after {
+        position: absolute;
+        content: "";
+        margin: auto;
+        border: 5px solid #2c3e50;
+        height: 50px;
+        width: 50px;
+        transform: rotate(45deg);
+        animation-name: rotateLoading;
+        animation-duration: 2500ms;
+        animation-timing-function: ease;
+        animation-iteration-count: infinite;
+        animation-direction: reverse;
+      }
+      @keyframes rotateLoading {
+        from {
+          transform: rotate(0deg);
+        }
+        to {
+          transform: rotate(360deg);
+        }
       }
     </style>
   </head>
@@ -38,6 +74,7 @@
     <script>
       const load = document.querySelector(".loading");
       window.addEventListener("load", () => {
+        document.body.style.overflow = "initial";
         load.remove();
       });
     </script>

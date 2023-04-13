@@ -5,7 +5,7 @@
             "id": 10,
             "url": "https://romanefaure.fr/",
             "git": "",
-            "preview": "romanefaure/romanefaure_1.png",
+            "preview": "romanefaure/logo.png",
             "media": [
                 { "img": "romanefaure/romanefaure_1.png" },
                 { "img": "romanefaure/romanefaure_2.png" }
@@ -14,7 +14,7 @@
             "frontend": true,
             "backend": false,
             "language": [
-                { "name": "seo/référencement" },
+                { "name": "seo" },
                 { "name": "node.js" },
                 { "name": "javascript" },
                 { "name": "sass" },
@@ -25,7 +25,7 @@
             "infos": "Développement du site romanefaure.fr, pour l'Association Romane Faure située en Isère (38). L’association a pour objectif de soutenir des enfants atteints de maladies ou de handicaps.",
             "description": [
                 { "achievement":"Conception graphique & Webdesign (Charte graphique)" },
-                { "achievement":"Intégration native en HTML - CSS (Sass)" },
+                { "achievement":"Intégration native en HTML - CSS(Sass)" },
                 { "achievement":"Développement sur la base du framework Vue.js" },
                 { "achievement":"Emailing à partir d'un outil sécurisé tiers (EmailJS)" },
                 { "achievement":"Animation / Dynamise des pages en Javascript" },
@@ -39,39 +39,44 @@
             "id": 9,
             "url": "https://hugodelbegue.github.io/space-tourism-website-main",
             "git": "https://github.com/hugodelbegue/space-tourism-website-main",
-            "preview": "space_tourism_website.png",
+            "preview": "spacetourismwebsite/spacetourismwebsite_preview.png",
             "media": [
-                { "img": "space_tourism_website.png"},
-                {"img": "space_tourism_website.png"}
+                { "img": "spacetourismwebsite/spacetourismwebsite_1.png"},
+                {"img": "spacetourismwebsite/spacetourismwebsite_2.png"}
             ],
             "title": "Space tourism website",
             "frontend": true,
             "backend": false,
             "language": [
                 { "name": "node.js" },
-                { "name": "seo/référencement" },
+                { "name": "seo" },
                 { "name": "javascript" },
                 { "name": "sass" },
                 { "name": "vue.js" },
                 { "name": "html" }
             ],
             "year": "2023",
-            "infos" : "ok",
+            "infos" : "Développement d’un projet d'entraînement professionnel, issue du de la plateforme “Frontend Mentor”. Ce défi a pour objectif d’améliorer mes compétences en code. Site de tourisme spatial de plusieurs pages.",
             "description": [
-                {"achievement":"réalisation 1"},
-                {"achievement":"réalisation 2"},
-                {"achievement":"réalisation 3"},
-                {"achievement":"réalisation 4"}
+                { "achievement":"Conception graphique & Webdesign à partir d'une maquette (Figma)" },
+                { "achievement":"Intégration native en HTML - CSS(Sass)" },
+                { "achievement":"Balisage sémantique HTML5" },
+                { "achievement":"Utilisation du Flexbox" },
+                { "achievement":"Animation / Dynamise des pages en Javascript & CSS" },
+                { "achievement":"Routage (Router Vue)" },
+                { "achievement":"Développement sur la base du framework Vue.js" },
+                { "achievement":"Référencement naturel SEO" },
+                { "achievement":"Site Responsive (compatible tous supports)" }
             ]
         },
         {
             "id": 8,
             "url": "https://hugodelbegue.fr",
             "git": "https://github.com/hugodelbegue/portfolio",
-            "preview": "portfolio.png",
+            "preview": "portfolio/avatar.svg",
             "media": [
-                { "img": "portfolio.png"},
-                {"img": "portfolio.png"}
+                { "img": "portfolio/portfolio_1.png"},
+                {"img": "portfolio/portfolio_2.png"}
             ],
             "title": "Portfolio",
             "frontend": true,
@@ -79,28 +84,34 @@
             "language": [
                 { "name": "vue.js" },
                 { "name": "sass" },
-                { "name": "seo/référencement" },
+                { "name": "seo" },
                 { "name": "javascript" },
                 { "name": "html" },
                 { "name": "node.js" }
             ],
             "year": "2023",
-            "infos" : "ok",
+            "infos" : "Voici mon portfolio..<br> Pas d'inquiétude ! vous n'avez rien à faire, vous êtes déjà dessus !<br> Développement du site hugodelbegue.fr, créé avec passion, n'hésitez pas à le parcourir dans tous les recoins ainsi que consulter les autres projets proposés.",
             "description": [
-                {"achievement":"réalisation 1"},
-                {"achievement":"réalisation 2"},
-                {"achievement":"réalisation 3"},
-                {"achievement":"réalisation 4"}
+                { "achievement":"Conception graphique & Webdesign" },
+                { "achievement":"Intégration native en HTML - CSS(Sass)" },
+                { "achievement":"Balisage sémantique HTML5" },
+                { "achievement":"Animation / Dynamise des pages en Javascript & CSS" },
+                { "achievement":"Emailing à partir d'un outil sécurisé tiers (EmailJS)" },
+                { "achievement":"Composants dynamiques (À partir de fichiers .json)" },
+                { "achievement":"Routage (Router Vue)" },
+                { "achievement":"Développement sur la base du framework Vue.js" },
+                { "achievement":"Référencement naturel SEO" },
+                { "achievement":"Site Responsive (compatible tous supports)" }
             ]
         },
         {
             "id": 7,
             "url": "https://hugodelbegue.github.io/interactive-card-details-form-main",
             "git": "https://github.com/hugodelbegue/interactive-card-details-form-main",
-            "preview": "interactive_card_details_form.png",
+            "preview": "interactivecarddetailsform/interactivecarddetailsform_preview.png",
             "media": [
-                { "img": "interactive_card_details_form.png"},
-                {"img": "interactive_card_details_form.png"}
+                { "img": "interactivecarddetailsform/interactivecarddetailsform_1.png"},
+                { "img": "interactivecarddetailsform/interactivecarddetailsform_2.png" }
             ],
             "title": "Interactive card details form",
             "frontend": true,
@@ -110,53 +121,66 @@
                 { "name": "javascript" },
                 { "name": "html" },
                 { "name": "sass" },
-                { "name": "seo/référencement" }
+                { "name": "seo" }
             ],
             "year": "2022",
-            "infos" : "ok",
+            "infos" : "Développement d’un projet d'entraînement professionnel, issue du de la plateforme “Frontend Mentor”. Ce défi a pour objectif d’améliorer mes compétences en code. Contient un formulaire de détails de carte interactif.",
             "description": [
-                {"achievement":"réalisation 1"},
-                {"achievement":"réalisation 2"},
-                {"achievement":"réalisation 3"},
-                {"achievement":"réalisation 4"}
+                { "achievement":"Conception graphique & Webdesign (Ressources fournis)" },
+                { "achievement":"Intégration native en HTML - CSS(Sass)" },
+                { "achievement":"Balisage sémantique HTML5" },
+                { "achievement":"Utilisation du Flexbox" },
+                { "achievement":"Regex" },
+                { "achievement":"Animation / Dynamise des pages en Javascript & CSS" },
+                { "achievement":"Gestion des évènements Vue" },
+                { "achievement":"Développement sur la base du framework Vue.js" },
+                { "achievement":"Référencement naturel SEO" },
+                { "achievement":"Site Responsive (compatible tous supports)" }
             ]
         },
         {
             "id": 6,
             "url": "https://hugodelbegue.github.io/notifications-page-main",
             "git": "https://github.com/hugodelbegue/notifications-page-main",
-            "preview": "notifications_page.png",
+            "preview": "notificationspage/notificationspage_preview.png",
             "media": [
-                { "img": "notifications_page.png"},
-                {"img": "notifications_page.png"}
+                { "img": "notificationspage/notificationspage_1.png"},
+                {"img": "notificationspage/notificationspage_2.png"}
             ],
             "title": "Notifications page",
             "frontend": true,
             "backend": false,
             "language": [
                 { "name": "html" },
-                { "name": "seo/référencement" },
+                { "name": "seo" },
                 { "name": "sass" },
                 { "name": "vue.js" },
                 { "name": "javascript" }
             ],
             "year": "2022",
-            "infos" : "ok",
+            "infos" : "Développement d’un projet d'entraînement professionnel, issue du de la plateforme “Frontend Mentor”. Ce défi a pour objectif d’améliorer mes compétences en code. C'est une page de notifications marquant les commentaires lus et non lus.",
             "description": [
-                {"achievement":"réalisation 1"},
-                {"achievement":"réalisation 2"},
-                {"achievement":"réalisation 3"},
-                {"achievement":"réalisation 4"}
+                { "achievement":"Conception graphique & Webdesign (Ressources fournis)" },
+                { "achievement":"Intégration native en HTML - CSS(Sass)" },
+                { "achievement":"Balisage sémantique HTML5" },
+                { "achievement":"Utilisation du Flexbox" },
+                { "achievement":"Animation / Dynamise des pages en Javascript & CSS" },
+                { "achievement":"Syntaxes modèles Vue" },
+                { "achievement":"Liaisons des classes et styles Vue" },
+                { "achievement":"Composants dynamiques" },
+                { "achievement":"Développement sur la base du framework Vue.js" },
+                { "achievement":"Référencement naturel SEO" },
+                { "achievement":"Site Responsive (compatible tous supports)" }
             ]
         },
         {
             "id": 5,
-            "url": "https://hugodelbegue.github.io/new-homepage-main",
+            "url": "https://hugodelbegue.github.io/news-homepage-main",
             "git": "https://github.com/hugodelbegue/news-homepage-main",
-            "preview": "news_homepage.png",
+            "preview": "newshomepage/newshomepage_preview.png",
             "media": [
-                { "img": "news_homepage.png"},
-                {"img": "news_homepage.png"}
+                { "img": "newshomepage/newshomepage_1.png"},
+                {"img": "newshomepage/newshomepage_2.png"}
             ],
             "title": "News homepage",
             "frontend": true,
@@ -164,25 +188,30 @@
             "language": [
                 { "name": "javascript" },
                 { "name": "html" },
-                { "name": "seo/référencement" },
+                { "name": "seo" },
                 { "name": "sass" }
             ],
             "year": "2022",
-            "infos" : "ok",
+            "infos" : "Développement d’un projet d'entraînement professionnel, issue du de la plateforme “Frontend Mentor”. Ce défi a pour objectif d’améliorer mes compétences en code. Simple page d'accueil qui peut être utilisé pour un site Web d'actualités.",
             "description": [
-                {"achievement":"réalisation 1"},
-                {"achievement":"réalisation 2"},
-                {"achievement":"réalisation 3"},
-                {"achievement":"réalisation 4"}
+                { "achievement":"Conception graphique & Webdesign (Ressources fournis)" },
+                { "achievement":"Intégration native en HTML - CSS(Sass)" },
+                { "achievement":"Balisage sémantique HTML5" },
+                { "achievement":"Variables et Mixins Sass" },
+                { "achievement":"Utilisation du Flexbox" },
+                { "achievement":"Animation / Dynamise des pages en Javascript & CSS" },
+                { "achievement":"Référencement naturel SEO" },
+                { "achievement":"Site Responsive (compatible tous supports)" }
             ]
         },
         {
             "id": 4,
             "url": "",
             "git": "https://github.com/hugodelbegue/vue",
-            "preview": "vue.png",
+            "preview": "vue/vue_preview.png",
             "media": [
-                { "img": "vue.png"}
+                { "img": "vue/vue_1.png"},
+                { "img": "vue/vue_2.png"}
             ],
             "title": "Vue",
             "frontend": true,
@@ -191,26 +220,31 @@
                 { "name": "vue.js" },
                 { "name": "javascript" },
                 { "name": "html" },
-                { "name": "seo/référencement" },
+                { "name": "seo" },
                 { "name": "sass" }
             ],
             "year": "2022",
-            "infos" : "ok",
+            "infos" : "Développement d'une interface de type e-commerce. Possibilité de mettre les articles dans un panier ou les mettre en favories.",
             "description": [
-                {"achievement":"réalisation 1"},
-                {"achievement":"réalisation 2"},
-                {"achievement":"réalisation 3"},
-                {"achievement":"réalisation 4"}
+                { "achievement":"Conception graphique & Webdesign from scratch" },
+                { "achievement":"Intégration native en HTML - CSS(Sass)" },
+                { "achievement":"Balisage sémantique HTML5" },
+                { "achievement":"Variables et Mixins Sass" },
+                { "achievement":"Utilisation du Flexbox" },
+                { "achievement":"Animation / Dynamise des pages en Javascript & CSS" },
+                { "achievement":"Utlisation de cookies" },
+                { "achievement":"Composants dynamiques avec calcule des totaux" },
+                { "achievement":"Développement sur la base du framework Vue.js" },
+                { "achievement":"Référencement naturel SEO" }
             ]
         },
         {
             "id": 3,
             "url": "",
             "git": "https://github.com/hugodelbegue/my-links",
-            "preview": "my_links.png",
+            "preview": "mylinks/my_links.png",
             "media": [
-                { "img": "my_links.png"},
-                {"img": "my_links.png"}
+                { "img": "mylinks/my_links.png"}
             ],
             "title": "My links",
             "frontend": false,
@@ -223,22 +257,19 @@
                 { "name": "sql" }
             ],
             "year": "2021",
-            "infos" : "ok",
+            "infos" : "En construction..",
             "description": [
-                {"achievement":"réalisation 1"},
-                {"achievement":"réalisation 2"},
-                {"achievement":"réalisation 3"},
-                {"achievement":"réalisation 4"}
+                {"achievement":"Ici les réalisations.."}
             ]
         },
         {
             "id": 2,
             "url": "https://primalprod.fr",
             "git": "https://github.com/hugodelbegue/primalprod",
-            "preview": "primalprod.png",
+            "preview": "primalprod/logo_primalprod.svg",
             "media": [
-                { "img": "primalprod.png"},
-                {"img": "primalprod.png"}
+                { "img": "primalprod/primalprod_1.png"},
+                {"img": "primalprod/primalprod_2.png"}
             ],
             "title": "Primalprod",
             "frontend": false,
@@ -250,22 +281,24 @@
                 { "name": "javascript" }
             ],
             "year": "2021",
-            "infos" : "ok",
+            "infos" : "Développement du site primalprod.fr sur une page. N'hésitez pas à le consulter, c'est le premier site perso from scratch que j'ai réalisé.",
             "description": [
-                {"achievement":"réalisation 1"},
-                {"achievement":"réalisation 2"},
-                {"achievement":"réalisation 3"},
-                {"achievement":"réalisation 4"}
+                { "achievement":"Conception graphique & Webdesign from scratch" },
+                { "achievement":"Intégration native en HTML - CSS" },
+                { "achievement":"Utilisation du Flexbox" },
+                { "achievement":"Animation / Dynamise des pages en Javascript & CSS" },
+                { "achievement":"Développement d'une partie Backend pour l'envoi des mails (PHP)" },
+                { "achievement":"Site Responsive (compatible tous supports)" }
             ]
         },
         {
             "id": 1,
             "url": "https://hugodelbegue.github.io/teacozy",
             "git": "https://github.com/hugodelbegue/teacozy",
-            "preview": "teacozy.png",
+            "preview": "teacozy/teacozy_1.png",
             "media": [
-                { "img": "teacozy.png"},
-                {"img": "teacozy.png"}
+                { "img": "teacozy/teacozy_1.png"},
+                {"img": "teacozy/teacozy_2.png"}
             ],
             "title": "Teacozy",
             "frontend": true,
@@ -276,12 +309,13 @@
                 { "name": "javascript" }
             ],
             "year": "2021",
-            "infos" : "ok",
+            "infos" : "Développement d’un projet d'entraînement, issue du de la plateforme “Codecademy”. Ce défi a pour objectif d’améliorer mes compétences en code.",
             "description": [
-                {"achievement":"réalisation 1"},
-                {"achievement":"réalisation 2"},
-                {"achievement":"réalisation 3"},
-                {"achievement":"réalisation 4"}
+                { "achievement":"Conception graphique & Webdesign (Ressources fournis)" },
+                { "achievement":"Intégration native en HTML - CSS" },
+                { "achievement":"Utilisation du Flexbox" },
+                { "achievement":"Animation / Dynamise des pages en Javascript & CSS" },
+                { "achievement":"Site Responsive (compatible tous supports)" }
             ]
         }
     ]

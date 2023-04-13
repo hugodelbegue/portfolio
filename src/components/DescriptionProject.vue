@@ -22,7 +22,7 @@ import JSONDATA from '@/components/api/data.json'
                     <div class="preview__content">
                         <div class="preview__development">
                             <h4>Développement complet</h4>
-                            <p>{{ dataDescription.infos }}</p>
+                            <p v-html="weightAddress(dataDescription.infos)" />
                         </div>
                         <div class="preview__skills">
                             <ul>
@@ -82,8 +82,11 @@ export default {
             cleanString(name) {
                 return name.replace(/[./\/]/g, "");
             },
+            weightAddress(address) {
+                return address.replace(/\b(?:https?:\/\/)?(?:www\.)?([^\s]*?\.fr)\b/g, "<strong>$1</strong>");
+            },
             italicWord(word) {
-                return word.replace(/\((.*?)\)/g, "(<i>$1</i>)");
+                return word.replace(/\((.*?)\)/g, "<i>($1)</i>");
             },
             imgUrl(file) {
                 return new URL(`../assets/img/previews/${file}`, import.meta.url).href;
@@ -227,8 +230,7 @@ export default {
         }
 
         li {
-            display: inline-flex;
-            align-items: center;
+            display: block;
 
             &:before {
                 content: url(@/assets/img/designs/check.svg);
@@ -244,6 +246,7 @@ export default {
         }
 
         .layout__category {
+            color: var(--color-text-infos);
             display: flex;
             flex-direction: column;
             gap: .5em;
@@ -257,11 +260,9 @@ export default {
                     color: var(--color-button);
                     margin-right: .8em;
                 }
-
             }
 
             .text {
-                color: var(--color-text);
                 margin-top: 0;
                 font-weight: var(--weight-bold);
             }
@@ -278,7 +279,6 @@ export default {
             }
         }
 
-
         .language {
             padding: 0em .5em;
             border-radius: 4px;
@@ -288,7 +288,7 @@ export default {
             display: flex;
             flex-wrap: wrap-reverse;
             gap: 10px;
-            width: 60%;
+            width: 50%;
         }
     }
 
@@ -377,7 +377,7 @@ export default {
     background-color: rgb(227, 78, 38, 0.2);
 }
 
-.seoréférencement {
+.seo {
     color: rgb(0, 0, 0);
     background-color: rgb(0, 0, 0, 0.2);
 }
