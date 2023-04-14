@@ -137,6 +137,7 @@ export default {
     display: none;
     overflow-y: auto;
     overflow-x: hidden;
+    // TODO : Corriger le overfllow en pleine écran desktop 
 
     @media #{$tabletScreen} {
         height: -webkit-fill-available;
