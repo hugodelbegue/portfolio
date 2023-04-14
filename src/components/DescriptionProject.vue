@@ -1,6 +1,7 @@
 <script setup>
 import Language from '@/components/items/Language.vue'
 import Button from '@/components/items/Button.vue'
+import RenderProjectImg from '@/components/items/RenderProjectImg.vue'
 import JSONDATA from '@/components/api/data.json'
 </script>
 
@@ -63,7 +64,10 @@ import JSONDATA from '@/components/api/data.json'
                         </div>
                     </div>
                     <div class="preview__img">
-                        <img v-for="img in dataDescription.media" :src="imgUrl(img.img)" :alt="dataDescription.title">
+                        <div v-for="img in dataDescription.media">
+                            <RenderProjectImg :src="imgUrl(img.img)" :alt="dataDescription.title"
+                                :title="dataDescription.title" />
+                        </div>
                     </div>
                 </div>
             </div>
@@ -215,9 +219,6 @@ export default {
         }
     }
 
-
-
-
     .preview__development {
         p {
             margin-top: .3em;
@@ -308,9 +309,10 @@ export default {
     }
 
     .preview__img {
+        position: relative;
         display: flex;
         flex-direction: column;
-        place-items: flex-end;
+        place-items: flex-start;
         gap: 1em;
 
         @media #{$tabletScreen} {
@@ -319,10 +321,12 @@ export default {
             flex-wrap: wrap;
         }
 
-        img {
+        &:deep(.image) {
             width: 100%;
             max-width: 400px;
-            height: auto;
+            max-height: 100%;
+            border: none;
+            border-radius: 1px;
         }
     }
 }
