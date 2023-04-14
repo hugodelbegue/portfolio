@@ -2,8 +2,8 @@
 import Project from '@/components/items/Project.vue'
 import Button from '@/components/items/Button.vue'
 import RenderProjectImg from '@/components/items/RenderProjectImg.vue'
-import DescriptionProject from '@/components/DescriptionProject.vue'
 import JSONDATA from '@/components/api/data.json'
+// import DescriptionProject from '@/components/DescriptionProject.vue'
 </script>
 
 <template>
@@ -34,17 +34,23 @@ import JSONDATA from '@/components/api/data.json'
             </TransitionGroup>
         </div>
         <!-- <DescriptionProject /> -->
-        <DescriptionProject ref="description" :renderTitle="this.render" />
+        <!-- <DescriptionProject ref="description" :renderTitle="this.render" /> -->
+        <AsyncDescriptionProject ref="description" :renderTitle="render" />
     </div>
 </template>
 
 <script>
+import { defineAsyncComponent } from 'vue';
+const AsyncDescriptionProject = defineAsyncComponent(() => import('@/components/DescriptionProject.vue'));
 export default {
+    components: {
+        AsyncDescriptionProject,
+    },
     data() {
         return {
             projects: JSONDATA,
             choice: "",
-            render: "",
+            render: " ",
             cleanString(name) {
                 return name.replace(/[./\/]/g, "");
             },
@@ -304,36 +310,4 @@ h2 {
     opacity: 0;
     transform: translateY(-30px);
 }
-
-// Class infos
-// .open {
-//     display: block !important;
-//     animation: slideOpen 1s ease;
-// }
-
-// .close {
-//     animation: slideClose 1s ease;
-//     animation-fill-mode: both;
-// }
-
-// @keyframes slideOpen {
-//     from {
-//         transform: translateY(100%);
-//     }
-
-//     to {
-//         transform: translateY(0%);
-//     }
-// }
-
-// @keyframes slideClose {
-//     from {
-//         transform: translateY(0%);
-//     }
-
-//     to {
-//         transform: translateY(100%);
-//         visibility: hidden;
-//     }
-// }
 </style>

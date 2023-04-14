@@ -74,7 +74,10 @@ import JSONDATA from '@/components/api/data.json'
 <script>
 export default {
     props: {
-        renderTitle: String
+        renderTitle: {
+            type: String,
+            default: "",
+        }
     },
     data() {
         return {
