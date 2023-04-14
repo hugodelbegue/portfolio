@@ -322,11 +322,22 @@ export default {
         }
 
         &:deep(.image) {
+            position: relative;
             width: 100%;
             max-width: 400px;
             max-height: 100%;
             border: none;
             border-radius: 1px;
+
+            @media #{$tabletScreen} {
+                max-width: none;
+            }
+        }
+
+        &:deep(.loading__project) {
+            @media #{$tabletScreen} {
+                position: absolute;
+            }
         }
     }
 }
