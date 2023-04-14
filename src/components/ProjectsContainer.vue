@@ -33,7 +33,6 @@ import JSONDATA from '@/components/api/data.json'
                 </article>
             </TransitionGroup>
         </div>
-        <!-- <DescriptionProject /> -->
         <!-- <DescriptionProject ref="description" :renderTitle="this.render" /> -->
         <AsyncDescriptionProject ref="description" :renderTitle="render" />
     </div>

@@ -101,11 +101,15 @@ export default {
         }
     },
     methods: {
+        scrollTop(content) {
+            content.scrollTo(0, 0);
+        },
         // Close infos projects
         closeInfos() {
             const { infos } = this.$refs;
             infos.classList.add('close');
             setTimeout(() => {
+                this.scrollTop(infos);
                 infos.classList.remove('open');
                 document.body.classList.remove('hidden')
             }, 750)
@@ -147,6 +151,7 @@ export default {
     }
 
     .close__infos {
+        z-index: 1;
         position: fixed;
         display: flex;
         border-radius: 11px;
@@ -329,7 +334,7 @@ export default {
             border: none;
             border-radius: 1px;
 
-            @media #{$tabletScreen} {
+            @media #{$mobileMediumScreen} {
                 max-width: none;
             }
         }
