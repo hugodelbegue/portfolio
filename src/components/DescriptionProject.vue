@@ -15,9 +15,25 @@ import JSONDATA from '@/components/api/data.json'
             </svg>
         </div>
         <div v-for=" dataDescription in projects.projectList">
-            <div v-if="dataDescription.title == renderTitle">
+            <div v-if="dataDescription.title == this.renderTitle" class="description__content">
                 <div class="title__description">
                     <h3>{{ dataDescription.title }}</h3>
+                    <div class="button__change__project">
+                        <div class="previous" @click="previous">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="currentColor"
+                                class="bi bi-arrow-left-circle-fill" viewBox="0 0 16 16">
+                                <path
+                                    d="M8 0a8 8 0 1 0 0 16A8 8 0 0 0 8 0zm3.5 7.5a.5.5 0 0 1 0 1H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H11.5z" />
+                            </svg>
+                        </div>
+                        <div class="next" @click="next">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="currentColor"
+                                class="bi bi-arrow-right-circle-fill" viewBox="0 0 16 16">
+                                <path
+                                    d="M8 0a8 8 0 1 1 0 16A8 8 0 0 1 8 0zM4.5 7.5a.5.5 0 0 0 0 1h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H4.5z" />
+                            </svg>
+                        </div>
+                    </div>
                 </div>
                 <div class="project__description__layout">
                     <div class="preview__content">
@@ -113,6 +129,22 @@ export default {
                 infos.classList.remove('open');
                 document.body.classList.remove('hidden')
             }, 750)
+        },
+        previous() {
+            const currentPage = this.projects.projectList.findIndex((items) =>
+                items.title === this.renderTitle)
+            if (currentPage >= 0) {
+                const previousPage = this.projects.projectList[currentPage - 1].title;
+                this.$emit('renderUpdated', previousPage)
+            }
+        },
+        next() {
+            const currentPage = this.projects.projectList.findIndex((items) =>
+                items.title === this.renderTitle)
+            if (currentPage < this.projects.projectList.length - 1) {
+                const nextPage = this.projects.projectList[currentPage + 1].title;
+                this.$emit('renderUpdated', nextPage)
+            }
         }
     }
 }
@@ -130,7 +162,7 @@ export default {
     background: var(--color-background);
     border-top: 3px solid var(--color-border-2);
     width: 100%;
-    height: auto;
+    height: 75vh;
     position: fixed;
     bottom: 0;
     left: 0;
@@ -142,12 +174,39 @@ export default {
         height: -webkit-fill-available;
     }
 
+    .description__content {
+        animation: showInfos .4s ease both;
+    }
+
     .title__description {
         display: flex;
         margin-left: 4em;
         margin-bottom: 1em;
         padding-bottom: .3em;
         border-bottom: 2px solid var(--color-text);
+        place-content: space-between;
+
+        .button__change__project {
+            display: flex;
+            gap: 1.5em;
+
+            svg {
+                cursor: pointer;
+                border-radius: 50%;
+
+                @media #{$desktopDownScreen} {
+                    &:hover {
+                        transition: border .1s;
+                        border: 3px solid var(--color-button);
+                    }
+                }
+
+                &:active {
+                    transition: border .1s;
+                    border: 3px solid var(--color-button);
+                }
+            }
+        }
     }
 
     .close__infos {
@@ -376,6 +435,16 @@ export default {
     to {
         transform: translateY(100%);
         visibility: hidden;
+    }
+}
+
+@keyframes showInfos {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
     }
 }
 

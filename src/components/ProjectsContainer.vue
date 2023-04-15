@@ -34,7 +34,7 @@ import JSONDATA from '@/components/api/data.json'
             </TransitionGroup>
         </div>
         <!-- <DescriptionProject ref="description" :renderTitle="this.render" /> -->
-        <AsyncDescriptionProject ref="description" :renderTitle="render" />
+        <AsyncDescriptionProject @renderUpdated="renderUpdated" ref="description" :renderTitle="render" />
     </div>
 </template>
 
@@ -100,6 +100,10 @@ export default {
             infos.classList.add('open');
             infos.classList.remove('close');
             document.body.classList.add('hidden')
+        },
+        renderUpdated(newPage) {
+            console.log(newPage);
+            this.render = newPage
         }
     }
 }
