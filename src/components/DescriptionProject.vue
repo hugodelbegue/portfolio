@@ -15,7 +15,7 @@ import JSONDATA from '@/components/api/data.json'
             </svg>
         </div>
         <div v-for=" dataDescription in projects.projectList">
-            <div v-if="dataDescription.title == this.renderTitle" class="description__content">
+            <div v-if="dataDescription.title == renderTitle" class="description__content">
                 <div class="title__description">
                     <h3>{{ dataDescription.title }}</h3>
                     <div class="button__change__project">
