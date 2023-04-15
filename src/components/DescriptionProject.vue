@@ -133,7 +133,7 @@ export default {
         previous() {
             const currentPage = this.projects.projectList.findIndex((items) =>
                 items.title === this.renderTitle)
-            if (currentPage >= 0) {
+            if (currentPage > 0) {
                 const previousPage = this.projects.projectList[currentPage - 1].title;
                 this.$emit('renderUpdated', previousPage)
             }
@@ -169,7 +169,6 @@ export default {
     display: none;
     overflow-y: auto;
     overflow-x: hidden;
-    // TODO : Corriger le overfllow en pleine écran desktop 
 
     @media #{$tabletScreen} {
         height: -webkit-fill-available;

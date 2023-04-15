@@ -3,7 +3,6 @@ import Project from '@/components/items/Project.vue'
 import Button from '@/components/items/Button.vue'
 import RenderProjectImg from '@/components/items/RenderProjectImg.vue'
 import JSONDATA from '@/components/api/data.json'
-// import DescriptionProject from '@/components/DescriptionProject.vue'
 </script>
 
 <template>
@@ -33,7 +32,6 @@ import JSONDATA from '@/components/api/data.json'
                 </article>
             </TransitionGroup>
         </div>
-        <!-- <DescriptionProject ref="description" :renderTitle="this.render" /> -->
         <AsyncDescriptionProject @renderUpdated="renderUpdated" ref="description" :renderTitle="render" />
     </div>
 </template>
@@ -102,7 +100,6 @@ export default {
             document.body.classList.add('hidden')
         },
         renderUpdated(newPage) {
-            console.log(newPage);
             this.render = newPage
         }
     }
@@ -209,12 +206,10 @@ export default {
 
             &::before {
                 transform: rotate(0deg) translate(-13px, -13px);
-                // background: rgba(218, 97, 32, 0.6);
             }
 
             &::after {
                 transform: rotate(0deg) translate(9px, 9px);
-                // background: rgba(218, 97, 32, 0.6);
             }
 
             & p {
