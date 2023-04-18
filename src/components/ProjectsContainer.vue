@@ -56,6 +56,12 @@ export default {
             }
         }
     },
+    mounted() {
+        // Remove the 'hidden' class from body when going backwards
+        window.addEventListener('popstate', () => {
+            document.body.classList.remove('hidden');
+        });
+    },
     computed: {
         allData() {
             return this.projects.projectList.filter((items) => {
