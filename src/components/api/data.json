@@ -2,6 +2,43 @@
     "_commentaire": "compléter les données des projets",
     "projectList":  [
         {
+            "id": 11,
+            "url": "https://hugodelbegue.github.io/url-shortening-api-master/",
+            "git": "https://github.com/hugodelbegue/url-shortening-api-master",
+            "preview": "urlshorteningapi/urlshorteningapi_1.png",
+            "media": [
+                { "img": "urlshorteningapi/urlshorteningapi_1.png" },
+                { "img": "urlshorteningapi/urlshorteningapi_2.png" }
+            ],
+            "title": "Url shortening API",
+            "frontend": true,
+            "backend": false,
+            "language": [
+                { "name": "node.js" },
+                { "name": "javascript" },
+                { "name": "sass" },
+                { "name": "seo" },
+                { "name": "html" },
+                { "name": "api" },
+                { "name": "vue.js" },
+                { "name": "vite.js" }
+            ],
+            "year": "2023",
+            "infos": "Développement d’un projet d'entraînement professionnel, issue du de la plateforme “Frontend Mentor”. Ce défi a pour objectif d’améliorer mes compétences en code. Site landing page avec une l'API shrtcode intégrée pour créer des URL raccourcies.",
+            "description": [
+                { "achievement":"Conception graphique & Webdesign (Ressources fournis)" },
+                { "achievement":"Intégration native en HTML - CSS(Sass)" },
+                { "achievement":"Balisage sémantique HTML5" },
+                { "achievement":"Utilisation du Flexbox" },
+                { "achievement":"Animation / Dynamise des pages en Javascript & CSS" },
+                { "achievement":"Flux de travail Mobile-first" },
+                { "achievement":"Connexion API" },
+                { "achievement":"Développement sur la base de l'application Vite.js (template Vue.js) " },
+                { "achievement":"Référencement naturel SEO" },
+                { "achievement":"Site Responsive (compatible tous supports)" }
+            ]
+        },
+        {
             "id": 10,
             "url": "https://romanefaure.fr/",
             "git": "",

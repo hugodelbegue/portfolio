@@ -493,4 +493,14 @@ export default {
     color: rgb(172, 185, 193);
     background-color: rgb(172, 185, 193, 0.2);
 }
+
+.api {
+    color: rgb(48, 203, 214);
+    background-color: rgb(48, 203, 214, 0.2);
+}
+
+.vitejs {
+    color: rgb(189, 52, 254);
+    background-color: rgb(189, 52, 254, 0.2);
+}
 </style>
